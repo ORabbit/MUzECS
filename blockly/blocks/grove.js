@@ -49,6 +49,23 @@ Blockly.Blocks['grove_led'] = {
   }
 };
 
+Blockly.Blocks['grove_led2'] = {
+  helpUrl: 'http://www.seeedstudio.com/wiki/index.php?title=GROVE_-_Starter_Bundle_V1.0b#LED',
+  init: function() {
+    this.setColour(190);
+    this.appendDummyInput()
+        .appendField("LED")
+        .appendField(new Blockly.FieldImage("http://www.seeedstudio.com/wiki/images/thumb/e/e0/LED1.jpg/400px-LED1.jpg", 64, 64))
+        .appendField("PIN#")
+        .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN")
+        .appendField("stat")
+        .appendField(new Blockly.FieldDropdown([["HIGH", "HIGH"], ["LOW", "LOW"]]), "STAT");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('green LED');
+  }
+};
+
 Blockly.Blocks['grove_button'] = {
   helpUrl: 'http://www.seeedstudio.com/wiki/index.php?title=GROVE_-_Starter_Bundle_V1.0b#Button',
   init: function() {
@@ -501,5 +518,4 @@ void loop()
 	{
 		digitalWrite( 1 , LOW);
 	}
-}
-*/
+}*/
