@@ -39,6 +39,15 @@ Blockly.Arduino.grove_led = function() {
   return code;
 };
 
+// PUT IN FOR TESTING PURPOSES
+Blockly.Arduino.grove_led2 = function() {
+  var dropdown_pin = this.getFieldValue('PIN');
+  var dropdown_stat = this.getFieldValue('STAT');
+  Blockly.Arduino.setups_['setup_green_led_'+dropdown_pin] = 'pinMode('+dropdown_pin+', OUTPUT);';
+  var code = 'digitalWrite('+dropdown_pin+','+dropdown_stat+');\n'
+  return code;
+};
+
 Blockly.Arduino.grove_button = function() {
   var dropdown_pin = this.getFieldValue('PIN');
   Blockly.Arduino.setups_['setup_button_'+dropdown_pin] = 'pinMode('+dropdown_pin+', INPUT);';
