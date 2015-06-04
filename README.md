@@ -1,10 +1,5 @@
 ### Welcome to BlocklyDuino
-<<<<<<< HEAD
-=======
 
-JASON ARNOLD ROCKS
-
->>>>>>> 4661118329271dde4f9c49ca52800c2a54e8defc
 BlocklyDuino is a **web-based visual programming editor for [Arduino](http://www.arduino.cc/)**.
 
 BlocklyDuino is based on [Blockly](https://developers.google.com/blockly/), the web-based, graphical programming editor. Provide static type language blocks and code generators for Arduino programming.

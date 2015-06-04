@@ -16,6 +16,22 @@ Blockly.Blocks['play_note'] = {
   }
 };
 
+Blockly.Blocks['play_note_time'] = {
+  init: function() {
+    this.setHelpUrl('http://www.example.com/');
+    this.setColour(120);
+    this.appendValueInput("note")
+        .setCheck("String")
+        .appendField("Play Note Time    note");
+    this.appendValueInput("milliseconds")
+        .setCheck("Number")
+        .appendField("                milliseconds");
+    this.setPreviousStatement(true, "null");
+    this.setNextStatement(true, "null");
+    this.setTooltip('');
+  }
+};
+
 Blockly.Blocks['turn_led_1_on'] = {
   init: function() {
     this.setHelpUrl('http://www.example.com/');
