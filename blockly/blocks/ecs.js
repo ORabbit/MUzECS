@@ -43,4 +43,28 @@ Blockly.Blocks['turn_led_1_on'] = {
     this.setNextStatement(true);
     this.setTooltip('');
   }
+}
+Blockly.Blocks['turn_led_1_off'] = {
+  init: function() {
+    this.setHelpUrl('http://www.example.com/');
+    this.setColour(120);
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldImage("http://www.mscs.mu.edu/~cohare/BlocklyDuino-master/blockly/media/red_led.png", 30, 30, "*"))
+        .appendField("Turn LED 1 Off");
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip('');
+  }
+};
+Blockly.Blocks['turn_led_2_on'] = {
+  init: function() {
+    this.setHelpUrl('http://www.example.com/');
+    this.setColour(120);
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldImage("http://www.mscs.mu.edu/~cohare/BlocklyDuino-master/blockly/media/led_orange.png", 30, 30, "*"))
+        .appendField("Turn LED 2 On");
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip('');
+  }
 };

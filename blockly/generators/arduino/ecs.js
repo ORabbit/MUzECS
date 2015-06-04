@@ -18,7 +18,33 @@ Blockly.JavaScript['play_note_time'] = function(block) {
   return code;
 };
 
-Blockly.JavaScript['turn_led_1_on'] = function(block) {
+
+Blockly.JavaScript['button_pressed'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...\n';
+  return code;
+};Blockly.JavaScript['turn_led_1_on'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'digitalWrite(5, HIGH);\n';
+  return code;
+}
+Blockly.JavaScript['turn_led_1_off'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'digitalWrite(5, LOW);\n';
+  return code;
+};
+
+Blockly.JavaScript['turn_led_2_on'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'digitalWrite(5, HIGH);\n';
+  return code;
+};
+Blockly.JavaScript['turn_led_2_off'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'digitalWrite(5, LOW);\n';
+  return code;
+}
+Blockly.JavaScript['turn_led_3_on'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   var code = 'digitalWrite(5, HIGH);\n';
   return code;
