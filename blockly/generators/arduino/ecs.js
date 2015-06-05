@@ -16,7 +16,7 @@ Blockly.Arduino.play_note = function() {
     case "\"A\"":
       value_note = "400";
       break;
-    case default:
+    default:
       break;
   }
   var code = 'tone(11, '+value_note+');\n';
@@ -54,47 +54,55 @@ Blockly.Arduino.play_frequency_time = function() {
 
 Blockly.Arduino.turn_led_1_on = function() {
   // TODO: Assemble JavaScript into code variable.
+  Blockly.Arduino.setups_['setup_red_led'] = 'pinMode(5, OUTPUT);';
   var code = 'digitalWrite(5, HIGH);\n';
   return code;
 };
 Blockly.Arduino.turn_led_1_off = function() {
   // TODO: Assemble JavaScript into code variable.
+  Blockly.Arduino.setups_['setup_red_led'] = 'pinMode(5, OUTPUT);';
   var code = 'digitalWrite(5, LOW);\n';
   return code;
 };
 
 Blockly.Arduino.turn_led_2_on = function() {
   // TODO: Assemble JavaScript into code variable.
+  Blockly.Arduino.setups_['setup_orange_led'] = 'pinMode(7, OUTPUT);';
   var code = 'digitalWrite(7, HIGH);\n';
   return code;
 };
 
 Blockly.Arduino.turn_led_2_off = function() {
   // TODO: Assemble JavaScript into code variable.
+  Blockly.Arduino.setups_['setup_orange_led'] = 'pinMode(7, OUTPUT);';
   var code = 'digitalWrite(7, LOW);\n';
   return code;
 };
 
 Blockly.Arduino.turn_led_3_on = function() {
   // TODO: Assemble JavaScript into code variable.
+  Blockly.Arduino.setups_['setup_orange_led'] = 'pinMode(9, OUTPUT);';
   var code = 'digitalWrite(9, HIGH);\n';
   return code;
 };
 
 Blockly.Arduino.turn_led_3_off = function() {
   // TODO: Assemble JavaScript into code variable.
+  Blockly.Arduino.setups_['setup_yellow_led'] = 'pinMode(9, OUTPUT);';
   var code = 'digitalWrite(9, LOW);\n';
   return code;
 };
 
 Blockly.Arduino.turn_led_4_on = function() {
   // TODO: Assemble JavaScript into code variable.
+  Blockly.Arduino.setups_['setup_green_led'] = 'pinMode(13, OUTPUT);';
   var code = 'digitalWrite(13, LOW);\n';
   return code;
 };
 
 Blockly.Arduino.turn_led_4_off = function() {
   // TODO: Assemble JavaScript into code variable.
+  Blockly.Arduino.setups_['setup_green_led'] = 'pinMode(13, OUTPUT);';
   var code = 'digitalWrite(13, HIGH);\n';
   return code;
 };
