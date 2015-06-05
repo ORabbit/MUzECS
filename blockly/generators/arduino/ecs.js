@@ -96,14 +96,14 @@ Blockly.Arduino.turn_led_3_off = function() {
 Blockly.Arduino.turn_led_4_on = function() {
   // TODO: Assemble JavaScript into code variable.
   Blockly.Arduino.setups_['setup_green_led'] = 'pinMode(13, OUTPUT);';
-  var code = 'digitalWrite(13, LOW);\n';
+  var code = 'digitalWrite(13, HIGH);\n';
   return code;
 };
 
 Blockly.Arduino.turn_led_4_off = function() {
   // TODO: Assemble JavaScript into code variable.
   Blockly.Arduino.setups_['setup_green_led'] = 'pinMode(13, OUTPUT);';
-  var code = 'digitalWrite(13, HIGH);\n';
+  var code = 'digitalWrite(13, LOW);\n';
   return code;
 };
 
