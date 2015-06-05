@@ -1,3 +1,11 @@
+/**
+ * Created by Marquette University REU team
+ *
+ *
+ *
+ *
+ */
+
 goog.provide('Blockly.Blocks.ecs');
 
 goog.require('Blockly.Blocks');
@@ -193,7 +201,7 @@ Blockly.Blocks['key_pressed'] = {
   init: function() {
     this.setHelpUrl('http://www.example.com/');
     this.setColour(120);
-    this.appendValueInput("NAME")
+    this.appendValueInput("key")
         .setCheck("String")
         .appendField("Key Pressed    key");
     this.setPreviousStatement(true, "null");
