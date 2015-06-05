@@ -10,8 +10,8 @@ Blockly.Blocks['play_note'] = {
         .setCheck("String")
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("Play Note  note");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setPreviousStatement(true, "null");
+    this.setNextStatement(true, "null");
     this.setTooltip('');
   }
 };
@@ -66,25 +66,27 @@ Blockly.Blocks['turn_led_1_on'] = {
     this.setHelpUrl('http://www.example.com/');
     this.setColour(120);
     this.appendDummyInput()
-        .appendField(new Blockly.FieldImage("http://www.mscs.mu.edu/~cohare/BlocklyDuino-master/blockly/media/red_led.png", 30, 30, "*"))
+        .appendField(new Blockly.FieldImage("http://www.mscs.mu.edu/~cohare/BlocklyDuino-master/blockly/media/led_red.png", 30, 30, "*"))
         .appendField("Turn LED 1 On");
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
+    this.setPreviousStatement(true, "null");
+    this.setNextStatement(true, "null");
     this.setTooltip('');
   }
-}
+};
+
 Blockly.Blocks['turn_led_1_off'] = {
   init: function() {
     this.setHelpUrl('http://www.example.com/');
     this.setColour(120);
     this.appendDummyInput()
-        .appendField(new Blockly.FieldImage("http://www.mscs.mu.edu/~cohare/BlocklyDuino-master/blockly/media/red_led.png", 30, 30, "*"))
+        .appendField(new Blockly.FieldImage("http://www.mscs.mu.edu/~cohare/BlocklyDuino-master/blockly/media/led_red.png", 30, 30, "*"))
         .appendField("Turn LED 1 Off");
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
+    this.setPreviousStatement(true, "null");
+    this.setNextStatement(true, "null");
     this.setTooltip('');
   }
 };
+
 Blockly.Blocks['turn_led_2_on'] = {
   init: function() {
     this.setHelpUrl('http://www.example.com/');
@@ -92,8 +94,110 @@ Blockly.Blocks['turn_led_2_on'] = {
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("http://www.mscs.mu.edu/~cohare/BlocklyDuino-master/blockly/media/led_orange.png", 30, 30, "*"))
         .appendField("Turn LED 2 On");
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
+    this.setPreviousStatement(true, "null");
+    this.setNextStatement(true, "null");
+    this.setTooltip('');
+  }
+};
+
+Blockly.Blocks['turn_led_2_off'] = {
+  init: function() {
+    this.setHelpUrl('http://www.example.com/');
+    this.setColour(120);
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldImage("http://www.mscs.mu.edu/~cohare/BlocklyDuino-master/blockly/media/led_orange.png", 30, 30, "*"))
+        .appendField("Turn LED 2 Off");
+    this.setPreviousStatement(true, "null");
+    this.setNextStatement(true, "null");
+    this.setTooltip('');
+  }
+};
+
+Blockly.Blocks['turn_led_3_on'] = {
+  init: function() {
+    this.setHelpUrl('http://www.example.com/');
+    this.setColour(120);
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldImage("http://www.mscs.mu.edu/~cohare/BlocklyDuino-master/blockly/media/led_yellow.png", 30, 30, "*"))
+        .appendField("Turn LED 3 On");
+    this.setPreviousStatement(true, "null");
+    this.setNextStatement(true, "null");
+    this.setTooltip('');
+  }
+};
+
+Blockly.Blocks['turn_led_3_off'] = {
+  init: function() {
+    this.setHelpUrl('http://www.example.com/');
+    this.setColour(120);
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldImage("http://www.mscs.mu.edu/~cohare/BlocklyDuino-master/blockly/media/led_yellow.png", 30, 30, "*"))
+        .appendField("Turn LED 3 Off");
+    this.setPreviousStatement(true, "null");
+    this.setNextStatement(true, "null");
+    this.setTooltip('');
+  }
+};
+
+Blockly.Blocks['turn_led_4_on'] = {
+  init: function() {
+    this.setHelpUrl('http://www.example.com/');
+    this.setColour(120);
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldImage("http://www.mscs.mu.edu/~cohare/BlocklyDuino-master/blockly/media/led_green.png", 30, 30, "*"))
+        .appendField("Turn LED 4 On");
+    this.setPreviousStatement(true, "null");
+    this.setNextStatement(true, "null");
+    this.setTooltip('');
+  }
+};
+
+Blockly.Blocks['turn_led_4_off'] = {
+  init: function() {
+    this.setHelpUrl('http://www.example.com/');
+    this.setColour(120);
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldImage("http://www.mscs.mu.edu/~cohare/BlocklyDuino-master/blockly/media/led_green.png", 30, 30, "*"))
+        .appendField("Turn LED 4 Off");
+    this.setPreviousStatement(true, "null");
+    this.setNextStatement(true, "null");
+    this.setTooltip('');
+  }
+};
+
+Blockly.Blocks['set_up_keyboard'] = {
+  init: function() {
+    this.setHelpUrl('http://www.example.com/');
+    this.setColour(120);
+    this.appendDummyInput()
+        .appendField("Set Up Keyboard");
+    this.setPreviousStatement(true, "null");
+    this.setNextStatement(true, "null");
+    this.setTooltip('');
+  }
+};
+
+Blockly.Blocks['update_keyboard'] = {
+  init: function() {
+    this.setHelpUrl('http://www.example.com/');
+    this.setColour(120);
+    this.appendDummyInput()
+        .appendField("Update Keyboard");
+    this.setPreviousStatement(true, "null");
+    this.setNextStatement(true, "null");
+    this.setTooltip('');
+  }
+};
+
+Blockly.Blocks['key_pressed'] = {
+  init: function() {
+    this.setHelpUrl('http://www.example.com/');
+    this.setColour(120);
+    this.appendValueInput("NAME")
+        .setCheck("String")
+        .appendField("Key Pressed    key");
+    this.setPreviousStatement(true, "null");
+    this.setNextStatement(true, "null");
     this.setTooltip('');
   }
 };
