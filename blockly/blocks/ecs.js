@@ -69,6 +69,19 @@ Blockly.Blocks['play_frequency_time'] = {
   }
 };
 
+Blockly.Blocks['no_tone'] = {
+  init: function() {
+    this.setHelpUrl('http://www.example.com/');
+    this.setColour(120);
+    this.appendDummyInput()
+        .appendField("No Tone");
+    this.setPreviousStatement(true, "null");
+    this.setNextStatement(true, "null");
+    this.setTooltip('');
+  }
+};
+
+
 Blockly.Blocks['turn_led_1_on'] = {
   init: function() {
     this.setHelpUrl('http://www.example.com/');
@@ -204,8 +217,9 @@ Blockly.Blocks['key_pressed'] = {
     this.appendValueInput("key")
         .setCheck("String")
         .appendField("Key Pressed    key");
-    this.setPreviousStatement(true, "null");
-    this.setNextStatement(true, "null");
+    //this.setPreviousStatement(true, "null");
+    //this.setNextStatement(true, "null");
+    this.setOutput(true, 'Boolean');
     this.setTooltip('');
   }
 };
