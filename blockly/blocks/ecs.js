@@ -223,3 +223,17 @@ Blockly.Blocks['key_pressed'] = {
     this.setTooltip('');
   }
 };
+Blockly.Blocks['button_pressed'] = {
+
+  init: function() {
+    this.setHelpUrl('http://www.example.com/');
+    this.setColour(120);
+    this.appendValueInput("button")
+        .setCheck("Number")
+        .appendField("Button Pressed    button");
+    //this.setPreviousStatement(true, "null");
+    //this.setNextStatement(true, "null");
+    this.setOutput(true, 'Boolean');
+    this.setTooltip('');
+  }
+};

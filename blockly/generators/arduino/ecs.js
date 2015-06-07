@@ -40,26 +40,30 @@ Blockly.Arduino.play_note_time = function() {
 
 Blockly.Arduino.button_pressed = function() {
   // TODO: Assemble JavaScript into code variable.
-  var value_button = Blockly.Arduino.valueToCode(this, 'milliseconds', Blockly.Arduino.ORDER_ATOMIC);
+  var value_button = Blockly.Arduino.valueToCode(this, 'button', Blockly.Arduino.ORDER_ATOMIC);
   var button_pin;
   switch (value_button){
-    case "\"1\"":
+    case "1":
+  Blockly.Arduino.setups_['setup_pin_6'] = 'pinMode(6, INPUT);';
       button_pin = 6;
       break;
-    case "\"2\"":
+    case "2":
+  Blockly.Arduino.setups_['setup_pin_8'] = 'pinMode(8, INPUT);';
       button_pin = 8;
       break;
-    case "\"3\"":
+    case "3":
+  Blockly.Arduino.setups_['setup_pin_10'] = 'pinMode(10, INPUT);';
       button_pin = 10;
       break;
-    case "\"4\"":
+    case "4":
+  Blockly.Arduino.setups_['setup_pin_12'] = 'pinMode(12, INPUT);';
       button_pin = 12;
     default:
+	//error
       break;
   }
-
-  var code = 'digitalRead(6)';
-  return code;
+  var code = 'digitalRead('+button_pin+')';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino.play_frequency = function() {
@@ -159,8 +163,20 @@ Blockly.Arduino.definitions_['vars_ecs_reads']="int ECSindex;\nint ECSnumAvailab
 };
 
 Blockly.Arduino.key_pressed = function() {
-  var value_name = Blockly.Arduino.valueToCode(this, 'key', Blockly.Arduino.ORDER_ATOMIC);
+  var value_key = Blockly.Arduino.valueToCode(this, 'key', Blockly.Arduino.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...';
-  return code;
+ var key_code;
+  if(value_key.length==3){// its valid
+	var key=value_key.charAt(1);
+	if(key.charCodeAt()>47&&key.charCodeAt()<58){
+		//0=0
+		key_code= (key.charCodeAt()-48);
+	}else if(key.charCodeAt()>96&&key.charCodeAt()<123){
+		// a =10
+		key_code = (key.charCodeAt()-97)+10;
+	}
+}
+//key code = null error alert box
+  var code = 'keysDown['+key_code+']';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
