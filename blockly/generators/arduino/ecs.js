@@ -17,6 +17,7 @@ Blockly.Arduino.play_note = function() {
       value_note = "400";
       break;
     default:
+	alert("unrecognized note used in block.\n\n\nHint: Please ask your teacher for a list of available note names.");
       break;
   }
   var code = 'tone(11, '+value_note+');\n';
@@ -32,6 +33,7 @@ Blockly.Arduino.play_note_time = function() {
       value_note = "400";
       break;
     default:
+	alert("unrecognized note used in block.\n\n\nHint: Please ask your teacher for a list of available note names.");
       break;
   }
   var code = 'tone(11, '+value_note+', '+value_milliseconds+');\n';
@@ -60,6 +62,7 @@ Blockly.Arduino.button_pressed = function() {
       button_pin = 12;
     default:
 	//error
+	alert("invalid button used in block.\n\n\nHint: Valid button numbers are 1-4.");
       break;
   }
   var code = 'digitalRead('+button_pin+')';
@@ -89,55 +92,55 @@ Blockly.Arduino.no_tone = function() {
 
 Blockly.Arduino.turn_led_1_on = function() {
   // TODO: Assemble JavaScript into code variable.
-  Blockly.Arduino.setups_['setup_red_led'] = 'pinMode(5, OUTPUT);';
+  Blockly.Arduino.setups_['setup_red_led'] = 'pinMode(5, OUTPUT);\n';
   var code = 'digitalWrite(5, HIGH);\n';
   return code;
 };
 Blockly.Arduino.turn_led_1_off = function() {
   // TODO: Assemble JavaScript into code variable.
-  Blockly.Arduino.setups_['setup_red_led'] = 'pinMode(5, OUTPUT);';
+  Blockly.Arduino.setups_['setup_red_led'] = 'pinMode(5, OUTPUT);\n';
   var code = 'digitalWrite(5, LOW);\n';
   return code;
 };
 
 Blockly.Arduino.turn_led_2_on = function() {
   // TODO: Assemble JavaScript into code variable.
-  Blockly.Arduino.setups_['setup_orange_led'] = 'pinMode(7, OUTPUT);';
+  Blockly.Arduino.setups_['setup_orange_led'] = 'pinMode(7, OUTPUT);\n';
   var code = 'digitalWrite(7, HIGH);\n';
   return code;
 };
 
 Blockly.Arduino.turn_led_2_off = function() {
   // TODO: Assemble JavaScript into code variable.
-  Blockly.Arduino.setups_['setup_orange_led'] = 'pinMode(7, OUTPUT);';
+  Blockly.Arduino.setups_['setup_orange_led'] = 'pinMode(7, OUTPUT);\n';
   var code = 'digitalWrite(7, LOW);\n';
   return code;
 };
 
 Blockly.Arduino.turn_led_3_on = function() {
   // TODO: Assemble JavaScript into code variable.
-  Blockly.Arduino.setups_['setup_yellow_led'] = 'pinMode(9, OUTPUT);';
+  Blockly.Arduino.setups_['setup_yellow_led'] = 'pinMode(9, OUTPUT);\n';
   var code = 'digitalWrite(9, HIGH);\n';
   return code;
 };
 
 Blockly.Arduino.turn_led_3_off = function() {
   // TODO: Assemble JavaScript into code variable.
-  Blockly.Arduino.setups_['setup_yellow_led'] = 'pinMode(9, OUTPUT);';
+  Blockly.Arduino.setups_['setup_yellow_led'] = 'pinMode(9, OUTPUT);\n';
   var code = 'digitalWrite(9, LOW);\n';
   return code;
 };
 
 Blockly.Arduino.turn_led_4_on = function() {
   // TODO: Assemble JavaScript into code variable.
-  Blockly.Arduino.setups_['setup_green_led'] = 'pinMode(13, OUTPUT);';
+  Blockly.Arduino.setups_['setup_green_led'] = 'pinMode(13, OUTPUT);\n';
   var code = 'digitalWrite(13, HIGH);\n';
   return code;
 };
 
 Blockly.Arduino.turn_led_4_off = function() {
   // TODO: Assemble JavaScript into code variable.
-  Blockly.Arduino.setups_['setup_green_led'] = 'pinMode(13, OUTPUT);';
+  Blockly.Arduino.setups_['setup_green_led'] = 'pinMode(13, OUTPUT);\n';
   var code = 'digitalWrite(13, LOW);\n';
   return code;
 };
@@ -145,7 +148,7 @@ Blockly.Arduino.turn_led_4_off = function() {
 Blockly.Arduino.set_up_keyboard = function() {
   // TODO: Assemble JavaScript into code variable.
 Blockly.Arduino.definitions_['var_keysDown_read']="boolean keysDown[36];\n"
-  return null;
+  return "";
 };
 
 Blockly.Arduino.update_keyboard = function() {
@@ -177,6 +180,9 @@ Blockly.Arduino.key_pressed = function() {
 	}
 }
 //key code = null error alert box
+if(key_code==null){
+	alert("unrecognized key used in block.\n\n\nHiny: Valid keys are a-z and 0-9.");
+}
   var code = 'keysDown['+key_code+']';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
