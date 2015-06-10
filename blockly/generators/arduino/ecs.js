@@ -332,6 +332,7 @@ Blockly.Arduino.play_note_time = function() {
   var value_milliseconds = Blockly.Arduino.valueToCode(this, 'milliseconds', Blockly.Arduino.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   value_note = Blockly.Arduino.get_freq(value_note);
+  value_milliseconds === "" ? (alert("Please add a time in milliseconds! Placed as 0 for now."), value_milliseconds = "0") : null;
   var code = 'tone(11, '+value_note+', '+value_milliseconds+');\n';
   return code;
 };
@@ -368,6 +369,7 @@ Blockly.Arduino.button_pressed = function() {
 Blockly.Arduino.play_frequency = function() {
   var value_frequency = Blockly.Arduino.valueToCode(this, 'frequency', Blockly.Arduino.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
+  value_frequency === "" ? (alert("Please add a frequency! Placed as 0 for now."), value_frequency = "0") : null;
   var code = 'tone(11, '+value_frequency+');\n';
   return code;
 };
@@ -376,6 +378,8 @@ Blockly.Arduino.play_frequency_time = function() {
   var value_frequency = Blockly.Arduino.valueToCode(this, 'frequency', Blockly.Arduino.ORDER_ATOMIC);
   var value_milliseconds = Blockly.Arduino.valueToCode(this, 'milliseconds', Blockly.Arduino.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
+  value_frequency === "" ? (alert("Please add a time in frequency! Placed as 0 for now."), value_frequency = "0") : null;
+  value_milliseconds === "" ? (alert("Please add a time in milliseconds! Placed as 0 for now."), value_milliseconds = "0") : null;
   var code = 'tone(11, '+value_frequency+', '+value_milliseconds+');\n';
   return code;
 };
