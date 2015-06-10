@@ -318,7 +318,7 @@ Blockly.Arduino.get_freq = function(note) {
       break;
 	}
   return value_note;
-}
+};
 
 Blockly.Arduino.play_note = function() {
   var value_note = Blockly.Arduino.valueToCode(this, 'note', Blockly.Arduino.ORDER_ATOMIC);
