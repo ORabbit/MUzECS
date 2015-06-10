@@ -4,11 +4,20 @@
 # credit: http://sheep.art.pl/Wiki%20Engine%20in%20Python%20from%20Scratch
 
 import BaseHTTPServer, urllib, re, os
+from BaseHTTPServer import HTTPServer
+from SocketServer import ThreadingMixIn
+import random
+import threading
+import string
+server_info=("127.0.0.1", 8080)
+class BrylowHTTPServer(ThreadingMixIn, HTTPServer):
+    pass
+    #Handle requests in seperate process
 
 class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
-    template = u"""<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-"http://www.w3.org/TR/html4/strict.dtd"><html><body><h1>Arduino INO web server</h1>To upload to an Arduino board connected to this computer, POST to /.</body></html>"""
-
+    template_begin = u"""<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd"><html><body>"""
+    template_end=u"<h1>Arduino INO web server</h1>To upload to an Arduino board connected to this computer, POST to /.</body></html>"
     def escape_html(self, text):
         """Replace special HTML characters with HTML entities"""
         return text.replace(
@@ -21,9 +30,29 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
-        """Send page text"""
+        """Send a link of a hex file corresponding with your ip address."""
         self.do_HEAD()
-        self.wfile.write(self.template)
+        self.wfile.write(self.template_begin)
+        #if doesn't exit make it
+        os.system("mkdir ardusers")
+        os.system("mkdir ardusers/hex_files")
+        os.system("touch ardusers/hosts.txt")
+
+        hosts_file=open("ardusers/hosts.txt","r")
+            #hex file is captured by (\w+)
+        match=re.search(self.client_address[0]+":(\w+)", hosts_file.read())
+        hosts_file.close()
+        #if there is a hex file success and tell the user
+        if match!=None:
+            hex_file=match.group(0)
+            print "success "+self.client_address[0]+" got the hex file "+hex_file
+            self.wfile.write("<a id=\"success\" href=\""+server_info[0]+"/ardusers/hex_files/"+hex_file+".txt\"></a>")
+        else:
+            self.wfile.write("<a id=\"failed\"></a>")
+
+        self.wfile.write(self.template_end)
+        print threading.currentThread().getName()+" handled GET Request from "+self.client_address[0]
+
 
     def do_POST(self):
         """Save new page text and display it"""
@@ -59,20 +88,41 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
                     print "ino build returned " + `rc` + " - trying again without skip_lib_includes"
                     rc = os.system("ino build")
                 
-                if not rc == 0:
+                if not rc == 0:#didn't work
                     print "ino build returned " + `rc`                            
                     self.send_response(400)
                 else:
-                    rc = os.system("ino upload")
-                    if not rc == 0:
-                        print "ino upload returned " + `rc`            
+                    #no upload 
+                    #rc = os.system("ino upload")
+                    if not rc == 0:#didn't work
+                        print "ino build returned " + `rc`           
                         self.send_response(500)
                     else:
-                        self.send_response(200)                        
+                        #create fØlders and hosts.txt if not made
+                        os.system("mkdir ../ardusers")
+                        os.system("mkdir ../ardusers/hex_files")
+                        os.system("touch ../ardusers/hosts.txt")
+
+                        #edit hosts. We are inside the ino_project
+                        hosts_file = open("../ardusers/hosts.txt","r+")
+                        match=re.search(self.client_address[0]+":(\w+)",hosts_file.read())
+                        if match==None:#hex_file not found append to file
+                            new_hex_file=''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(8))
+                            hosts_file.write(self.client_address[0]+":"+new_hex_file+".txt\n")
+                            os.system("cp .build/leonardo/firmware.hex ../ardusers/hex_files/"+new_hex_file+".txt")
+                            print "written to hosts.txt this line: "+self.client_address[0]+":"+new_hex_file+".txt with the nex hex file"
+                        else:#edit the file with the new firmware hex
+                            hex_file=match.group(0)
+                            os.system("cp .build/leonardo/firmware.hex ../ardusers/hex_files/"+hex_file+".txt")
+                            print "updated the users hex file with the compiled hex"
+                        hosts_file.close()
+                        self.send_response(200)
+            print threading.currentThread().getName()+" handled Post Request from "+self.client_address[0]                        
             os.chdir("..")
 
 if __name__ == '__main__':
     print "running local web server at 127.0.0.1:8080..."
-    server = BaseHTTPServer.HTTPServer(("127.0.0.1", 8080), Handler)
+    server = BrylowHTTPServer(server_info, Handler)
+    print 'Starting server, use <Ctrl-C> to stop'
     server.pages = {}
     server.serve_forever()
