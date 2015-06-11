@@ -210,7 +210,7 @@ function uploadCode(code, callback) {
         case 200:
             break;
         case 0:
-            errorInfo = "code 0\n\nCould not connect to server at " + url + ".  Is the local web server running?";
+            errorInfo = "code 0\n\nCould not connect to server at " + url + ".  Is the web server running?";
             break;
         case 400:
             errorInfo = "code 400\n\nBuild failed - probably due to invalid source code.  Make sure that there are no missing connections in the blocks.";

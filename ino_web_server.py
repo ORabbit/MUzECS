@@ -9,6 +9,7 @@ from SocketServer import ThreadingMixIn
 import random
 import threading
 import string
+lock = threading.Lock()
 server_info=("134.48.6.40", 8080)
 class BrylowHTTPServer(ThreadingMixIn, HTTPServer):
     pass
@@ -36,13 +37,15 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
         #self.do_HEAD()
         self.wfile.write(self.template_begin)
         #if doesn't exit make it
-        os.system("mkdir ardusers")
-        os.system("mkdir ardusers/hex_files")
+        #os.system("mkdir ardusers")
+        #os.system("mkdir ardusers/hex_files")
 
+	lock.acquire()
         hosts_file=open("ardusers/hosts.txt","r")
             #hex file is captured by (\w+)
         match=re.search(self.client_address[0]+":(\w+)", hosts_file.read())
         hosts_file.close()
+	lock.release()
         #if there is a hex file success and tell the user
         if match!=None:
             hex_file=match.group(1)
@@ -77,10 +80,11 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
                 self.send_response(501)
             else:            
                 # write to file
+		lock.acquire()
                 fo = open("src/sketch.ino", "wb")
                 fo.write(text + "\n");
                 fo.close()
-
+		lock.release()
                 print "created src/sketch.ino"
             
                 # invoke ino to build/upload
@@ -103,12 +107,15 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
                         self.send_response(500)
                     else:
                         #create fØlders and hosts.txt if not made
-                        os.system("mkdir ../ardusers")
-                        os.system("mkdir ../ardusers/hex_files")
+                        #os.system("mkdir ../ardusers")
+                        #os.system("mkdir ../ardusers/hex_files")
 
                         #edit hosts. We are inside the ino_project
+			lock.acquire()
                         hosts_file = open("../ardusers/hosts.txt","r+")
                         match=re.search(self.client_address[0]+":(\w+)",hosts_file.read())
+                        hosts_file.close()
+			lock.release()
                         if match==None:#hex_file not found append to file
                             new_hex_file=''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(8))
                             hosts_file.write(self.client_address[0]+":"+new_hex_file+".txt\n")
@@ -118,7 +125,6 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
                             hex_file=match.group(1)
                             os.system("cp .build/leonardo/firmware.hex ../ardusers/hex_files/"+hex_file+".txt")
                             print "updated the users hex file with the compiled hex"
-                        hosts_file.close()
                         self.send_response(200)
             os.chdir("..")
 	else:
