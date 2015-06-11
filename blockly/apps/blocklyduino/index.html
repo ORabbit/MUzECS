@@ -1,15 +1,15 @@
-<html manifest=node.manifest>
+<html manifest=blockly/apps/blocklyduino/node.manifest>
 <head>
   <meta charset="utf-8">
-  <title>BlocklyDuino</title>
-  <script type="text/javascript" src="../../blockly_compressed.js"></script>
-  <script type="text/javascript" src="../../blocks_compressed.js"></script>
-  <script type="text/javascript" src="../../arduino_compressed.js"></script>
-  <script type="text/javascript" src="../../msg/js/en.js"></script>
-  <script type="text/javascript" src="Blob.js"></script>
-  <script type="text/javascript" src="spin.js"></script>
-  <script type="text/javascript" src="FileSaver.min.js"></script>
-  <script type="text/javascript" src="blockly_helper.js"></script>
+  <title>MUzECS</title>
+  <script type="text/javascript" src="blockly/blockly_compressed.js"></script>
+  <script type="text/javascript" src="blockly/blocks_compressed.js"></script>
+  <script type="text/javascript" src="blockly/arduino_compressed.js"></script>
+  <script type="text/javascript" src="blockly/msg/js/en.js"></script>
+  <script type="text/javascript" src="blockly/apps/blocklyduino/Blob.js"></script>
+  <script type="text/javascript" src="blockly/apps/blocklyduino/spin.js"></script>
+  <script type="text/javascript" src="blockly/apps/blocklyduino/FileSaver.min.js"></script>
+  <script type="text/javascript" src="blockly/apps/blocklyduino/blockly_helper.js"></script>
   <script>
 
 /**
@@ -155,7 +155,7 @@ function init() {
            length: 3,
            colour: '#ccc',
            snap: true},
-       media: '../../media/',
+       media: 'blockly/media/',
        toolbox: toolbox});
 
   auto_save_and_restore_blocks();
@@ -272,7 +272,7 @@ function init() {
   <table height="100%" width="100%">
     <tr>
       <td>
-        <h1><a href="https://github.com/ORabbit/MUBlocklyDuino/wiki">MUBlocklyDuino</a> &gt; web-based visual programming editor for arduino</h1>
+        <h1><a href="https://github.com/ORabbit/MUBlocklyDuino/wiki">MUzECS</a> &gt; web-based visual programming editor for arduino</h1>
       </td>
     </tr>
     <tr>
@@ -291,7 +291,7 @@ function init() {
             <td class="tabmin">&nbsp;</td>
             <td id="tab_xml" class="taboff" onclick="tabClick('xml')">XML</td>
             <td class="tabmax">
-              <button type="button" href="#" onclick="window.open('https://chrome.google.com/webstore/detail/')">Get Chrome Extension</button>
+              <button type="button" href="#" onclick="window.open('https://chrome.google.com/webstore/detail/muzecs/ppbahioljpoljnkfkdmehhdpimhdpelj?utm_source=chrome-ntp-icon')">Get Chrome Extension</button>
               <button type="button" href="#" onclick="window.open('http://pumpcs.mu.edu/muzecs/#/')">See MUzECS</button>
               <button type="button" onclick="resetClick()">Reset</button>
               <button onclick="discard()">Discard</button>
@@ -395,10 +395,44 @@ function init() {
       <block type="grove_motor_shield"></block>
     </category>
 	 <category name="ECS">
-		<block type="play_note"></block>
-		<block type="play_note_time"></block>
-		<block type="play_frequency"></block>
-		<block type="play_frequency_time"></block>
+		<block type="play_note">
+		   <value name="note">
+        	      <block type="text">
+                         <field name="TEXT">A</field>
+                      </block>
+                   </value>
+		</block>
+		<block type="play_note_time">
+		   <value name="note">
+        	      <block type="text">
+                         <field name="TEXT">A</field>
+                      </block>
+                   </value>
+		   <value name="milliseconds">
+		      <block type="math_number">
+			 <field name="NUM">1000</field>
+		      </block>
+		   </value>
+		</block>
+		<block type="play_frequency">
+		   <value name="frequency">
+        	      <block type="math_number">
+                         <field name="NUM">440</field>
+                      </block>
+                   </value>
+		</block>
+		<block type="play_frequency_time">
+		   <value name="frequency">
+        	      <block type="math_number">
+                         <field name="NUM">440</field>
+                      </block>
+                   </value>
+		   <value name="milliseconds">
+		      <block type="math_number">
+			 <field name="NUM">1000</field>
+		      </block>
+		   </value>
+		</block>
 		<block type="no_tone"></block>
 		<block type="turn_led_1_on"></block>
 		<block type="turn_led_1_off"></block>
@@ -410,8 +444,20 @@ function init() {
 		<block type="turn_led_4_off"></block>
 		<block type="set_up_keyboard"></block>
 		<block type="update_keyboard"></block>
-		<block type="key_pressed"></block>
-		<block type="button_pressed"></block>
+		<block type="key_pressed">
+		   <value name="key">
+        	      <block type="text">
+                         <field name="TEXT">a</field>
+                      </block>
+                   </value>
+		</block>
+		<block type="button_pressed">
+		   <value name="button">
+        	      <block type="math_number">
+                         <field name="NUM">1</field>
+                      </block>
+                   </value>
+		</block>
 	 </category>
 	<category name="Advanced (Pins)">
 		<block type="play_note_adv"></block>

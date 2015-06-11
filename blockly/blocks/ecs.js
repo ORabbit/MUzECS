@@ -87,7 +87,7 @@ Blockly.Blocks['turn_led_1_on'] = {
     this.setHelpUrl('http://www.example.com/');
     this.setColour(120);
     this.appendDummyInput()
-        .appendField(new Blockly.FieldImage("http://www.mscs.mu.edu/~cohare/BlocklyDuino-master/blockly/media/led_red.png", 30, 30, "*"))
+        .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/led_red.png", 30, 30, "*"))
         .appendField("Turn LED 1 On");
     this.setPreviousStatement(true, "null");
     this.setNextStatement(true, "null");
@@ -100,7 +100,7 @@ Blockly.Blocks['turn_led_1_off'] = {
     this.setHelpUrl('http://www.example.com/');
     this.setColour(120);
     this.appendDummyInput()
-        .appendField(new Blockly.FieldImage("http://www.mscs.mu.edu/~cohare/BlocklyDuino-master/blockly/media/led_red.png", 30, 30, "*"))
+        .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/led_red.png", 30, 30, "*"))
         .appendField("Turn LED 1 Off");
     this.setPreviousStatement(true, "null");
     this.setNextStatement(true, "null");
@@ -113,7 +113,7 @@ Blockly.Blocks['turn_led_2_on'] = {
     this.setHelpUrl('http://www.example.com/');
     this.setColour(120);
     this.appendDummyInput()
-        .appendField(new Blockly.FieldImage("http://www.mscs.mu.edu/~cohare/BlocklyDuino-master/blockly/media/led_orange.png", 30, 30, "*"))
+        .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/led_orange.png", 30, 30, "*"))
         .appendField("Turn LED 2 On");
     this.setPreviousStatement(true, "null");
     this.setNextStatement(true, "null");
@@ -126,7 +126,7 @@ Blockly.Blocks['turn_led_2_off'] = {
     this.setHelpUrl('http://www.example.com/');
     this.setColour(120);
     this.appendDummyInput()
-        .appendField(new Blockly.FieldImage("http://www.mscs.mu.edu/~cohare/BlocklyDuino-master/blockly/media/led_orange.png", 30, 30, "*"))
+        .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/led_orange.png", 30, 30, "*"))
         .appendField("Turn LED 2 Off");
     this.setPreviousStatement(true, "null");
     this.setNextStatement(true, "null");
@@ -139,7 +139,7 @@ Blockly.Blocks['turn_led_3_on'] = {
     this.setHelpUrl('http://www.example.com/');
     this.setColour(120);
     this.appendDummyInput()
-        .appendField(new Blockly.FieldImage("http://www.mscs.mu.edu/~cohare/BlocklyDuino-master/blockly/media/led_yellow.png", 30, 30, "*"))
+        .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/led_yellow.png", 30, 30, "*"))
         .appendField("Turn LED 3 On");
     this.setPreviousStatement(true, "null");
     this.setNextStatement(true, "null");
@@ -152,7 +152,7 @@ Blockly.Blocks['turn_led_3_off'] = {
     this.setHelpUrl('http://www.example.com/');
     this.setColour(120);
     this.appendDummyInput()
-        .appendField(new Blockly.FieldImage("http://www.mscs.mu.edu/~cohare/BlocklyDuino-master/blockly/media/led_yellow.png", 30, 30, "*"))
+        .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/led_yellow.png", 30, 30, "*"))
         .appendField("Turn LED 3 Off");
     this.setPreviousStatement(true, "null");
     this.setNextStatement(true, "null");
@@ -165,7 +165,7 @@ Blockly.Blocks['turn_led_4_on'] = {
     this.setHelpUrl('http://www.example.com/');
     this.setColour(120);
     this.appendDummyInput()
-        .appendField(new Blockly.FieldImage("http://www.mscs.mu.edu/~cohare/BlocklyDuino-master/blockly/media/led_green.png", 30, 30, "*"))
+        .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/led_green.png", 30, 30, "*"))
         .appendField("Turn LED 4 On");
     this.setPreviousStatement(true, "null");
     this.setNextStatement(true, "null");
@@ -178,7 +178,7 @@ Blockly.Blocks['turn_led_4_off'] = {
     this.setHelpUrl('http://www.example.com/');
     this.setColour(120);
     this.appendDummyInput()
-        .appendField(new Blockly.FieldImage("http://www.mscs.mu.edu/~cohare/BlocklyDuino-master/blockly/media/led_green.png", 30, 30, "*"))
+        .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/led_green.png", 30, 30, "*"))
         .appendField("Turn LED 4 Off");
     this.setPreviousStatement(true, "null");
     this.setNextStatement(true, "null");

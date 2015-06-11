@@ -160,7 +160,7 @@ Blockly.parseOptions_ = function(options) {
     Blockly.pathToMedia = options['media'];
   } else if (options['path']) {
     // 'path' is a deprecated option which has been replaced by 'media'.
-    Blockly.pathToMedia = options['path'] + 'media/';
+    Blockly.pathToMedia = options['path'] + 'blockly/media/';
   }
   Blockly.hasCategories = hasCategories;
   Blockly.hasScrollbars = hasScrollbars;

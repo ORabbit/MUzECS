@@ -9,15 +9,17 @@ from SocketServer import ThreadingMixIn
 import random
 import threading
 import string
-server_info=("127.0.0.1", 8080)
+server_info=("134.48.6.40", 8080)
 class BrylowHTTPServer(ThreadingMixIn, HTTPServer):
     pass
     #Handle requests in seperate process
 
 class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
-    template_begin = u"""<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-"http://www.w3.org/TR/html4/strict.dtd"><html><body>"""
-    template_end=u"<h1>Arduino INO web server</h1>To upload to an Arduino board connected to this computer, POST to /.</body></html>"
+    #template_begin = u"""<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	#"http://www.w3.org/TR/html4/strict.dtd"><html><body>"""
+    #template_end=u"<h1>Arduino INO web server</h1>To upload to an Arduino board connected to this computer, POST to /.</body></html>"
+    template_begin="<html>"
+    template_end="</html>"
     def escape_html(self, text):
         """Replace special HTML characters with HTML entities"""
         return text.replace(
@@ -31,12 +33,11 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
 
     def do_GET(self):
         """Send a link of a hex file corresponding with your ip address."""
-        self.do_HEAD()
+        #self.do_HEAD()
         self.wfile.write(self.template_begin)
         #if doesn't exit make it
         os.system("mkdir ardusers")
         os.system("mkdir ardusers/hex_files")
-        os.system("touch ardusers/hosts.txt")
 
         hosts_file=open("ardusers/hosts.txt","r")
             #hex file is captured by (\w+)
@@ -44,11 +45,13 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
         hosts_file.close()
         #if there is a hex file success and tell the user
         if match!=None:
-            hex_file=match.group(0)
+            hex_file=match.group(1)
             print "success "+self.client_address[0]+" got the hex file "+hex_file
-            self.wfile.write("<a id=\"success\" href=\""+server_info[0]+"/ardusers/hex_files/"+hex_file+".txt\"></a>")
+            print "http://"+server_info[0]+"/MUBlocklyDuino/ardusers/hex_files/"+hex_file+".txt"
+            self.wfile.write("http://"+server_info[0]+"/ardusers/hex_files/"+hex_file+".txt")
         else:
-            self.wfile.write("<a id=\"failed\"></a>")
+            print "file not found"
+            self.wfile.write("file_not_found")
 
         self.wfile.write(self.template_end)
         print threading.currentThread().getName()+" handled GET Request from "+self.client_address[0]
@@ -57,6 +60,7 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
     def do_POST(self):
         """Save new page text and display it"""
         length = int(self.headers.getheader('content-length'))
+	print threading.currentThread().getName()+" handling post request from "+self.client_address[0]                        
         if length:
             text = self.rfile.read(length)
                         
@@ -101,7 +105,6 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
                         #create fØlders and hosts.txt if not made
                         os.system("mkdir ../ardusers")
                         os.system("mkdir ../ardusers/hex_files")
-                        os.system("touch ../ardusers/hosts.txt")
 
                         #edit hosts. We are inside the ino_project
                         hosts_file = open("../ardusers/hosts.txt","r+")
@@ -112,17 +115,18 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
                             os.system("cp .build/leonardo/firmware.hex ../ardusers/hex_files/"+new_hex_file+".txt")
                             print "written to hosts.txt this line: "+self.client_address[0]+":"+new_hex_file+".txt with the nex hex file"
                         else:#edit the file with the new firmware hex
-                            hex_file=match.group(0)
+                            hex_file=match.group(1)
                             os.system("cp .build/leonardo/firmware.hex ../ardusers/hex_files/"+hex_file+".txt")
                             print "updated the users hex file with the compiled hex"
                         hosts_file.close()
                         self.send_response(200)
-            print threading.currentThread().getName()+" handled Post Request from "+self.client_address[0]                        
             os.chdir("..")
-
+	else:
+	    print "post request failed because content was "+ str(length)+" bytes" 
 if __name__ == '__main__':
-    print "running local web server at 127.0.0.1:8080..."
+    print "running local web server at 134.48.6.40:8080..."
     server = BrylowHTTPServer(server_info, Handler)
     print 'Starting server, use <Ctrl-C> to stop'
     server.pages = {}
     server.serve_forever()
+
