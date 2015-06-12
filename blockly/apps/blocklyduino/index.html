@@ -461,18 +461,125 @@ function init() {
 		</block>
 	 </category>
 	<category name="Advanced (Pins)">
-		<block type="play_note_adv"></block>
-		<block type="play_note_time_adv"></block>
-		<block type="play_frequency_adv"></block>
-		<block type="play_frequency_time_adv"></block>
-		<block type="no_tone_adv"></block>
-		<block type="turn_led_on_adv"></block>
-		<block type="turn_led_off_adv"></block>
-		<block type="button_pressed_adv"></block>
-		<block type="digital_adv"></block>
-		<block type="set_digital_adv"></block>
-		<block type="analog_adv"></block>
-		<block type="set_analog_adv"></block>
+		<block type="play_note_adv">
+		   <value name="pin">
+        	      <block type="math_number">
+                         <field name="NUM">1</field>
+                      </block>
+                   </value>
+		   <value name="note">
+        	      <block type="text">
+                         <field name="TEXT">A</field>
+                      </block>
+                   </value>
+		</block>
+		<block type="play_note_time_adv">
+		   <value name="pin">
+        	      <block type="math_number">
+                         <field name="NUM">1</field>
+                      </block>
+                   </value>
+		   <value name="note">
+        	      <block type="text">
+                         <field name="TEXT">A</field>
+                      </block>
+                   </value>
+		   <value name="milliseconds">
+        	      <block type="math_number">
+                         <field name="NUM">1000</field>
+                      </block>
+                   </value>
+		</block>
+		<block type="play_frequency_adv">
+		   <value name="pin">
+        	      <block type="math_number">
+                         <field name="NUM">1</field>
+                      </block>
+                   </value>
+		   <value name="frequency">
+        	      <block type="math_number">
+                         <field name="NUM">440</field>
+                      </block>
+                   </value>
+		</block>
+		<block type="play_frequency_time_adv">
+		   <value name="pin">
+        	      <block type="math_number">
+                         <field name="NUM">1</field>
+                      </block>
+                   </value>
+		   <value name="frequency">
+        	      <block type="math_number">
+                         <field name="NUM">440</field>
+                      </block>
+                   </value>
+		   <value name="milliseconds">
+        	      <block type="math_number">
+                         <field name="NUM">1000</field>
+                      </block>
+                   </value>
+		</block>
+		<block type="no_tone_adv">
+		   <value name="pin">
+        	      <block type="math_number">
+                         <field name="NUM">1</field>
+                      </block>
+                   </value>
+		</block>
+		<block type="turn_led_on_adv">
+		   <value name="pin">
+        	      <block type="math_number">
+                         <field name="NUM">1</field>
+                      </block>
+                   </value>
+		</block>
+		<block type="turn_led_off_adv">
+		   <value name="pin">
+        	      <block type="math_number">
+                         <field name="NUM">1</field>
+                      </block>
+                   </value>
+		</block>
+		<block type="button_pressed_adv">
+		   <value name="pin">
+        	      <block type="math_number">
+                         <field name="NUM">1</field>
+                      </block>
+                   </value>
+		</block>
+		<block type="digital_adv">
+		   <value name="pin">
+        	      <block type="math_number">
+                         <field name="NUM">1</field>
+                      </block>
+                   </value>
+		</block>
+		<block type="set_digital_adv">
+		   <value name="pin">
+        	      <block type="math_number">
+                         <field name="NUM">1</field>
+                      </block>
+                   </value>
+		</block>
+		<block type="analog_adv">
+		   <value name="pin">
+        	      <block type="math_number">
+                         <field name="NUM">1</field>
+                      </block>
+                   </value>
+		</block>
+		<block type="set_analog_adv">
+		   <value name="pin">
+        	      <block type="math_number">
+                         <field name="NUM">1</field>
+                      </block>
+                   </value>
+		   <value name="analog">
+        	      <block type="math_number">
+                         <field name="NUM">1</field>
+                      </block>
+                   </value>
+		</block>
 	</category>
     <sep></sep>
     <category name="Logic">
