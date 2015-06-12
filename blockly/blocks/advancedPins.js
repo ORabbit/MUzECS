@@ -126,6 +126,7 @@ Blockly.Blocks['button_pressed_adv'] = {
     this.appendValueInput("pin")
         .setCheck("Number")
         .appendField("Button Pressed    pin#");
+    this.setOutput(true, "Boolean");
     this.setTooltip('');
   }
 };
@@ -137,6 +138,7 @@ Blockly.Blocks['digital_adv'] = {
     this.appendValueInput("pin")
         .setCheck("Number")
         .appendField("Digital    pin#");
+    this.setOutput(true, "Boolean");
     this.setTooltip('');
   }
 };

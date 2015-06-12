@@ -389,7 +389,7 @@ Blockly.Arduino.button_pressed_adv = function() {
   value_pin === "" ? (alert("Please add a pin number! Placed as 0 for now."), value_pin = "0") : null;
   Blockly.Arduino.setups_['setup_pin_'+value_pin] = 'pinMode('+value_pin+', INPUT);';
   var code = 'digitalRead('+value_pin+')';
-  return code;
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino.digital_adv = function() {
@@ -397,7 +397,7 @@ Blockly.Arduino.digital_adv = function() {
   value_pin === "" ? (alert("Please add a pin number! Placed as 0 for now."), value_pin = "0") : null;
   Blockly.Arduino.setups_['setup_pin_'+value_pin] = 'pinMode('+value_pin+', INPUT);';
   var code = 'digitalRead('+value_pin+')';
-  return code;
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino.set_digital_adv = function() {
