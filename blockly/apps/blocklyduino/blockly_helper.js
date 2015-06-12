@@ -212,6 +212,9 @@ function uploadCode(code, callback) {
         case 0:
             errorInfo = "code 0\n\nCould not connect to server at " + url + ".  Is the web server running?";
             break;
+	case 300:
+	    errorInfo = "code 200\n\nNo code sent to the server.\nPlease make sure to click the Arudino tab before clicking Upload"
+	    break;
         case 400:
             errorInfo = "code 400\n\nBuild failed - probably due to invalid source code.  Make sure that there are no missing connections in the blocks.";
             break;
@@ -237,7 +240,7 @@ function uploadCode(code, callback) {
 function uploadClick() {
     var code = document.getElementById('content_arduino').value;
 
-    alert("Ready to upload to Arduino.\n\nNote: this only works on Mac OS X and Linux at this time.");
+    alert("Ready to upload to Arduino.\n\nNote: You must click the Arduino tab before uploading");
     
     uploadCode(code, function(status, errorInfo) {
         if (status == 200) {

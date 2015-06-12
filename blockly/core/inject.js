@@ -459,13 +459,13 @@ Blockly.init_ = function() {
   // Load the sounds.
   if (Blockly.hasSounds) {
     Blockly.loadAudio_(
-        [Blockly.pathToMedia + 'click.mp3',
-         Blockly.pathToMedia + 'click.wav',
+        [Blockly.pathToMedia + 'click.wav',
+         Blockly.pathToMedia + 'click.mp3',
          Blockly.pathToMedia + 'click.ogg'], 'click');
     Blockly.loadAudio_(
-        [Blockly.pathToMedia + 'delete.mp3',
-         Blockly.pathToMedia + 'delete.ogg',
-         Blockly.pathToMedia + 'delete.wav'], 'delete');
+        [Blockly.pathToMedia + 'delete.wav',
+         Blockly.pathToMedia + 'delete.mp3',
+         Blockly.pathToMedia + 'delete.ogg'], 'delete');
 
     // Bind temporary hooks that preload the sounds.
     var soundBinds = [];

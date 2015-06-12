@@ -1,7 +1,5 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-#
-# credit: http://sheep.art.pl/Wiki%20Engine%20in%20Python%20from%20Scratch
 
 import BaseHTTPServer, urllib, re, os
 from BaseHTTPServer import HTTPServer
@@ -9,7 +7,10 @@ from SocketServer import ThreadingMixIn
 import random
 import threading
 import string
+absPathMUBD ="/var/www/html/MUBlocklyDuino/"
 lock = threading.Lock()
+lock3 = threading.Lock()
+lock2 = threading.Lock()
 server_info=("134.48.6.40", 8080)
 class BrylowHTTPServer(ThreadingMixIn, HTTPServer):
     pass
@@ -41,7 +42,7 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
         #os.system("mkdir ardusers/hex_files")
 
 	lock.acquire()
-        hosts_file=open("ardusers/hosts.txt","r")
+        hosts_file=open(absPathMUBD+"ardusers/hosts.txt","r")
             #hex file is captured by (\w+)
         match=re.search(self.client_address[0]+":(\w+)", hosts_file.read())
         hosts_file.close()
@@ -80,23 +81,23 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
                 self.send_response(501)
             else:            
                 # write to file
-		lock.acquire()
+		lock2.acquire()
                 fo = open("src/sketch.ino", "wb")
                 fo.write(text + "\n");
                 fo.close()
-		lock.release()
+		lock2.release()
                 print "created src/sketch.ino"
             
                 # invoke ino to build/upload
                 # skip_lib_includes is used to avoid "line too long" errors with IDE 1.5.8+
-                rc = os.system("ino build --skip_lib_includes")
+                #rc = os.system("ino build --skip_lib_includes")
+	        print "ino building"
+	        lock3.acquire()	
+	        rc = os.system("ino build")
+                lock3.release()
 
                 # 512 probably means invalid option (skip_lib_includes)
-                if rc == 512:
-                    print "ino build returned " + `rc` + " - trying again without skip_lib_includes"
-                    rc = os.system("ino build")
-                
-                if not rc == 0:#didn't work
+	        if not rc == 0:#didn't work
                     print "ino build returned " + `rc`                            
                     self.send_response(400)
                 else:
@@ -112,23 +113,26 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
 
                         #edit hosts. We are inside the ino_project
 			lock.acquire()
-                        hosts_file = open("../ardusers/hosts.txt","r+")
+                        hosts_file = open(absPathMUBD+"ardusers/hosts.txt","r+")
                         match=re.search(self.client_address[0]+":(\w+)",hosts_file.read())
-                        hosts_file.close()
-			lock.release()
                         if match==None:#hex_file not found append to file
                             new_hex_file=''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(8))
                             hosts_file.write(self.client_address[0]+":"+new_hex_file+".txt\n")
-                            os.system("cp .build/leonardo/firmware.hex ../ardusers/hex_files/"+new_hex_file+".txt")
+                            os.system("cp "+absPathMUBD+"ino_project/.build/leonardo/firmware.hex "+absPathMUBD+"ardusers/hex_files/"+new_hex_file+".txt")
                             print "written to hosts.txt this line: "+self.client_address[0]+":"+new_hex_file+".txt with the nex hex file"
                         else:#edit the file with the new firmware hex
                             hex_file=match.group(1)
-                            os.system("cp .build/leonardo/firmware.hex ../ardusers/hex_files/"+hex_file+".txt")
-                            print "updated the users hex file with the compiled hex"
+                            os.system("cp "+absPathMUBD+"ino_project/.build/leonardo/firmware.hex "+absPathMUBD+"ardusers/hex_files/"+hex_file+".txt")
+                        hosts_file.close()
+			lock.release()
+                        print "updated the users hex file with the compiled hex"
                         self.send_response(200)
+			self.send_header("Access-Control-Allow-Origin","*")
             os.chdir("..")
 	else:
 	    print "post request failed because content was "+ str(length)+" bytes" 
+	    self.send_response(300)
+	    self.send_header("Access-Control-Allow-Origin","*")
 if __name__ == '__main__':
     print "running local web server at 134.48.6.40:8080..."
     server = BrylowHTTPServer(server_info, Handler)
