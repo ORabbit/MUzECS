@@ -1,17 +1,19 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-
+#modified by Marquette REU team
 import BaseHTTPServer, urllib, re, os
 from BaseHTTPServer import HTTPServer
 from SocketServer import ThreadingMixIn
 import random
 import threading
 import string
+
 absPathMUBD ="/var/www/html/MUBlocklyDuino/"
 lock = threading.Lock()
 lock3 = threading.Lock()
 lock2 = threading.Lock()
 server_info=("134.48.6.40", 8080)
+#make the HTTP Server multi threaded
 class BrylowHTTPServer(ThreadingMixIn, HTTPServer):
     pass
     #Handle requests in seperate process
@@ -35,19 +37,17 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
 
     def do_GET(self):
         """Send a link of a hex file corresponding with your ip address."""
+	#don't send header html to the extension
         #self.do_HEAD()
         self.wfile.write(self.template_begin)
-        #if doesn't exit make it
-        #os.system("mkdir ardusers")
-        #os.system("mkdir ardusers/hex_files")
-
+	#critical section where we try to find the hex_file corresponding to the client's ip address and when we find it send the link with html tags to the extension
 	lock.acquire()
         hosts_file=open(absPathMUBD+"ardusers/hosts.txt","r")
-            #hex file is captured by (\w+)
+        #hex file is captured by (\w+)
         match=re.search(self.client_address[0]+":(\w+)", hosts_file.read())
         hosts_file.close()
 	lock.release()
-        #if there is a hex file success and tell the user
+        #if there is a hex file success and tell the user the link if not tellt them file not found
         if match!=None:
             hex_file=match.group(1)
             print "success "+self.client_address[0]+" got the hex file "+hex_file
@@ -80,7 +80,7 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
                 print "ino init returned " + `rc`            
                 self.send_response(501)
             else:            
-                # write to file
+                # write to file: critical section
 		lock2.acquire()
                 fo = open("src/sketch.ino", "wb")
                 fo.write(text + "\n");
@@ -88,9 +88,7 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
 		lock2.release()
                 print "created src/sketch.ino"
             
-                # invoke ino to build/upload
-                # skip_lib_includes is used to avoid "line too long" errors with IDE 1.5.8+
-                #rc = os.system("ino build --skip_lib_includes")
+                # invoke ino to build
 	        print "ino building"
 	        lock3.acquire()	
 	        rc = os.system("ino build")
@@ -107,11 +105,9 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
                         print "ino build returned " + `rc`           
                         self.send_response(500)
                     else:
-                        #create fØlders and hosts.txt if not made
-                        #os.system("mkdir ../ardusers")
-                        #os.system("mkdir ../ardusers/hex_files")
-
-                        #edit hosts. We are inside the ino_project
+                        #edit hosts. We are inside the ino_project: critical section
+			#read the hosts and if we haven't seen the client's ip address yet then write to the hosts file with a randomly generated name for the hex_file
+			# if we have seen the client's ip address be fore then get the hex file that corresponds to the clients and overwrite it with the new hex file 
 			lock.acquire()
                         hosts_file = open(absPathMUBD+"ardusers/hosts.txt","r+")
                         match=re.search(self.client_address[0]+":(\w+)",hosts_file.read())
@@ -129,6 +125,7 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
                         self.send_response(200)
 			self.send_header("Access-Control-Allow-Origin","*")
             os.chdir("..")
+	#this occurs if the person doesn't click the arduino tab atleast once: the length of content is 0
 	else:
 	    print "post request failed because content was "+ str(length)+" bytes" 
 	    self.send_response(300)
