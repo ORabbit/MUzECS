@@ -3,7 +3,8 @@
  *
  *
  *
- *
+ * purpose: this code changes the way the blocks in the ecs tab look and how it takes input
+ * further documentation can be found at https://developers.google.com/blockly/custom-blocks/overview
  */
 
 goog.provide('Blockly.Blocks.ecs');
