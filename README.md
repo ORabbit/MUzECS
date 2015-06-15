@@ -33,11 +33,11 @@ To avoid the tedious step of manually pasting code to the Arduino IDE, you can u
 
 ------
 
-When changing javascript files run '<python build.py>'
+When changing javascript files run `python build.py`
 
-To run daemon for ino web server on server run '<sudo nohup /var/www/html/MUBlocklyDuino/ino_web_server.py>'
+To run daemon for ino web server on server run `sudo nohup /var/www/html/MUBlocklyDuino/ino_web_server.py`
 
-To run daemon for cleaner on server run '<sudo nohup /var/www/html/MUBlocklyDuino/cleaner.py>'
+To run daemon for cleaner on server run `sudo nohup /var/www/html/MUBlocklyDuino/cleaner.py`
 
 ### ChangeLog
 
