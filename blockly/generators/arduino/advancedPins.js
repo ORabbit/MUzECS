@@ -3,7 +3,8 @@
  *
  *
  *
- *
+ * purpose: this code determines what the arduino code will be in the ecs tab
+ * further documentation can be found at https://developers.google.com/blockly/custom-blocks/overview 
  */
 
 goog.provide('Blockly.Arduino.advancedPins');
