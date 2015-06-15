@@ -61,3 +61,6 @@ Copyright (C) 2012~2015 Fred Lin gasolin+blockly@gmail.com
  * You may obtain a copy of the License at
  *
  *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+
+Additional license for INO under the [MIT-LICENSE](https://github.com/amperka/ino/blob/master/MIT-LICENSE.txt)
