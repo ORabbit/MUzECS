@@ -37,7 +37,9 @@ To avoid the tedious step of manually pasting code to the Arduino IDE, you can u
 Marquette University REU Team (@orabbit, @davidxyz, @drummerfreek789)
 
 Thanks Fred Lin (@gasolin) for creating [BlocklyDuino](https://github.com/gasolin/BlocklyDuino)
+
 Thanks [Blockly](https://developers.google.com/blockly/)
+
 Thanks Arduino and Seeeduino guys for Arduino and Grove blocks.
 
 The project is also inspired by [arduiblock](https://github.com/taweili/ardublock) and [modkit](http://www.modk.it/)
