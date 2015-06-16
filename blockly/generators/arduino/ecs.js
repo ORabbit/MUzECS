@@ -455,7 +455,7 @@ Blockly.Arduino.definitions_['var_keysDown_read']="boolean keysDown[36];\n"
 Blockly.Arduino.update_keyboard = function() {
   // TODO: Assemble JavaScript into code variable.
 Blockly.Arduino.definitions_['vars_ecs_reads']="int ECSindex;\nint ECSnumAvailable;\nint ECSiteration;\n"
-  var code = 'ECSnumAvailable = Serial.available()\n' +
+  var code = 'ECSnumAvailable = Serial.available();\n' +
  'char buffer[ECSnumAvailable];\n'+
  'Serial.readBytes(buffer, ECSnumAvailable);\n'+
  'for (ECSiteration = 0; ECSiteration < ( ECSnumAvailable ); ++ECSiteration)\n'+
