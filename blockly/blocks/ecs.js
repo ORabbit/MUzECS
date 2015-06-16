@@ -237,3 +237,14 @@ Blockly.Blocks['button_pressed'] = {
     this.setTooltip('');
   }
 };
+
+Blockly.Blocks['get_distance'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Get Distance");
+    this.setOutput(true, "Number");
+    this.setColour(120);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};

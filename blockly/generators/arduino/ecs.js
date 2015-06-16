@@ -447,13 +447,13 @@ Blockly.Arduino.turn_led_4_off = function() {
 
 Blockly.Arduino.set_up_keyboard = function() {
   // TODO: Assemble JavaScript into code variable.
-Blockly.Arduino.definitions_['var_keysDown_read']="boolean keysDown[36];\n"
+Blockly.Arduino.definitions_['var_keysDown_read']="boolean keysDown[36];\n";
   return "";
 };
 
 Blockly.Arduino.update_keyboard = function() {
   // TODO: Assemble JavaScript into code variable.
-Blockly.Arduino.definitions_['vars_ecs_reads']="int ECSindex;\nint ECSnumAvailable;\nint ECSiteration;\n"
+Blockly.Arduino.definitions_['vars_ecs_reads']="int ECSindex;\nint ECSnumAvailable;\nint ECSiteration;\n";
   var code = 'ECSnumAvailable = Serial.available()\n' +
  'char buffer[ECSnumAvailable];\n'+
  'Serial.readBytes(buffer, ECSnumAvailable);\n'+
@@ -485,4 +485,64 @@ Blockly.Arduino.key_pressed = function() {
   }
   var code = 'keysDown['+key_code+']';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.JavaScript['get_distance'] = function(block) {
+  Blockly.Arduino.definitions_['func_smoothDistance']=
+    "int smoothDistance()\n"+
+    "{\n"+
+    "  int count = 0;\n"+
+    "  long avg = 0;\n"+
+    "  int dist = 0;\n"+
+    "  while (count < 4) {\n"+
+    "    dist = getDistance();"+
+    "    avg = (avg + dist)/2;\n"+
+    "    count = count + 1;\n"+
+    "  }\n"+
+    "  if (count == 4) {\n"+
+    "    count = 0;\n"+
+    "  }\n"+
+    "  Serial.println(avg, DEC);\n"+
+    "  return (int)avg;\n"+
+    "}\n";
+  Blockly.Arduino.definitions_['func_getDistance()'] = 
+    "int getDistance()\n"+
+    "{\n"+
+    " unsigned long start = micros();\n"+
+    " int CYCLES = 4;\n"+
+    " int DELAY_PING = 25;\n"+
+    " int timeout = 16000;\n"+
+    " int T1OUT = 0x10;\n"+
+    " \n"+
+    " for (int ii = 0; ii < CYCLES; ii++) {\n"+
+    "   digitalWrite(2, HIGH);\n"+
+    "   digitalWrite(3, LOW);\n"+
+    "   delayMicroseconds(DELAY_PING);\n"+
+    "   digitalWrite(2, LOW);\n"+
+    "   digitalWrite(3, HIGH);\n"+
+    "   delayMicroseconds(DELAY_PING);\n"+
+    " }\n"+
+    " \n"+
+    " delayMicroseconds(200);\n"+
+    " while((PIND & T1OUT) != 0 && timeout > 0) {\n"+
+    "   timeout--;\n"+
+    "   delayMicroseconds(1);\n"+
+    " }\n"+
+    " unsigned long end = micros();\n"+
+    " unsigned long time;\n"+
+    " if (end > start) {\n"+
+    "   time = end - start;\n"+
+    " }\n"+
+    " else {\n"+
+    "   time = (end + ~start) - (start + ~start);\n"+
+    " }\n"+
+    "\n"+
+    " delayMicroseconds(400000);\n"+
+    " return ((int) time);\n"+
+    "}\n";
+  Blockly.Arduino.setups_['setup_dist_1'] = 'Serial.begin(9600);\n';
+  Blockly.Arduino.setups_['setup_dist_2'] = 'pinnMode(3, OUTPUT);\n';
+  Blockly.Arduino.setups_['setup_dist_3'] = 'pinnMode(2, OUTPUT);\n';
+  var code = 'smoothDistance()';
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
