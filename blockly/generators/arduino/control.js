@@ -83,3 +83,24 @@ Blockly.Arduino.controls_repeat = function() {
   return code + '\n';
 
 };
+Blockly.Arduino.controls_whileUntil = function() {
+  var mode = this.getFieldValue('MODE');
+  var bool=Blockly.Arduino.valueToCode(this, 'BOOL', Blockly.Arduino.ORDER_NONE);
+
+  var branch = Blockly.Arduino.statementToCode(this, 'DO');
+  if(mode==='WHILE'){
+	  var code = 'while ('+bool+') {\n' + branch + '\n}';
+  }else{
+	  var code = 'while (!'+bool+') {\n' + branch + '\n}';
+	}
+
+  return code + '\n';
+
+};
+Blockly.Arduino.controls_infloop = function() {
+  var branch = Blockly.Arduino.statementToCode(this, 'DO');
+  var code = 'while ( true ) {\n' + branch + '\n}';
+
+  return code + '\n';
+
+};

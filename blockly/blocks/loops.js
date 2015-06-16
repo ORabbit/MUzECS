@@ -102,6 +102,20 @@ Blockly.Blocks['controls_whileUntil'] = {
     });
   }
 };
+Blockly.Blocks['controls_infloop'] = {
+  /**
+   * Block for 'do while/until' loop.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.CONTROLS_WHILEUNTIL_HELPURL);
+    this.setColour(Blockly.Blocks.loops.HUE);
+    this.appendStatementInput('DO')
+        .appendField(Blockly.Msg.CONTROLS_WHILEUNTIL_INPUT_DO);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+      }
+};
 
 Blockly.Blocks['controls_for'] = {
   /**
