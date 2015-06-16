@@ -40,6 +40,8 @@ spin.js
 ../../media/sprites.png
 ../../media/click.mp3
 ../../media/delete.mp3
+../../media/click.wav
+../../media/click.wav
 ../../media/handdelete.cur
 ../../media/handopen.cur
 ../../media/handclosed.cur
