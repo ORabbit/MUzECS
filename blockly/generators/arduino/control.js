@@ -75,3 +75,11 @@ Blockly.Arduino.controls_for = function() {
   }
   return code;
 };
+Blockly.Arduino.controls_repeat = function() {
+  var times = this.getFieldValue('TIMES');
+  Blockly.Arduino.definitions_['index_i'] = 'int i;\n';
+  var branch = Blockly.Arduino.statementToCode(this, 'DO');
+  var code = 'for (i = 1; i <= '+times+'; i++ ) {\n' + branch + '\n}';
+  return code + '\n';
+
+};
