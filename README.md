@@ -1,6 +1,6 @@
-### Welcome to BlocklyDuino
+### Welcome to MUzECS
 
-BlocklyDuino is a **web-based visual programming editor for [Arduino](http://www.arduino.cc/)**.
+MUzECS is a **web-based visual programming editor for [Arduino](http://www.arduino.cc/)**.
 
 MUzECS is based on [Blockly](https://developers.google.com/blockly/) and [BlocklyDuino](https://github.com/gasolin/BlocklyDuino), the web-based, graphical programming editor. Provide static type language blocks and code generators for Arduino programming.
 
