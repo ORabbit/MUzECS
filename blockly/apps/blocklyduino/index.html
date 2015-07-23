@@ -315,8 +315,7 @@ function init() {
   <textarea id="content_xml" class="content" wrap="off"></textarea>
 
   <xml id="toolbox" style="display: none">
-    <category name="In/Out">
-      <block type="inout_highlow"></block>
+<!--    <category name="In/Out">
       <block type="inout_digital_write"></block>
       <block type="inout_digital_read"></block>
       <block type="inout_analog_write">
@@ -327,13 +326,6 @@ function init() {
         </value>
       </block>
       <block type="inout_analog_read"></block>
-      <block type="serial_print">
-        <value name="CONTENT">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-      </block>
       <block type="inout_buildin_led"></block>
     </category>
     <category name="Servo">
@@ -394,6 +386,32 @@ function init() {
     </category>
     <category name="Grove Motor">
       <block type="grove_motor_shield"></block>
+    </category>
+-->
+    <category name="Control">
+      <block type="controls_if"></block>
+      <block type="base_delay">
+        <value name="DELAY_TIME">
+          <block type="math_number">
+            <field name="NUM">1000</field>
+          </block>
+        </value>
+      </block>
+	<block type="controls_repeat"></block>
+	<block type="controls_whileUntil"></block>
+	<block type="controls_infloop"></block>
+      <block type="controls_for">
+        <value name="FROM">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="TO">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+      </block>
     </category>
 	 <category name="ECS">
 		<block type="play_note">
@@ -461,6 +479,31 @@ function init() {
 		</block>
 		<block type="get_distance"></block>
 	 </category>
+    <category name="Variables/Constants" custom="VARIABLE">
+      	<block type="math_number"></block>
+      	<block type="text"></block>
+			<block type="inout_highlow"></block>
+			<block type="logic_boolean"></block>
+	 </category>
+    <category name="Math Operators">
+<!--      <block type="base_map"></block> -->
+      <block type="math_arithmetic"></block>
+    </category>
+    <category name="Logic Operators">
+      <block type="logic_compare"></block>
+      <block type="logic_operation"></block>
+      <block type="logic_negate"></block>
+      <block type="logic_null"></block>
+    </category>
+	<category name="Communications">
+      <block type="serial_print">
+        <value name="CONTENT">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
+	</category>
 	<category name="Advanced (Pins)">
 		<block type="play_note_adv">
 		   <value name="pin">
@@ -582,49 +625,9 @@ function init() {
                    </value>
 		</block>
 	</category>
+	<category name="Advanced (Code)">
+	</category>
     <sep></sep>
-    <category name="Logic">
-      <block type="controls_if"></block>
-      <block type="logic_compare"></block>
-      <block type="logic_operation"></block>
-      <block type="logic_negate"></block>
-      <block type="logic_null"></block>
-	<block type="logic_boolean"></block>
-    </category>
-    <category name="Control">
-      <block type="base_delay">
-        <value name="DELAY_TIME">
-          <block type="math_number">
-            <field name="NUM">1000</field>
-          </block>
-        </value>
-      </block>
-	<block type="controls_repeat"></block>
-	<block type="controls_whileUntil"></block>
-	<block type="controls_infloop"></block>
-      <block type="controls_for">
-        <value name="FROM">
-          <block type="math_number">
-            <field name="NUM">1</field>
-          </block>
-        </value>
-        <value name="TO">
-          <block type="math_number">
-            <field name="NUM">10</field>
-          </block>
-        </value>
-      </block>
-    </category>
-    <category name="Math">
-      <block type="base_map"></block>
-      <block type="math_number"></block>
-      <block type="math_arithmetic"></block>
-    </category>
-    <category name="Text">
-      <block type="text"></block>
-    </category>
-    <sep></sep>
-    <category name="Variables" custom="VARIABLE"></category>
     <category name="Functions" custom="PROCEDURE"></category>
   </xml>
 </body>
