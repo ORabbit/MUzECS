@@ -18,6 +18,7 @@ Blockly.Blocks['play_note'] = {
     this.appendValueInput("note")
         .setCheck("String")
         .setAlign(Blockly.ALIGN_RIGHT)
+         .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/sound_wave.png", 30, 30, "*"))
         .appendField("Play Note  note");
     this.setPreviousStatement(true, "null");
     this.setNextStatement(true, "null");
@@ -34,6 +35,7 @@ Blockly.Blocks['play_note_time'] = {
         .appendField("Play Note Time    note");
     this.appendValueInput("milliseconds")
         .setCheck("Number")
+        .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/sound_wave.png", 30, 30, "*"))
         .appendField("                milliseconds");
     this.setPreviousStatement(true, "null");
     this.setNextStatement(true, "null");
@@ -47,6 +49,7 @@ Blockly.Blocks['play_frequency'] = {
     this.setColour(120);
     this.appendValueInput("frequency")
         .setCheck("Number")
+         .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/sound_wave.png", 30, 30, "*"))
         .appendField("Play Frequency     frequency");
     this.setPreviousStatement(true, "null");
     this.setNextStatement(true, "null");
@@ -63,7 +66,8 @@ Blockly.Blocks['play_frequency_time'] = {
         .appendField("Play Frequency     frequency");
     this.appendValueInput("milliseconds")
         .setCheck("Number")
-        .appendField("                          milliseconds");
+        .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/sound_wave.png", 30, 30, "*"))
+        .appendField("                 milliseconds");
     this.setPreviousStatement(true, "null");
     this.setNextStatement(true, "null");
     this.setTooltip('');
@@ -75,6 +79,7 @@ Blockly.Blocks['no_tone'] = {
     this.setHelpUrl('http://www.example.com/');
     this.setColour(120);
     this.appendDummyInput()
+	.appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/sound_nowave.png", 30, 30, "*"))
         .appendField("No Tone");
     this.setPreviousStatement(true, "null");
     this.setNextStatement(true, "null");
@@ -88,7 +93,7 @@ Blockly.Blocks['turn_led_1_on'] = {
     this.setHelpUrl('http://www.example.com/');
     this.setColour(120);
     this.appendDummyInput()
-        .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/led_red.png", 30, 30, "*"))
+        .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/led_red_on.png", 30, 30, "*"))
         .appendField("Turn LED 1 On");
     this.setPreviousStatement(true, "null");
     this.setNextStatement(true, "null");
@@ -114,7 +119,7 @@ Blockly.Blocks['turn_led_2_on'] = {
     this.setHelpUrl('http://www.example.com/');
     this.setColour(120);
     this.appendDummyInput()
-        .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/led_orange.png", 30, 30, "*"))
+        .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/led_orange_on.png", 30, 30, "*"))
         .appendField("Turn LED 2 On");
     this.setPreviousStatement(true, "null");
     this.setNextStatement(true, "null");
@@ -140,7 +145,7 @@ Blockly.Blocks['turn_led_3_on'] = {
     this.setHelpUrl('http://www.example.com/');
     this.setColour(120);
     this.appendDummyInput()
-        .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/led_yellow.png", 30, 30, "*"))
+        .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/led_yellow_on.png", 30, 30, "*"))
         .appendField("Turn LED 3 On");
     this.setPreviousStatement(true, "null");
     this.setNextStatement(true, "null");
@@ -166,7 +171,7 @@ Blockly.Blocks['turn_led_4_on'] = {
     this.setHelpUrl('http://www.example.com/');
     this.setColour(120);
     this.appendDummyInput()
-        .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/led_green.png", 30, 30, "*"))
+        .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/led_green_on.png", 30, 30, "*"))
         .appendField("Turn LED 4 On");
     this.setPreviousStatement(true, "null");
     this.setNextStatement(true, "null");
@@ -192,6 +197,7 @@ Blockly.Blocks['set_up_keyboard'] = {
     this.setHelpUrl('http://www.example.com/');
     this.setColour(120);
     this.appendDummyInput()
+	.appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/keyboard.png", 30, 30, "*"))
         .appendField("Set Up Keyboard");
     this.setPreviousStatement(true, "null");
     this.setNextStatement(true, "null");
@@ -204,6 +210,7 @@ Blockly.Blocks['update_keyboard'] = {
     this.setHelpUrl('http://www.example.com/');
     this.setColour(120);
     this.appendDummyInput()
+	.appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/keyboard.png", 30, 30, "*"))
         .appendField("Update Keyboard");
     this.setPreviousStatement(true, "null");
     this.setNextStatement(true, "null");
@@ -217,6 +224,7 @@ Blockly.Blocks['key_pressed'] = {
     this.setColour(120);
     this.appendValueInput("key")
         .setCheck("String")
+        .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/key.png", 30, 30, "*"))
         .appendField("Key Pressed    key");
     //this.setPreviousStatement(true, "null");
     //this.setNextStatement(true, "null");
@@ -231,6 +239,7 @@ Blockly.Blocks['button_pressed'] = {
     this.setColour(120);
     this.appendValueInput("button")
         .setCheck("Number")
+        .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/button_press.png", 30, 30, "*"))
         .appendField("Button Pressed    button");
     //this.setPreviousStatement(true, "null");
     //this.setNextStatement(true, "null");
@@ -242,6 +251,7 @@ Blockly.Blocks['button_pressed'] = {
 Blockly.Blocks['get_distance'] = {
   init: function() {
     this.appendDummyInput()
+	.appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/ruler.png", 30, 30, "*"))
         .appendField("Get Distance");
     this.setOutput(true, "Number");
     this.setColour(120);
