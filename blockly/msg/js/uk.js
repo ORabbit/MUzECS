@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "просте";
 Blockly.Msg.MATH_IS_TOOLTIP = "Перевіряє, чи число парне, непарне, просте, ціле, додатне, від'ємне або чи воно ділиться на певне число без остачі. Повертає істина або хибність.";
 Blockly.Msg.MATH_IS_WHOLE = "ціле";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://uk.wikipedia.org/wiki/Ділення_з_остачею";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "остача від %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Повертає остачу від ділення двох чисел.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";  // untranslated

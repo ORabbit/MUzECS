@@ -33,3 +33,10 @@ Blockly.Arduino.text = function() {
   var code = Blockly.Arduino.quote_(this.getFieldValue('TEXT'));
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
+
+Blockly.Arduino.text_concat = function() {
+  var text_text1 = Blockly.Arduino.quote_(this.getFieldValue('TEXT1'));
+  var value_text2 = Blockly.Arduino.valueToCode(this, 'TEXT2', Blockly.Arduino.ORDER_ATOMIC);
+  var code = text_text1 + text_text2;
+  return [code, Blockly.Arudino.ORDER_ATOMIC];
+}

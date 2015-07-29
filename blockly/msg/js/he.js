@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "ראשוני";
 Blockly.Msg.MATH_IS_TOOLTIP = "Check if a number is an even, odd, prime, whole, positive, negative, or if it is divisible by certain number.  Returns true or false.";
 Blockly.Msg.MATH_IS_WHOLE = "שלם";
 Blockly.Msg.MATH_MODULO_HELPURL = "http://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "שארית החילוק %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "החזרת השארית מחלוקת שני המספרים.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";

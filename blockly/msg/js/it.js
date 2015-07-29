@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "è primo";
 Blockly.Msg.MATH_IS_TOOLTIP = "Verifica se un numero è pari, dispari, primo, intero, positivo, negativo o se è divisibile per un certo numero. Restituisce vero o falso.";
 Blockly.Msg.MATH_IS_WHOLE = "è intero";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://it.wikipedia.org/wiki/Resto";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "resto di %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Restituisce il resto della divisione di due numeri.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";  // untranslated

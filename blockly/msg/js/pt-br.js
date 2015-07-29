@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "é primo";
 Blockly.Msg.MATH_IS_TOOLTIP = "Verifica se um número é par, ímpar, inteiro, positivo, negativo, ou se é divisível por outro número.  Retorna verdadeiro ou falso.";
 Blockly.Msg.MATH_IS_WHOLE = "é inteiro";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://pt.wikipedia.org/wiki/Opera%C3%A7%C3%A3o_m%C3%B3dulo";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "resto da divisão de %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Retorna o resto da divisão de dois números.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";  // untranslated

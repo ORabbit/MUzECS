@@ -486,15 +486,27 @@ function init() {
                    </value>
 		</block>
 	 </category>
-    <category name="Variables/Constants" custom="VARIABLE">
+    <category name="Variables/Constants"><!-- custom="VARIABLE"> -->
       	<block type="math_number"></block>
-      	<block type="text"></block>
-			<block type="inout_highlow"></block>
-			<block type="logic_boolean"></block>
-	 </category>
+	<block type="text_concat"></block>
+      	<block type="text">
+		<field name="TEXT">Note</field>
+	</block>
+	<block type="text">
+		<field name="TEXT">Key</field>
+	</block>
+	<block type="inout_highlow"></block>
+	<block type="logic_boolean"></block>
+    </category>
     <category name="Math Operators">
 <!--      <block type="base_map"></block> -->
-      <block type="math_arithmetic"></block>
+    <!--  <block type="math_arithmetic"></block> -->
+      <block type="math_add"></block>
+      <block type="math_subtract"></block>
+      <block type="math_multiplication"></block>
+      <block type="math_division"></block>
+      <block type="math_exponent"></block>
+      <block type="math_mod"></block>
     </category>
     <category name="Logic Operators">
       <block type="logic_compare"></block>

@@ -29,7 +29,7 @@ goog.provide('Blockly.Blocks.texts');
 goog.require('Blockly.Blocks');
 
 
-Blockly.Blocks.texts.HUE = 160;
+Blockly.Blocks.texts.HUE = 210;
 
 Blockly.Blocks['text'] = {
   /**
@@ -52,6 +52,28 @@ Blockly.Blocks['text'] = {
    * @return {!Blockly.FieldImage} The field image of the quote.
    * @private
    */
+  newQuote_: function(open) {
+    if (open == Blockly.RTL) {
+      var file = 'quote1.png';
+    } else {
+      var file = 'quote0.png';
+    }
+    return new Blockly.FieldImage(Blockly.pathToMedia + file, 12, 12, '"');
+  }
+};
+
+Blockly.Blocks['text_concat'] = {
+  init: function() {
+    this.appendValueInput("TEXT2")
+        .setCheck("String")
+	.appendField(this.newQuote_(true))
+        .appendField(new Blockly.FieldTextInput("message"), "TEXT1")
+	.appendField(this.newQuote_(false));
+    this.setOutput(true, 'String');
+    this.setColour(210);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  },
   newQuote_: function(open) {
     if (open == Blockly.RTL) {
       var file = 'quote1.png';

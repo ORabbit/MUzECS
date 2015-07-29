@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "on alkuluku";
 Blockly.Msg.MATH_IS_TOOLTIP = "Tarkistaa onko numero parillinen, pariton, alkuluku, kokonaisluku, positiivinen, negatiivinen, tai jos se on jaollinen toisella luvulla. Palauttaa tosi tai epätosi.";
 Blockly.Msg.MATH_IS_WHOLE = "on kokonaisluku";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "%1 ÷ %2 jakojäännös";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Palauttaa jakolaskun jakojäännöksen.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "⋅";

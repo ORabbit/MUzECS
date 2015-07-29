@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "est primu";
 Blockly.Msg.MATH_IS_TOOLTIP = "Cumprova si unu numeru est paris, dìsparis, primu, intreu, positivu, negativu o si fait a ddu dividi po unu numeru giau. Torrat berus o frassu.";
 Blockly.Msg.MATH_IS_WHOLE = "est intreu";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "arrestu de %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Torrat s'arrestu de sa divisioni de duus numerus.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";  // untranslated

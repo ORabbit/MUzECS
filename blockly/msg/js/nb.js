@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "er et primtall";
 Blockly.Msg.MATH_IS_TOOLTIP = "Sjekk om et tall er et partall, oddetall, primtall, heltall, positivt, negativt, eller om det er delelig med et annet tall. Returnerer sant eller usant.";
 Blockly.Msg.MATH_IS_WHOLE = "er et heltall";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "resten av %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Returner resten fra delingen av to tall.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "x";

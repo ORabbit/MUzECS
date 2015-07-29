@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "asal";
 Blockly.Msg.MATH_IS_TOOLTIP = "Bir sayinin çift mi tek mi , tam mı, asal mı , pozitif mi, negatif mi, veya tam bir  sayıyla bölünebilirliğini kontrol et.'True' veya 'False' değerini döndür.";
 Blockly.Msg.MATH_IS_WHOLE = "Bütün olduğunu";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "%1 ÷ %2 nin kalanı";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "İki sayının bölümünden kalanı döndür.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "x";

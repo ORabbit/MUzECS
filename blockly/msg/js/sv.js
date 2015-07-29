@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "är ett primtal";
 Blockly.Msg.MATH_IS_TOOLTIP = "Kontrollera om ett tal är jämnt, ojämnt, helt, positivt, negativt eller det är delbart med ett bestämt tal. Returnerar med sant eller falskt.";
 Blockly.Msg.MATH_IS_WHOLE = "är helt";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "resten av %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Returnerar kvoten från divisionen av de två talen.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";

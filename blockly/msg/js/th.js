@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "เป็นจำนวนเฉพาะ";
 Blockly.Msg.MATH_IS_TOOLTIP = "ตรวจว่าตัวเลขเป็นจำนวนคู่ จำนวนคี่ จำนวนเฉพาะ จำนวนเต็ม เลขบวก เลขติดลบ หรือหารด้วยเลขที่กำหนดลงตัวหรือไม่ คืนค่าเป็นจริงหรือเท็จ";
 Blockly.Msg.MATH_IS_WHOLE = "เป็นเลขจำนวนเต็ม";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "เศษของ %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "คืนค่าเศษที่ได้จากการหารของตัวเลขทั้งสองจำนวน";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";  // untranslated

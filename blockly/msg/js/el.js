@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "είναι πρώτος";
 Blockly.Msg.MATH_IS_TOOLTIP = "Ελέγχει αν ένας αριθμός είναι άρτιος, περιττός, πρώτος, ακέραιος, θετικός, αρνητικός, ή αν είναι διαιρετός από έναν ορισμένο αριθμό. Επιστρέφει αληθής ή ψευδής.";
 Blockly.Msg.MATH_IS_WHOLE = "είναι ακέραιος";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "υπόλοιπο της %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Επιστρέφει το υπόλοιπο της διαίρεσης των δύο αριθμών.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";

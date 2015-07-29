@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "este prim";
 Blockly.Msg.MATH_IS_TOOLTIP = "Verifică dacă un număr este un par, impar, prim, întreg, pozitiv, negativ, sau dacă este divizibil cu un anumit număr.  Returnează true sau false.";
 Blockly.Msg.MATH_IS_WHOLE = "este întreg";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "restul la %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Întoarce restul din împărţirea celor două numere.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";

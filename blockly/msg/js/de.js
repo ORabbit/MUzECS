@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "ist eine Primenzahl";
 Blockly.Msg.MATH_IS_TOOLTIP = "Überprüft ob eine Zahl gerade, ungerade, eine Primenzahl, ganzzahlig, positiv, negativ oder durch eine zweite Zahl teilbar ist.  Gibt wahr (true) oder falsch (false) zurück.";
 Blockly.Msg.MATH_IS_WHOLE = "ganze Zahl";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://de.wikipedia.org/wiki/Modulo";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "Rest von %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Der Rest nach einer Division.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";  // untranslated

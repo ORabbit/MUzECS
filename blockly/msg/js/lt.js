@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "yra pirminis";
 Blockly.Msg.MATH_IS_TOOLTIP = "Patikrina skaičiaus savybę: (ne)lyginis/pirminis/sveikasis/teigiamas/neigiamas/dalus iš x.";
 Blockly.Msg.MATH_IS_WHOLE = "yra sveikasis";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";  // untranslated
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "dalybos liekana %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Return the remainder from dividing the two numbers.";  // untranslated
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";  // untranslated

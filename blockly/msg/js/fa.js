@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "عدد اول است";
 Blockly.Msg.MATH_IS_TOOLTIP = "بررسی می‌کند که آیا یک عدد زوج، فرد، اول، کامل، مثبت، منفی یا بخش‌پذیر عدد خاصی باشد را بررسی می‌کند. درست یا نادرست باز می‌گرداند.";
 Blockly.Msg.MATH_IS_WHOLE = "کامل است";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://fa.wikipedia.org/wiki/%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA_%D9%BE%DB%8C%D9%85%D8%A7%D9%86%D9%87";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "باقی‌ماندهٔ %1 + %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "باقی‌ماندهٔ تقسیم دو عدد را بر می‌گرداند.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";  // untranslated

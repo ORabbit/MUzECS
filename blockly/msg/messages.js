@@ -320,6 +320,8 @@ Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = '×';
 /// value of the left operand is L and the value of the right operand (the exponent) is
 /// R, multiply L by itself R times.  (Fractional and negative exponents are also legal.)
 Blockly.Msg.MATH_POWER_SYMBOL = '^';
+//added this - davi
+Blockly.Msg.MATH_MODULO_SYMBOL = '%';
 
 /// math - The short name of the trigonometric function
 /// [https://en.wikipedia.org/wiki/Trigonometric_functions#Sine.2C_cosine_and_tangent sine].
@@ -469,6 +471,7 @@ Blockly.Msg.MATH_ONLIST_OPERATOR_RANDOM = 'random item of list';
 /// tooltip - Please use same term for 'random' as in previous entry.
 Blockly.Msg.MATH_ONLIST_TOOLTIP_RANDOM = 'Return a random element from the list.';
 
+//david added this:
 /// url - information about the modulo (remainder) operation.
 Blockly.Msg.MATH_MODULO_HELPURL = 'https://en.wikipedia.org/wiki/Modulo_operation';
 /// block text - Title of block providing the remainder when dividing the first numerical input by the second.  For example, the remainder of 10 divided by 3 is 1.\n\nParameters:\n* %1 - the dividend (10, in our example)\n* %2 - the divisor (3 in our example).

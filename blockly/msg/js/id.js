@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "adalah bilangan pokok";
 Blockly.Msg.MATH_IS_TOOLTIP = "Periksa apakah angka adalah bilangan genap, bilangan pokok, bilangan bulat, bilangan positif, bilangan negatif, atau apakan bisa dibagi oleh angka tertentu. Mengembalikan benar (true) atau salah (false).";
 Blockly.Msg.MATH_IS_WHOLE = "adalah bilangan bulat";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "sisa %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Kembalikan sisa dari pembagian ke dua angka.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";

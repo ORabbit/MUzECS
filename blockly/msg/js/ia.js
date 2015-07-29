@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "es prime";
 Blockly.Msg.MATH_IS_TOOLTIP = "Verificar si un numero es par, impare, prime, integre, positive, negative, o divisibile per un certe numero. Retorna ver o false.";
 Blockly.Msg.MATH_IS_WHOLE = "es integre";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";  // untranslated
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "resto de %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Retornar le resto del division del duo numeros.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";  // untranslated

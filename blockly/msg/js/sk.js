@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "je prvočíslo";
 Blockly.Msg.MATH_IS_TOOLTIP = "Skontroluj či je číslo párne, nepárne, celé, kladné, záporné alebo deliteľné určitým číslom. Vráť hodnotu pravda alebo nepravda.";
 Blockly.Msg.MATH_IS_WHOLE = "je celé číslo";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "zvyšok po delení %1 + %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Vráť zvyšok po delení jedného čísla druhým.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";  // untranslated

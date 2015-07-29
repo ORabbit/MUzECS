@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "е просто";
 Blockly.Msg.MATH_IS_TOOLTIP = "Проверете дали дадено число е четно, нечетно, просто, цяло, положително, отрицателно или дали се дели на друго число. Връща истина или лъжа.";
 Blockly.Msg.MATH_IS_WHOLE = "е цяло";
 Blockly.Msg.MATH_MODULO_HELPURL = "http://bg.wikipedia.org/wiki/Остатък";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "остатъка от делението на %1 на %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Върни остатъка от деление на две числа.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";  // untranslated

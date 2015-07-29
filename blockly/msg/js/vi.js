@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "là số nguyên tố";
 Blockly.Msg.MATH_IS_TOOLTIP = "Kiểm tra con số xem nó có phải là số chẵn, lẻ, nguyên tố, nguyên, dương, âm,  hay xem nó có chia hết cho số đầu vào hay không.  Hoàn trả đúng hay sai.";
 Blockly.Msg.MATH_IS_WHOLE = "là số nguyên";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "số dư của %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Chia số thứ nhất cho số thứ hai rồi hoàn trả số dư từ.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";  // untranslated

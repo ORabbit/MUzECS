@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "jest liczbą pierwszą";
 Blockly.Msg.MATH_IS_TOOLTIP = "Sprawdź, czy liczba jest parzysta, nieparzysta, pierwsza, całkowita, dodatnia, ujemna, lub czy jest podzielna przez podaną liczbę. Zwraca wartość \"prawda\" lub \"fałsz\".";
 Blockly.Msg.MATH_IS_WHOLE = "jest liczbą całkowitą";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "reszta z dzielenia %1 przez %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Zwróć resztę z dzielenia dwóch liczb przez siebie.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";

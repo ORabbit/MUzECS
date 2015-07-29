@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2015-06-11 14:10:26.256146",
+		"lastupdated": "2015-07-29 18:55:28.344087",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -118,6 +118,7 @@
 	"MATH_DIVISION_SYMBOL": "÷",
 	"MATH_MULTIPLICATION_SYMBOL": "×",
 	"MATH_POWER_SYMBOL": "^",
+	"MATH_MODULO_SYMBOL": "%",
 	"MATH_TRIG_SIN": "sin",
 	"MATH_TRIG_COS": "cos",
 	"MATH_TRIG_TAN": "tan",

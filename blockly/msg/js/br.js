@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "zo kentañ";
 Blockly.Msg.MATH_IS_TOOLTIP = "Gwiriañ m'eo par, anpar, kentañ, muiel, leiel un niverenn pe ma c'haller rannañ anezhi dre un niver roet zo. Distreiñ gwir pe faos.";
 Blockly.Msg.MATH_IS_WHOLE = "zo anterin";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "rest eus %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Distreiñ dilerc'h rannadur an div niver";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";  // untranslated

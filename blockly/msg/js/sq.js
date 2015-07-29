@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "është prim";
 Blockly.Msg.MATH_IS_TOOLTIP = "Kontrollo nëse një numër është çift, tek, prim, i plotë, pozitiv, negativ, ose nëse është i pjestueshëm me një numër të caktuar. Kthehet e saktë ose e pasaktë.";
 Blockly.Msg.MATH_IS_WHOLE = "është i plotë";
 Blockly.Msg.MATH_MODULO_HELPURL = "http://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "mbetësi i %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Kthen mbetësin nga pjestimi i dy numrave.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "x";

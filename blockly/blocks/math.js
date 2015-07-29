@@ -84,6 +84,126 @@ Blockly.Blocks['math_arithmetic'] = {
   }
 };
 
+Blockly.Blocks['math_add'] = {
+  /**
+   * Block for basic arithmetic operator.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.MATH_ADDITION_HELPURL);
+    this.setColour(Blockly.Blocks.math.HUE);
+    this.setOutput(true, 'Number');
+    this.appendValueInput('A')
+        .setCheck('Number');
+    this.appendValueInput('B')
+        .setCheck('Number')
+        .appendField(Blockly.Msg.MATH_ADDITION_SYMBOL);
+    this.setInputsInline(true);
+    // Assign 'this' to a variable for use in the tooltip closure below.
+    this.setTooltip(Blockly.Msg.MATH_ARITHMETIC_TOOLTIP_ADD);
+  }
+};
+
+Blockly.Blocks['math_subtract'] = {
+  /**
+   * Block for basic arithmetic operator.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.MATH_SUBTRACTION_HELPURL);
+    this.setColour(Blockly.Blocks.math.HUE);
+    this.setOutput(true, 'Number');
+    this.appendValueInput('A')
+        .setCheck('Number');
+    this.appendValueInput('B')
+        .setCheck('Number')
+        .appendField(Blockly.Msg.MATH_SUBTRACTION_SYMBOL);
+    this.setInputsInline(true);
+    // Assign 'this' to a variable for use in the tooltip closure below.
+    this.setTooltip(Blockly.Msg.MATH_ARITHMETIC_TOOLTIP_MINUS);
+  }
+};
+
+Blockly.Blocks['math_multiplication'] = {
+  /**
+   * Block for basic arithmetic operator.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.MATH_MULTIPLICATION_HELPURL);
+    this.setColour(Blockly.Blocks.math.HUE);
+    this.setOutput(true, 'Number');
+    this.appendValueInput('A')
+        .setCheck('Number');
+    this.appendValueInput('B')
+        .setCheck('Number')
+        .appendField(Blockly.Msg.MATH_MULTIPLICATION_SYMBOL);
+    this.setInputsInline(true);
+    // Assign 'this' to a variable for use in the tooltip closure below.
+    this.setTooltip( Blockly.Msg.MATH_ARITHMETIC_TOOLTIP_MULTIPLY);
+  }
+};
+
+Blockly.Blocks['math_division'] = {
+  /**
+   * Block for basic arithmetic operator.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.MATH_DIVISION_HELPURL);
+    this.setColour(Blockly.Blocks.math.HUE);
+    this.setOutput(true, 'Number');
+    this.appendValueInput('A')
+        .setCheck('Number');
+    this.appendValueInput('B')
+        .setCheck('Number')
+        .appendField(Blockly.Msg.MATH_DIVISION_SYMBOL);
+    this.setInputsInline(true);
+    // Assign 'this' to a variable for use in the tooltip closure below.
+    this.setTooltip(Blockly.Msg.MATH_ARITHMETIC_TOOLTIP_DIVISION);
+  }
+};
+
+Blockly.Blocks['math_exponent'] = {
+  /**
+   * Block for basic arithmetic operator.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.MATH_POWER_HELPURL);
+    this.setColour(Blockly.Blocks.math.HUE);
+    this.setOutput(true, 'Number');
+    this.appendValueInput('A')
+        .setCheck('Number');
+    this.appendValueInput('B')
+        .setCheck('Number')
+        .appendField(Blockly.Msg.MATH_POWER_SYMBOL);
+    this.setInputsInline(true);
+    // Assign 'this' to a variable for use in the tooltip closure below.
+    this.setTooltip(Blockly.Msg.MATH_ARITHMETIC_TOOLTIP_POWER);
+  }
+};
+
+Blockly.Blocks['math_mod'] = {
+  /**
+   * Block for basic arithmetic operator.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.MATH_MODULO_HELPURL);
+    this.setColour(Blockly.Blocks.math.HUE);
+    this.setOutput(true, 'Number');
+    this.appendValueInput('A')
+        .setCheck('Number');
+    this.appendValueInput('B')
+        .setCheck('Number')
+        .appendField(Blockly.Msg.MATH_MODULO_SYMBOL);
+    this.setInputsInline(true);
+    // Assign 'this' to a variable for use in the tooltip closure below.
+    this.setTooltip(Blockly.Msg.MATH_ARITHMETIC_TOOLTIP_MODULO);
+  }
+};
+
 Blockly.Blocks['math_single'] = {
   /**
    * Block for advanced math operators with single operand.

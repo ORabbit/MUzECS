@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "ist en Primenzoohl";
 Blockly.Msg.MATH_IS_TOOLTIP = "Üwerprüft ob en Zoohl grood, ungrood, en Primenzoohl, ganzzoohlich, positiv, negativ orrer doorrich en zwooite Zoohl telbar ist.  Gebt woahr (true) orrer falsch (false) zurück.";
 Blockly.Msg.MATH_IS_WHOLE = "ganze Zoohl";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://hrx.wikipedia.org/wiki/Modulo";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "Rest von %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Der Rest noh en Division.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";  // untranslated

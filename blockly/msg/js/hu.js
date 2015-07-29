@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "prímszám?";
 Blockly.Msg.MATH_IS_TOOLTIP = "Megadja a számról, hogy páros, páratlan, prím, egész, pozitív vagy negatív szám, illetve osztható-e a másodikkal.  Igaz, vagy Hamis értéket ad eredményül.";
 Blockly.Msg.MATH_IS_WHOLE = "egész szám?";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://hu.wikipedia.org/wiki/Eg%C3%A9szr%C3%A9sz#Als.C3.B3_eg.C3.A9szr.C3.A9sz";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "maradék %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Az egész osztás maradékát adja eredméynül.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";  // untranslated

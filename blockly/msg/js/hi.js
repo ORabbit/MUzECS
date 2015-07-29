@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "अभाज्य है";
 Blockly.Msg.MATH_IS_TOOLTIP = "Check if a number is an even, odd, prime, whole, positive, negative, or if it is divisible by certain number. Returns true or false.";  // untranslated
 Blockly.Msg.MATH_IS_WHOLE = "पूर्णांक है";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "%1 ÷ %2 का शेषफल";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "दो संख्याओं के भाग का शेषफल रिटर्न करें।";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";  // untranslated

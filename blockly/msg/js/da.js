@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "er et primtal";
 Blockly.Msg.MATH_IS_TOOLTIP = "Kontrollere, om et tal er lige, ulige, primtal, helt, positivt, negativt, eller om det er deleligt med bestemt tal. Returnere sandt eller falskt.";
 Blockly.Msg.MATH_IS_WHOLE = "er helt";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://da.wikipedia.org/wiki/Modulo";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "resten af %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Returner resten fra at dividere de to tal.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";  // untranslated

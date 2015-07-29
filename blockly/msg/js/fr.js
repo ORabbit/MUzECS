@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "est premier";
 Blockly.Msg.MATH_IS_TOOLTIP = "Vérifier si un nombre est pair, impair, premier, entier, positif, négatif, ou s’il est divisible par un certain nombre. Renvoie vrai ou faux.";
 Blockly.Msg.MATH_IS_WHOLE = "est entier";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "reste de %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Renvoyer le reste de la division des deux nombres.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";  // untranslated

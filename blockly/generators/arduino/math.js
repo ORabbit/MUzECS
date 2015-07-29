@@ -55,6 +55,60 @@ Blockly.Arduino.math_arithmetic = function() {
   return [code, order];
 };
 
+Blockly.Arduino.math_add = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
+  var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
+  var code = argument0 + " + " + argument1;
+  return [code, order];
+};
+
+Blockly.Arduino.math_subtract = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
+  var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
+  var code = argument0 + " - " + argument1;
+  return [code, order];
+};
+
+Blockly.Arduino.math_multiplication = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
+  var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
+  var code = argument0 + " * " + argument1;
+  return [code, order];
+};
+
+Blockly.Arduino.math_division = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
+  var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
+  var code = argument0 + " / " + argument1;
+  return [code, order];
+};
+
+Blockly.Arduino.math_exponent = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
+  var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
+  var code = "Math.pow("+argument0 + " , " + argument1+")";
+  return [code, order];
+};
+
+Blockly.Arduino.math_mod = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
+  var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
+  var code = argument0 + " % " + argument1;
+  return [code, order];
+};
+
 Blockly.Arduino.math_arithmetic.OPERATORS = {
   ADD: [' + ', Blockly.Arduino.ORDER_ADDITIVE],
   MINUS: [' - ', Blockly.Arduino.ORDER_ADDITIVE],

@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "가 소수(prime) 이면";
 Blockly.Msg.MATH_IS_TOOLTIP = "어떤 수가 짝 수, 홀 수, 소 수, 정 수, 양 수, 음 수, 나누어 떨어지는 수 인지 검사해 결과값을 돌려줍니다. 참(true) 또는 거짓(false) 값을 돌려줌.";
 Blockly.Msg.MATH_IS_WHOLE = "가 정수이면";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "%1 를 %2 로 나눈 나머지";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "첫 번째 수를 두 번째 수로 나눈, 나머지 값을 돌려줍니다.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "x";

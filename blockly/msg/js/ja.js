@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "素数です";
 Blockly.Msg.MATH_IS_TOOLTIP = "数字が、偶数、奇数、素数、整数、正数、負数、またはそれが特定の数で割り切れる場合かどうかを確認してください。どの制限が一つでも本当でしたら true をかえしてください、そうでない場合わ falseを返してください。";
 Blockly.Msg.MATH_IS_WHOLE = "は整数";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "残りの %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "2 つの数値を除算した残りを返します。";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";

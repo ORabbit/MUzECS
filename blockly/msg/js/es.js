@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "es primo";
 Blockly.Msg.MATH_IS_TOOLTIP = "Comprueba si un número es par, impar, primo, entero, positivo, negativo, o si es divisible por un número determinado. Devuelve verdadero o falso.";
 Blockly.Msg.MATH_IS_WHOLE = "es entero";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "resto de %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Devuelve el resto al dividir los dos números.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";  // untranslated

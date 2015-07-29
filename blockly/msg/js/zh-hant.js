@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "是質數";
 Blockly.Msg.MATH_IS_TOOLTIP = "如果數字是偶數，奇數，非負整數，正數、 負數或如果它是可被某數字整除，則返回 真 或 否。";
 Blockly.Msg.MATH_IS_WHOLE = "是非負整數";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "取餘數自 %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "回傳兩個數字相除的餘數";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";  // untranslated

@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "هو أولي";
 Blockly.Msg.MATH_IS_TOOLTIP = "تحقق إذا كان عدد ما زوجيا، فرذيا, أوليا، صحيحا،موجبا أو سالبا، أو إذا كان قابلا للقسمة على عدد معين.  يرجع صحيح أو خاطئ.";
 Blockly.Msg.MATH_IS_WHOLE = "هو صحيح";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "باقي %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "يرجع الباقي من قسمة الرقمين.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";

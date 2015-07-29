@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "простое";
 Blockly.Msg.MATH_IS_TOOLTIP = "Проверяет, является ли число чётным, нечётным, простым, целым, положительным, отрицательным или оно кратно определённому числу.  Возвращает значение истина или ложь.";
 Blockly.Msg.MATH_IS_WHOLE = "целое";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://ru.wikipedia.org/wiki/Деление_с_остатком";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "остаток от %1 : %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Возвращает остаток от деления двух чисел.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";  // untranslated

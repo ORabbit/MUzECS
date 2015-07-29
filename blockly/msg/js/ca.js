@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "és primer";
 Blockly.Msg.MATH_IS_TOOLTIP = "Comprova si un nombre és parell, senar, enter, positium negatiu, o si és divisible per un cert nombre. Retorna cert o fals.";
 Blockly.Msg.MATH_IS_WHOLE = "és enter";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://ca.wikipedia.org/wiki/Residu_%28aritm%C3%A8tica%29";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "residu de %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Retorna el residu de dividir els dos nombres.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";  // untranslated

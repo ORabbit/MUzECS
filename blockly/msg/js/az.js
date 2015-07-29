@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "sadədir";
 Blockly.Msg.MATH_IS_TOOLTIP = "Bir ədədin cüt, tək, sadə, tam, müsbət, mənfi olmasını və ya müəyyən bir ədədə bölünməsini yoxlayır. \"Doğru\" və ya \"yalan\" qiymətini qaytarır.";
 Blockly.Msg.MATH_IS_WHOLE = "tamdır";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";  // untranslated
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "%1 ÷ %2 bölməsinin qalığı";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "İki ədədin nisbətindən alınan qalığı qaytarır.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";

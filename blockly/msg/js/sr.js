@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "је прост";
 Blockly.Msg.MATH_IS_TOOLTIP = "Провјерава да ли је број паран, непаран, прост, цио, позитиван, негативан, или да ли је делјив са одређеним бројем. Враћа тачно или нетачно.";
 Blockly.Msg.MATH_IS_WHOLE = "је цео";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://sr.wikipedia.org/wiki/Конгруенција";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "подсетник од %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Враћа подсетник од дељења два броја.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";

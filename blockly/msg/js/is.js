@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "er prímtala";
 Blockly.Msg.MATH_IS_TOOLTIP = "Kanna hvort tala sé jöfn tala, oddatala, jákvæð, neikvæð eða deilanleg með tiltekinni tölu. Skilar sönnu eða ósönnu.";
 Blockly.Msg.MATH_IS_WHOLE = "er heiltala";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "afgangur af %1 ÷ %2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "Skila afgangi deilingar með tölunum.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";

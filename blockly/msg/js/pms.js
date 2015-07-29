@@ -206,6 +206,7 @@ Blockly.Msg.MATH_IS_PRIME = "a l'é prim";
 Blockly.Msg.MATH_IS_TOOLTIP = "A contròla si un nùmer a l'é cobi, dëscobi, prim, antreghm positiv, negativ, o s'a l'é divisìbil për un nùmer dàit. A rëspond ver o fàuss.";
 Blockly.Msg.MATH_IS_WHOLE = "a l'é antregh";
 Blockly.Msg.MATH_MODULO_HELPURL = "https://en.wikipedia.org/wiki/Modulo_operation";
+Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "resta ëd %1:%2";
 Blockly.Msg.MATH_MODULO_TOOLTIP = "A smon la resta ëd la division dij doi nùmer.";
 Blockly.Msg.MATH_MULTIPLICATION_SYMBOL = "×";  // untranslated
