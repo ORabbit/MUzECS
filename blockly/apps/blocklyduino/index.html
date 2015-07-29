@@ -460,6 +460,14 @@ function init() {
 		   </value>
 		</block>
 		<block type="no_tone"></block>
+		<block type="get_distance"></block>
+		<block type="button_pressed">
+		   <value name="button">
+        	      <block type="math_number">
+                         <field name="NUM">1</field>
+                      </block>
+                   </value>
+		</block>
 		<block type="turn_led_1_on"></block>
 		<block type="turn_led_1_off"></block>
 		<block type="turn_led_2_on"></block>
@@ -477,14 +485,6 @@ function init() {
                       </block>
                    </value>
 		</block>
-		<block type="button_pressed">
-		   <value name="button">
-        	      <block type="math_number">
-                         <field name="NUM">1</field>
-                      </block>
-                   </value>
-		</block>
-		<block type="get_distance"></block>
 	 </category>
     <category name="Variables/Constants" custom="VARIABLE">
       	<block type="math_number"></block>
