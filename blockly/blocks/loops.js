@@ -29,7 +29,7 @@ goog.provide('Blockly.Blocks.loops');
 goog.require('Blockly.Blocks');
 
 
-Blockly.Blocks.loops.HUE = 120;
+Blockly.Blocks.loops.HUE = 60; // Yellow
 
 Blockly.Blocks['controls_repeat'] = {
   /**

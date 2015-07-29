@@ -28,6 +28,12 @@ goog.provide('Blockly.Arduino.loops');
 goog.require('Blockly.Arduino');
 
 
+Blockly.Arduino.delay_micro = function() {
+  var delay_time = Blockly.Arduino.valueToCode(this, 'DELAY_TIME', Blockly.Arduino.ORDER_ATOMIC) || '1000'
+  var code = 'delayMicroseconds(' + delay_time + ');\n';
+  return code;
+};
+
 Blockly.Arduino.controls_for = function() {
   // For loop.
   var variable0 = Blockly.Arduino.variableDB_.getName(
