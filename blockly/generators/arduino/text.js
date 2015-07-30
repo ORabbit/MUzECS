@@ -37,6 +37,9 @@ Blockly.Arduino.text = function() {
 Blockly.Arduino.text_concat = function() {
   var text_text1 = Blockly.Arduino.quote_(this.getFieldValue('TEXT1'));
   var value_text2 = Blockly.Arduino.valueToCode(this, 'TEXT2', Blockly.Arduino.ORDER_ATOMIC);
-  var code = text_text1 + text_text2;
-  return [code, Blockly.Arudino.ORDER_ATOMIC];
-}
+  // Get rid of quotes between the two
+  text_text1 = text_text1.substring(0, text_text1.length-1);
+  value_text2 = value_text2.substring(1);
+  var code = text_text1 + value_text2;
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
