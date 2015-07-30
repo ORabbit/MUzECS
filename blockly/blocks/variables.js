@@ -205,3 +205,30 @@ Blockly.Blocks['constants_false'] = {
     this.setTooltip('Boolean false');
   }
 };
+
+Blockly.Blocks['variables_array_create'] = {
+  init: function() {
+    this.appendValueInput("variable")
+        .setCheck("Digital")
+        .appendField("create an integer array      variable");
+    this.appendValueInput("size")
+        .setCheck("Number")
+        .appendField("                                              size");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(290);
+    this.setTooltip('Create an array of standard integers. -32,768 to +32,767');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.Blocks['variables_digital'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("array variable name"), "variable");
+    this.setOutput(true, "Digital");
+    this.setColour(330);
+    this.setTooltip('Digital var');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};

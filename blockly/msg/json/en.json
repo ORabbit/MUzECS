@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2015-07-29 18:55:28.344087",
+		"lastupdated": "2015-07-30 12:14:40.894495",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -119,6 +119,10 @@
 	"MATH_MULTIPLICATION_SYMBOL": "×",
 	"MATH_POWER_SYMBOL": "^",
 	"MATH_MODULO_SYMBOL": "%",
+	"MATH_SQRT": "sqrt",
+	"MATH_SQRT_TOOLTIP": "returns the square root of a number.",
+	"MATH_ABS": "abs",
+	"MATH_ABS_TOOLTIP": "returns the absolute value of a number",
 	"MATH_TRIG_SIN": "sin",
 	"MATH_TRIG_COS": "cos",
 	"MATH_TRIG_TAN": "tan",

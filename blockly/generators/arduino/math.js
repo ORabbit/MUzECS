@@ -96,7 +96,7 @@ Blockly.Arduino.math_exponent = function() {
   var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
   var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
   var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
-  var code = "Math.pow("+argument0 + " , " + argument1+")";
+  var code = "pow("+argument0 + " , " + argument1+")";
   return [code, order];
 };
 
@@ -108,6 +108,51 @@ Blockly.Arduino.math_mod = function() {
   var code = argument0 + " % " + argument1;
   return [code, order];
 };
+
+Blockly.Arduino.math_sqrt = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument = Blockly.Arduino.valueToCode(this, 'NUM', order) || '0';
+  var code = "sqrt("+argument+")";
+  return [code, order];
+};
+
+
+Blockly.Arduino.math_abs = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument = Blockly.Arduino.valueToCode(this, 'NUM', order) || '0';
+  var code = "abs("+argument+")";
+  return [code, order];
+};
+
+
+Blockly.Arduino.math_sin = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument = Blockly.Arduino.valueToCode(this, 'NUM', order) || '0';
+  var code = "sin("+argument+")";
+  return [code, order];
+};
+
+Blockly.Arduino.math_cos = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument = Blockly.Arduino.valueToCode(this, 'NUM', order) || '0';
+  var code = "cos("+argument+")";
+  return [code, order];
+};
+
+
+Blockly.Arduino.math_tan = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument = Blockly.Arduino.valueToCode(this, 'NUM', order) || '0';
+  var code = "tan("+argument+")";
+  return [code, order];
+};
+
+
 
 Blockly.Arduino.math_arithmetic.OPERATORS = {
   ADD: [' + ', Blockly.Arduino.ORDER_ADDITIVE],

@@ -278,7 +278,67 @@ Blockly.Blocks['math_trig'] = {
     });
   }
 };
+Blockly.Blocks['math_abs'] = {
 
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.MATH_TRIG_HELPURL);
+    this.setColour(Blockly.Blocks.math.HUE);
+    this.appendValueInput("NUM")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.MATH_ABS);
+    this.setOutput(true, 'Number');
+    this.setTooltip(Blockly.Msg.MATH_TOOLTIP_ABS);
+  }
+};
+Blockly.Blocks['math_sqrt'] = {
+
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.MATH_SQRT_HELPURL);
+    this.setColour(Blockly.Blocks.math.HUE);
+    this.appendValueInput("NUM")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.MATH_SQRT);
+    this.setOutput(true, 'Number');
+    this.setTooltip(Blockly.Msg.MATH_TOOLTIP_SQRT);
+  }
+};
+
+Blockly.Blocks['math_sin'] = {
+
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.MATH_TRIG_HELPURL);
+    this.setColour(Blockly.Blocks.math.HUE);
+    this.appendValueInput("NUM")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.MATH_TRIG_SIN);
+    this.setOutput(true, 'Number');
+    this.setTooltip(Blockly.Msg.MATH_TRIG_TOOLTIP_SIN);
+  }
+};
+Blockly.Blocks['math_cos'] = {
+
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.MATH_COS_HELPURL);
+    this.setColour(Blockly.Blocks.math.HUE);
+    this.appendValueInput("NUM")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.MATH_TRIG_COS);
+    this.setOutput(true, 'Number');
+    this.setTooltip(Blockly.Msg.MATH_TRIG_TOOLTIP_COS);
+  }
+};
+Blockly.Blocks['math_tan'] = {
+
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.MATH_TRIG_HELPURL);
+    this.setColour(Blockly.Blocks.math.HUE);
+    this.appendValueInput("NUM")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.MATH_TRIG_TAN);
+    this.setOutput(true, 'Number');
+    this.setTooltip(Blockly.Msg.MATH_TRIG_TOOLTIP_TAN);
+  }
+};
 Blockly.Blocks['math_constant'] = {
   /**
    * Block for constants: PI, E, the Golden Ratio, sqrt(2), 1/sqrt(2), INFINITY.

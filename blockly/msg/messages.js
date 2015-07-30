@@ -304,8 +304,8 @@ Blockly.Msg.LOGIC_TERNARY_TOOLTIP = 'Check the condition in "test". If the condi
 /// url - Information about (real) numbers.
 Blockly.Msg.MATH_NUMBER_HELPURL = 'https://en.wikipedia.org/wiki/Number';
 /// tooltip - Any positive or negative number, not necessarily an integer.
-Blockly.Msg.MATH_NUMBER_TOOLTIP = 'A number.';
 
+Blockly.Msg.MATH_NUMBER_TOOLTIP = 'A number.';
 /// {{optional}}\nmath - The symbol for the binary operation addition.
 Blockly.Msg.MATH_ADDITION_SYMBOL = '+';
 /// {{optional}}\nmath - The symbol for the binary operation indicating that the right operand should be
@@ -323,6 +323,14 @@ Blockly.Msg.MATH_POWER_SYMBOL = '^';
 //added this - davi
 Blockly.Msg.MATH_MODULO_SYMBOL = '%';
 
+//added this - david
+Blockly.Msg.MATH_SQRT = 'sqrt';
+
+Blockly.Msg.MATH_SQRT_TOOLTIP = 'returns the square root of a number.';
+
+Blockly.Msg.MATH_ABS = 'abs';
+
+Blockly.Msg.MATH_ABS_TOOLTIP = 'returns the absolute value of a number';
 /// math - The short name of the trigonometric function
 /// [https://en.wikipedia.org/wiki/Trigonometric_functions#Sine.2C_cosine_and_tangent sine].
 Blockly.Msg.MATH_TRIG_SIN = 'sin';

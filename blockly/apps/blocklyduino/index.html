@@ -500,19 +500,34 @@ function init() {
 	<block type="constants_low"></block>
 	<block type="constants_true"></block>
 	<block type="constants_false"></block>
+	<block type="variables_array_create">
+		<value name="variable">
+			<block type="variables_digital"></block>
+		</value>
+		<value name="size">
+			<block type="math_number">
+				<field name="NUM">1</field>
+			</block>
+		</value>
+	</block>
 	<!--<block type="logic_boolean"></block>-->
     </category>
     <category name="Math Operators">
 <!--      <block type="base_map"></block> -->
     <!--  <block type="math_arithmetic"></block> -->
-      <block type="math_trig"></block>
+     <!-- <block type="math_trig"></block> -->
       <block type="math_add"></block>
       <block type="math_subtract"></block>
       <block type="math_multiplication"></block>
       <block type="math_division"></block>
       <block type="math_exponent"></block>
       <block type="math_mod"></block>
+      <block type="math_sqrt"></block>
+      <block type="math_abs"></block>
       <block type="math_sin"></block>
+      <block type="math_cos"></block>
+      <block type="math_tan"></block>
+      <!--<block type="math_random"></block>-->
     </category>
     <category name="Logic Operators">
       <block type="logic_compare"></block>

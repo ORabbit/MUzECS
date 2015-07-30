@@ -180,6 +180,8 @@ Blockly.Msg.LOGIC_TERNARY_HELPURL = "https://en.wikipedia.org/wiki/%3F:";  // un
 Blockly.Msg.LOGIC_TERNARY_IF_FALSE = "اگر ناصحیح";
 Blockly.Msg.LOGIC_TERNARY_IF_TRUE = "اگر صحیح";
 Blockly.Msg.LOGIC_TERNARY_TOOLTIP = "بررسی وضعیت در «آزمایش». اگر وضعیت صحیح باشد، مقدار «اگر صحیح» را بر می‌گرداند در غیر اینصورت مقدار «اگر ناصحیح» را.";
+Blockly.Msg.MATH_ABS = "abs";  // untranslated
+Blockly.Msg.MATH_ABS_TOOLTIP = "returns the absolute value of a number";  // untranslated
 Blockly.Msg.MATH_ADDITION_SYMBOL = "+";  // untranslated
 Blockly.Msg.MATH_ARITHMETIC_HELPURL = "https://fa.wikipedia.org/wiki/%D8%AD%D8%B3%D8%A7%D8%A8";
 Blockly.Msg.MATH_ARITHMETIC_TOOLTIP_ADD = "بازگرداندن مقدار جمع دو عدد.";
@@ -251,6 +253,8 @@ Blockly.Msg.MATH_SINGLE_TOOLTIP_LOG10 = "بازگرداندن لگاریتم ب�
 Blockly.Msg.MATH_SINGLE_TOOLTIP_NEG = "منفی‌شدهٔ یک عدد را باز می‌گرداند.";
 Blockly.Msg.MATH_SINGLE_TOOLTIP_POW10 = "بازگرداندن توان ۱۰ یک عدد.";
 Blockly.Msg.MATH_SINGLE_TOOLTIP_ROOT = "ریشهٔ دوم یک عدد را باز می‌گرداند.";
+Blockly.Msg.MATH_SQRT = "sqrt";  // untranslated
+Blockly.Msg.MATH_SQRT_TOOLTIP = "returns the square root of a number.";  // untranslated
 Blockly.Msg.MATH_SUBTRACTION_SYMBOL = "-";  // untranslated
 Blockly.Msg.MATH_TRIG_ACOS = "acos";  // untranslated
 Blockly.Msg.MATH_TRIG_ASIN = "asin";  // untranslated
