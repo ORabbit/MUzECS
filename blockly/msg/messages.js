@@ -331,6 +331,21 @@ Blockly.Msg.MATH_SQRT_TOOLTIP = 'returns the square root of a number.';
 Blockly.Msg.MATH_ABS = 'abs';
 
 Blockly.Msg.MATH_ABS_TOOLTIP = 'returns the absolute value of a number';
+
+Blockly.Msg.MATH_RAND_MAX = 'rand';
+Blockly.Msg.MATH_RAND_TOOLTIP_RAND_MAX = 'take the random number of the 0 and max';
+
+Blockly.Msg.MATH_RAND_MIN = 'rand';
+Blockly.Msg.MATH_RAND_TOOLTIP_RAND_MAX_MIN = "take the random number between min and max";
+
+Blockly.Msg.MATH_MAX = 'max';
+Blockly.Msg.MATH_MAX_TOOLTIP = "take the bigger number of two numbers";
+
+Blockly.Msg.MATH_MIN = 'min';
+Blockly.Msg.MATH_MIN_TOOLTIP = 'take smaller of two numbers';
+
+Blockly.Msg.MATH_CONSTRAIN = 'constrain';
+Blockly.Msg.MATH_CONSTRAIN_TOOLTIP= 'make sure value doesn\'t go lower than lower and biger higher';
 /// math - The short name of the trigonometric function
 /// [https://en.wikipedia.org/wiki/Trigonometric_functions#Sine.2C_cosine_and_tangent sine].
 Blockly.Msg.MATH_TRIG_SIN = 'sin';

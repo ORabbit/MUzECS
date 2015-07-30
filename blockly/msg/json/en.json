@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2015-07-30 12:14:40.894495",
+		"lastupdated": "2015-07-30 17:41:27.913505",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -123,6 +123,13 @@
 	"MATH_SQRT_TOOLTIP": "returns the square root of a number.",
 	"MATH_ABS": "abs",
 	"MATH_ABS_TOOLTIP": "returns the absolute value of a number",
+	"MATH_RAND_MAX": "rand",
+	"MATH_RAND_TOOLTIP_RAND_MAX": "take the random number of the 0 and max",
+	"MATH_RAND_MIN": "rand",
+	"MATH_MAX": "max",
+	"MATH_MIN": "min",
+	"MATH_MIN_TOOLTIP": "take smaller of two numbers",
+	"MATH_CONSTRAIN": "constrain",
 	"MATH_TRIG_SIN": "sin",
 	"MATH_TRIG_COS": "cos",
 	"MATH_TRIG_TAN": "tan",

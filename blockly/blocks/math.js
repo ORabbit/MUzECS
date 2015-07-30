@@ -281,7 +281,6 @@ Blockly.Blocks['math_trig'] = {
 Blockly.Blocks['math_abs'] = {
 
   init: function() {
-    this.setHelpUrl(Blockly.Msg.MATH_TRIG_HELPURL);
     this.setColour(Blockly.Blocks.math.HUE);
     this.appendValueInput("NUM")
         .setCheck("Number")
@@ -293,7 +292,6 @@ Blockly.Blocks['math_abs'] = {
 Blockly.Blocks['math_sqrt'] = {
 
   init: function() {
-    this.setHelpUrl(Blockly.Msg.MATH_SQRT_HELPURL);
     this.setColour(Blockly.Blocks.math.HUE);
     this.appendValueInput("NUM")
         .setCheck("Number")
@@ -339,11 +337,91 @@ Blockly.Blocks['math_tan'] = {
     this.setTooltip(Blockly.Msg.MATH_TRIG_TOOLTIP_TAN);
   }
 };
-Blockly.Blocks['math_constant'] = {
-  /**
-   * Block for constants: PI, E, the Golden Ratio, sqrt(2), 1/sqrt(2), INFINITY.
-   * @this Blockly.Block
-   */
+
+Blockly.Blocks['math_random_max'] = {
+
+  init: function() {
+    this.setColour(Blockly.Blocks.math.HUE);
+    this.appendValueInput("NUM")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.MATH_RAND_MAX)
+	.appendField("        max");
+    this.setOutput(true, 'Number');
+    this.setTooltip(Blockly.Msg.MATH_RAND_TOOLTIP_RAND_MAX);
+  }
+};
+
+Blockly.Blocks['math_random_max_min'] = {
+
+  init: function() {
+    this.setColour(Blockly.Blocks.math.HUE);
+    this.appendValueInput("A")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.MATH_RAND_MAX)
+        .appendField("         min");
+    this.appendValueInput("B")
+	.setCheck("Number")
+	.appendField("                  max");
+    this.setOutput(true, 'Number');
+    this.setTooltip(Blockly.Msg.MATH_RAND_TOOLTIP_RAND_MAX_MIN);
+  }
+};
+
+Blockly.Blocks['math_max'] = {
+	init: function() {
+	    this.setColour(Blockly.Blocks.math.HUE);
+	    this.setOutput(true, 'Number');
+	    this.appendValueInput('A')
+		.setCheck('Number');
+	    this.appendValueInput('B')
+		.setCheck('Number')
+		.appendField(Blockly.Msg.MATH_MAX);
+	    this.setInputsInline(true);
+	    // Assign 'this' to a variable for use in the tooltip closure below.
+	    this.setTooltip(Blockly.Msg.MATH_MAX_TOOLTIP);
+	  }
+};
+
+Blockly.Blocks['math_min'] = {
+	init: function() {
+	    this.setColour(Blockly.Blocks.math.HUE);
+	    this.setOutput(true, 'Number');
+	    this.appendValueInput('A')
+		.setCheck('Number');
+	    this.appendValueInput('B')
+		.setCheck('Number')
+		.appendField(Blockly.Msg.MATH_MIN);
+	    this.setInputsInline(true);
+	    // Assign 'this' to a variable for use in the tooltip closure below.
+	    this.setTooltip(Blockly.Msg.MATH_MIN_TOOLTIP);
+	  }
+};
+
+Blockly.Blocks['math_constrain'] = {
+	init: function() {
+	    this.setColour(Blockly.Blocks.math.HUE);
+	    this.setOutput(true, 'Number');
+	    this.appendValueInput('A')
+		.setCheck('Number')
+		.appendField("        value");
+	    this.appendValueInput('B')
+		.setCheck('Number')
+		.appendField(Blockly.Msg.MATH_CONSTRAIN)
+		.appendField("        lower");
+	    this.appendValueInput('C')
+		.setCheck('Number')
+		.appendField("        higher");
+
+	    this.setInputsInline(true);
+	    // Assign 'this' to a variable for use in the tooltip closure below.
+	    this.setTooltip(Blockly.Msg.MATH_CONSTRAIN_TOOLTIP);
+	  }
+};
+/**
+Blockly.Blocks['math_constrain'] = {
+    Block for constants: PI, E, the Golden Ratio, sqrt(2), 1/sqrt(2), INFINITY.
+    @this Blockly.Block
+   
   init: function() {
     var CONSTANTS =
         [['\u03c0', 'PI'],
@@ -360,7 +438,7 @@ Blockly.Blocks['math_constant'] = {
     this.setTooltip(Blockly.Msg.MATH_CONSTANT_TOOLTIP);
   }
 };
-
+*/
 Blockly.Blocks['math_number_property'] = {
   /**
    * Block for checking if a number is even, odd, prime, whole, positive,

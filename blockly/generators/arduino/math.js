@@ -152,6 +152,51 @@ Blockly.Arduino.math_tan = function() {
   return [code, order];
 };
 
+Blockly.Arduino.math_random_max = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument = Blockly.Arduino.valueToCode(this, 'NUM', order) || '0';
+  var code = "random("+argument+")";
+  return [code, order];
+};
+
+Blockly.Arduino.math_random_max_min = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
+  var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
+  var code = "random("+argument0+","+argument1+")";
+  return [code, order];
+};
+
+Blockly.Arduino.math_min = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
+  var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
+  var code = "min("+argument+")";
+  return [code, order];
+};
+
+Blockly.Arduino.math_max = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument0 = Blockly.Arduino.valueToCode(this, 'NUM', order) || '0';
+  var argument1 = Blockly.Arduino.valueToCode(this, 'NUM', order) || '0';
+  var code = "max("+argument0+","+argument1+")";
+  return [code, order];
+};
+
+Blockly.Arduino.math_constrain = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
+  var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
+  var argument2 = Blockly.Arduino.valueToCode(this, 'C', order) || '0';
+  var code = "tan("+argument0+","+argument1+","+argument2+")";
+  return [code, order];
+};
+
 
 
 Blockly.Arduino.math_arithmetic.OPERATORS = {

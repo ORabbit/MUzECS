@@ -195,6 +195,7 @@ Blockly.Msg.MATH_CHANGE_TITLE_CHANGE = "تغییر";
 Blockly.Msg.MATH_CHANGE_TOOLTIP = "افزودن یک عدد به متغیر '%1'.";
 Blockly.Msg.MATH_CONSTANT_HELPURL = "https://fa.wikipedia.org/wiki/%D8%AB%D8%A7%D8%A8%D8%AA_%D8%B1%DB%8C%D8%A7%D8%B6%DB%8C";
 Blockly.Msg.MATH_CONSTANT_TOOLTIP = "یکی از مقادیر مشترک را برمی‌گرداند: π (۳٫۱۴۱…)، e (۲٫۷۱۸...)، φ (۱٫۶۱۸)، sqrt(۲) (۱٫۴۱۴)، sqrt(۱/۲) (۰٫۷۰۷...) و یا ∞ (بی‌نهایت).";
+Blockly.Msg.MATH_CONSTRAIN = "constrain";  // untranslated
 Blockly.Msg.MATH_CONSTRAIN_HELPURL = "https://en.wikipedia.org/wiki/Clamping_%28graphics%29";  // untranslated
 Blockly.Msg.MATH_CONSTRAIN_TITLE = "محدودکردن %1 پایین %2 بالا %3";
 Blockly.Msg.MATH_CONSTRAIN_TOOLTIP = "محدودکردن یک عدد بین محدودیت‌های مشخص‌شده (بسته).";
@@ -207,6 +208,9 @@ Blockly.Msg.MATH_IS_POSITIVE = "مثبت است";
 Blockly.Msg.MATH_IS_PRIME = "عدد اول است";
 Blockly.Msg.MATH_IS_TOOLTIP = "بررسی می‌کند که آیا یک عدد زوج، فرد، اول، کامل، مثبت، منفی یا بخش‌پذیر عدد خاصی باشد را بررسی می‌کند. درست یا نادرست باز می‌گرداند.";
 Blockly.Msg.MATH_IS_WHOLE = "کامل است";
+Blockly.Msg.MATH_MAX = "max";  // untranslated
+Blockly.Msg.MATH_MIN = "min";  // untranslated
+Blockly.Msg.MATH_MIN_TOOLTIP = "take smaller of two numbers";  // untranslated
 Blockly.Msg.MATH_MODULO_HELPURL = "https://fa.wikipedia.org/wiki/%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA_%D9%BE%DB%8C%D9%85%D8%A7%D9%86%D9%87";
 Blockly.Msg.MATH_MODULO_SYMBOL = "%";  // untranslated
 Blockly.Msg.MATH_MODULO_TITLE = "باقی‌ماندهٔ %1 + %2";
@@ -238,6 +242,9 @@ Blockly.Msg.MATH_RANDOM_FLOAT_TOOLTIP = "بازگرداندن کسری تصاد�
 Blockly.Msg.MATH_RANDOM_INT_HELPURL = "https://fa.wikipedia.org/wiki/%D8%AA%D9%88%D9%84%DB%8C%D8%AF_%D8%A7%D8%B9%D8%AF%D8%A7%D8%AF_%D8%AA%D8%B5%D8%A7%D8%AF%D9%81%DB%8C";
 Blockly.Msg.MATH_RANDOM_INT_TITLE = "عدد صحیح تصادفی بین %1 تا %2";
 Blockly.Msg.MATH_RANDOM_INT_TOOLTIP = "یک عدد تصادفی بین دو مقدار مشخص‌شده به صورت بسته باز می‌گرداند.";
+Blockly.Msg.MATH_RAND_MAX = "rand";  // untranslated
+Blockly.Msg.MATH_RAND_MIN = "rand";  // untranslated
+Blockly.Msg.MATH_RAND_TOOLTIP_RAND_MAX = "take the random number of the 0 and max";  // untranslated
 Blockly.Msg.MATH_ROUND_HELPURL = "https://fa.wikipedia.org/wiki/%D8%B1%D9%88%DB%8C%D9%87_%28%D8%B9%D9%84%D9%88%D9%85_%D8%B1%D8%A7%DB%8C%D8%A7%D9%86%D9%87%29";
 Blockly.Msg.MATH_ROUND_OPERATOR_ROUND = "گردکردن";
 Blockly.Msg.MATH_ROUND_OPERATOR_ROUNDDOWN = "گرد به پایین";
