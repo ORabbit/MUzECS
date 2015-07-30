@@ -55,3 +55,13 @@ Blockly.Arduino.variables_set = function() {
       Blockly.Variables.NAME_TYPE);
   return varName + ' = ' + argument0 + ';\n';
 };
+
+Blockly.Arduino.high = function() {
+  var code = "HIGH";
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino.low = function() {
+  var code = "LOW";
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};

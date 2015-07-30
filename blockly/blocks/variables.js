@@ -162,3 +162,24 @@ Blockly.Blocks['variables_set'] = {
 
 // New variable blocks
 
+Blockly.Blocks['high'] = {
+  helpUrl: 'http://arduino.cc/en/Reference/Constants',
+  init: function() {
+    this.setColour(290); // Pink
+    this.appendDummyInput()
+        .appendField("HIGH")
+    this.setOutput(true, 'Boolean');
+    this.setTooltip('pin HIGH');
+  }
+};
+
+Blockly.Blocks['low'] = {
+  helpUrl: 'http://arduino.cc/en/Reference/Constants',
+  init: function() {
+    this.setColour(290); // Pink
+    this.appendDummyInput()
+        .appendField("LOW")
+    this.setOutput(true, 'Boolean');
+    this.setTooltip('pin LOW');
+  }
+};
