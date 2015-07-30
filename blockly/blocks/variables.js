@@ -162,7 +162,7 @@ Blockly.Blocks['variables_set'] = {
 
 // New variable blocks
 
-Blockly.Blocks['high'] = {
+Blockly.Blocks['constants_high'] = {
   helpUrl: 'http://arduino.cc/en/Reference/Constants',
   init: function() {
     this.setColour(290); // Pink
@@ -173,7 +173,7 @@ Blockly.Blocks['high'] = {
   }
 };
 
-Blockly.Blocks['low'] = {
+Blockly.Blocks['constants_low'] = {
   helpUrl: 'http://arduino.cc/en/Reference/Constants',
   init: function() {
     this.setColour(290); // Pink
@@ -181,5 +181,27 @@ Blockly.Blocks['low'] = {
         .appendField("LOW")
     this.setOutput(true, 'Boolean');
     this.setTooltip('pin LOW');
+  }
+};
+
+Blockly.Blocks['constants_true'] = {
+  helpUrl: 'http://arduino.cc/en/Reference/Constants',
+  init: function() {
+    this.setColour(290); // Pink
+    this.appendDummyInput()
+        .appendField("TRUE")
+    this.setOutput(true, 'Boolean');
+    this.setTooltip('Boolean true');
+  }
+};
+
+Blockly.Blocks['constants_false'] = {
+  helpUrl: 'http://arduino.cc/en/Reference/Constants',
+  init: function() {
+    this.setColour(290); // Pink
+    this.appendDummyInput()
+        .appendField("FALSE")
+    this.setOutput(true, 'Boolean');
+    this.setTooltip('Boolean false');
   }
 };

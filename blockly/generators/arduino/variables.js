@@ -56,12 +56,22 @@ Blockly.Arduino.variables_set = function() {
   return varName + ' = ' + argument0 + ';\n';
 };
 
-Blockly.Arduino.high = function() {
+Blockly.Arduino.constants_high = function() {
   var code = "HIGH";
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
-Blockly.Arduino.low = function() {
+Blockly.Arduino.constants_low = function() {
   var code = "LOW";
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino.constants_true = function() {
+  var code = "true";
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino.constants_false = function() {
+  var code = "false";
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
