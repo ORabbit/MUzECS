@@ -56,6 +56,18 @@ Blockly.Arduino.variables_set = function() {
   return varName + ' = ' + argument0 + ';\n';
 };
 
+Blockly.Arduino.constants_highlow = function() {
+  // Boolean values HIGH and LOW.
+  var code = (this.getFieldValue('BOOL') == 'HIGH') ? 'HIGH' : 'LOW';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino.constants_boolean = function() {
+  // Boolean values true and false.
+  var code = (this.getFieldValue('BOOL') == 'TRUE') ? 'true' : 'false';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
 Blockly.Arduino.constants_high = function() {
   var code = "HIGH";
   return [code, Blockly.Arduino.ORDER_ATOMIC];
@@ -139,7 +151,7 @@ Blockly.Arduino.variables_digital = function() {
 };
 
 Blockly.Arduino.variables_set_int_array_member = function() {
-  var value_variable = Blockly.Arduino.valueToCode(this, 'variable', Blockly.Arduino.ORDER_ATOMIC);
+  var value_variable = Blockly.Arduino.valueToCode(this, 'variable', Blockly.Arduino.ORDER_ATOMIC).replace(/\s/g, "");
   var value_position = Blockly.Arduino.valueToCode(this, 'position', Blockly.Arduino.ORDER_ATOMIC);
   var value_value = Blockly.Arduino.valueToCode(this, 'value', Blockly.Arduino.ORDER_ATOMIC);
   
@@ -154,6 +166,26 @@ Blockly.Arduino.variables_set_int_array_member = function() {
   var code = 'vec__ABVAR_' + (varNum + 1) + '_' + value_variable + '[' + value_position + ' - 1] = ' + value_value + ';\n';
   return code;
 };
+
+Blockly.Arduino.variables_set_integer = function() {
+  var value_variable = Blockly.Arduino.valueToCode(this, 'variable', Blockly.Arduino.ORDER_ATOMIC).replace(/\s/g, "");
+  var value_value = Blockly.JavaScript.valueToCode(block, 'value', Blockly.JavaScript.ORDER_ATOMIC);
+
+
+  var varNum = findVariable(value_variable);
+  if(varNum == -1) {
+    varNames.push(value_variable);
+    varSize.push(-1);
+    Blockly.Arduino.definitions_['vars_integer_' + value_variable]="int _ABVAR_" + varNames.length + "_" + value_variable + "[" + value_size + "];\n";
+    var code = '_ABVAR_' + varNames.length + '_' + value_variable + ' = ' + value_value + ';\n';
+    return code;
+  }else {
+    //ERROR variable already exists
+    alert("ERROR: Invalid array name used.\nYou tried to create at least two arrays with the same name\n(Tried: " + value_variable + ")");
+  }
+  var code = '...';
+  return code;
+  };
 
 Blockly.Arduino.resetVariables = function() {
   varNames = [];

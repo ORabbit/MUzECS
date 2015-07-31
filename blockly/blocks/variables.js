@@ -162,6 +162,36 @@ Blockly.Blocks['variables_set'] = {
 
 // New variable blocks
 
+
+Blockly.Blocks['constants_boolean'] = {
+  /**
+   * Block for boolean data type: true and false.
+   * @this Blockly.Block
+   */
+  init: function() {
+    var BOOLEANS =
+        [[Blockly.Msg.LOGIC_BOOLEAN_TRUE, 'TRUE'],
+         [Blockly.Msg.LOGIC_BOOLEAN_FALSE, 'FALSE']];
+    this.setHelpUrl(Blockly.Msg.LOGIC_BOOLEAN_HELPURL);
+    this.setColour(290);
+    this.setOutput(true, 'Boolean');
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown(BOOLEANS), 'BOOL');
+    this.setTooltip(Blockly.Msg.LOGIC_BOOLEAN_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['constants_highlow'] = {
+  helpUrl: 'http://arduino.cc/en/Reference/Constants',
+  init: function() {
+    this.setColour(290);
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["HIGH", "HIGH"], ["LOW", "LOW"]]), 'BOOL')
+    this.setOutput(true, 'Boolean');
+    this.setTooltip('');
+  }
+};
+
 Blockly.Blocks['constants_high'] = {
   helpUrl: 'http://arduino.cc/en/Reference/Constants',
   init: function() {
