@@ -101,8 +101,8 @@ Blockly.Arduino.variables_array_create = function() {
   if(varNum == -1) {
     varNames.push(value_variable);
     varSize.push(value_size);
-    Blockly.Arduino.definitions_['vars_array' + value_variable]="int vec__ABVAR_" + varNames.length + "_" + value_variable + "[" + value_size + "];\n";
-    Blockly.Arduino.setups_['setup_array'] = 'for (int i = 0; i < ' + value_size + '; i++) {\n    vec__ABVAR_' + varNames.length + '_' + value_variable + '[i] = 0;\n  }\n';
+    Blockly.Arduino.definitions_['vars_array_' + value_variable]="int vec__ABVAR_" + varNames.length + "_" + value_variable + "[" + value_size + "];\n";
+    Blockly.Arduino.setups_['setup_array_' + value_variable] = 'for (int i = 0; i < ' + value_size + '; i++) {\n    vec__ABVAR_' + varNames.length + '_' + value_variable + '[i] = 0;\n  }\n';
     var code = '';
     return code;
   }else {
@@ -136,4 +136,9 @@ Blockly.Arduino.variables_digital = function() {
     alert("ERROR: Invalid array name used.\nMake sure you have created an array variable by using the \'Create an integer array\' block before you try to reference it.\n(Tried: " + text_variable + ")");
   }*/
   return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino.resetVariables = function() {
+  varNames = [];
+  varSize = [];
 };
