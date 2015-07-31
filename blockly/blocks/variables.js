@@ -235,6 +235,25 @@ Blockly.Blocks['variables_array_name'] = {
   }
 };
 
+Blockly.Blocks['variables_set_int_array_member'] = {
+  init: function() {
+    this.appendValueInput("variable")
+        .setCheck("Digital")
+        .appendField("                                          variable");
+    this.appendValueInput("position")
+        .setCheck("Number")
+        .appendField("set an integer array member  position");
+    this.appendValueInput("value")
+        .setCheck("Number")
+        .appendField("                                             value");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(290);
+    this.setTooltip('Set the value of an array');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
 Blockly.Blocks['variables_digital'] = {
   init: function() {
     this.appendDummyInput()

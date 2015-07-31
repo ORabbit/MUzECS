@@ -138,6 +138,23 @@ Blockly.Arduino.variables_digital = function() {
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino.variables_set_int_array_member = function() {
+  var value_variable = Blockly.Arduino.valueToCode(this, 'variable', Blockly.Arduino.ORDER_ATOMIC);
+  var value_position = Blockly.Arduino.valueToCode(this, 'position', Blockly.Arduino.ORDER_ATOMIC);
+  var value_value = Blockly.Arduino.valueToCode(this, 'value', Blockly.Arduino.ORDER_ATOMIC);
+  
+  var varNum = findVariable(value_variable);
+  if (varNum == -1) {
+    // ERROR variable doesn't exist
+    alert("ERROR: Invalid array name used.\nMake sure you have created an array variable by using the \'Create an integer array\' block before you try to reference it.\n(Tried: " + value_variable + ")");
+  }else if (value_position < 1 || varSize[varNum] < value_position) {
+    // ERROR index is less than 1 or index is larager than size of array
+    alert("ERROR: Invalid position used.\nMust be between 1 and " + varSize[varNum] + "\n(Tried: " + value_position + ")");
+  }
+  var code = 'vec__ABVAR_' + (varNum + 1) + '_' + value_variable + '[' + value_position + ' - 1] = ' + value_value + ';\n';
+  return code;
+};
+
 Blockly.Arduino.resetVariables = function() {
   varNames = [];
   varSize = [];
