@@ -153,6 +153,26 @@ Blockly.Arduino.logic_equals_boolean = function() {
   return [code, order];
 };
 
+Blockly.Arduino.logic_and = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
+  var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
+  var code = argument0+" && "+argument1;
+  return [code, order];
+};
+
+
+Blockly.Arduino.logic_or = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || 'false';
+  var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || 'false';
+  var code = argument0+" || "+argument1;
+  return [code, order];
+};
+
+
 
 Blockly.Arduino.logic_negate = function() {
   // Negation.

@@ -480,6 +480,33 @@ Blockly.Blocks['logic_not_equals_boolean'] = {
 	  }
 };
 
+Blockly.Blocks['logic_and'] = {
+	init: function() {
+	    this.setColour(Blockly.Blocks.math.HUE);
+	    this.setOutput(true, 'Boolean');
+	    this.appendValueInput('A')
+		.setCheck('Boolean')
+		.appendField("and");
+	    this.appendValueInput('B')
+		.setCheck('Boolean');
+	    // Assign 'this' to a variable for use in the tooltip closure below.
+	    this.setTooltip("Are the two boolean values equal?");
+	  }
+};
+Blockly.Blocks['logic_or'] = {
+	init: function() {
+	    this.setColour(Blockly.Blocks.math.HUE);
+	    this.setOutput(true, 'Boolean');
+	    this.appendValueInput('A')
+		.setCheck('Boolean')
+		.appendField("or");
+	    this.appendValueInput('B')
+		.setCheck('Boolean');
+	    // Assign 'this' to a variable for use in the tooltip closure below.
+	    this.setTooltip("Are the boolean values  not equal?");
+	  }
+};
+
 Blockly.Blocks['logic_negate'] = {
   /**
    * Block for negation.
