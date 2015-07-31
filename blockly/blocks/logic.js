@@ -333,15 +333,90 @@ Blockly.Blocks['logic_compare'] = {
 Blockly.Blocks['logic_equals_number'] = {
 	init: function() {
 	    this.setColour(Blockly.Blocks.math.HUE);
-	    this.setOutput(true, 'Number');
+	    this.setOutput(true, 'Boolean');
 	    this.appendValueInput('A')
 		.setCheck('Number');
 	    this.appendValueInput('B')
 		.setCheck('Number')
-		.appendField(Blockly.Msg.MATH_MIN);
+		.appendField("==");
 	    this.setInputsInline(true);
 	    // Assign 'this' to a variable for use in the tooltip closure below.
-	    this.setTooltip(Blockly.Msg.MATH_MIN_TOOLTIP);
+	    this.setTooltip("Are the two numbers equal?");
+	  }
+};
+
+Blockly.Blocks['logic_greater_number'] = {
+	init: function() {
+	    this.setColour(Blockly.Blocks.math.HUE);
+	    this.setOutput(true, 'Boolean');
+	    this.appendValueInput('A')
+		.setCheck('Number');
+	    this.appendValueInput('B')
+		.setCheck('Number')
+		.appendField(">");
+	    this.setInputsInline(true);
+	    // Assign 'this' to a variable for use in the tooltip closure below.
+	    this.setTooltip("Is the left number greater than the right number?");
+	  }
+};
+
+Blockly.Blocks['logic_less_number'] = {
+	init: function() {
+	    this.setColour(Blockly.Blocks.math.HUE);
+	    this.setOutput(true, 'Boolean');
+	    this.appendValueInput('A')
+		.setCheck('Number');
+	    this.appendValueInput('B')
+		.setCheck('Number')
+		.appendField("<");
+	    this.setInputsInline(true);
+	    // Assign 'this' to a variable for use in the tooltip closure below.
+	    this.setTooltip("Is the number to the left less than the right number?");
+	  }
+};
+
+Blockly.Blocks['logic_less_equals_number'] = {
+	init: function() {
+	    this.setColour(Blockly.Blocks.math.HUE);
+	    this.setOutput(true, 'Boolean');
+	    this.appendValueInput('A')
+		.setCheck('Number');
+	    this.appendValueInput('B')
+		.setCheck('Number')
+		.appendField("<=");
+	    this.setInputsInline(true);
+	    // Assign 'this' to a variable for use in the tooltip closure below.
+	    this.setTooltip("Is the number to the left less than or equal to the right number?");
+	  }
+};
+
+Blockly.Blocks['logic_greater_equals_number'] = {
+	init: function() {
+	    this.setColour(Blockly.Blocks.math.HUE);
+	    this.setOutput(true, 'Boolean');
+	    this.appendValueInput('A')
+		.setCheck('Number');
+	    this.appendValueInput('B')
+		.setCheck('Number')
+		.appendField(">=");
+	    this.setInputsInline(true);
+	    // Assign 'this' to a variable for use in the tooltip closure below.
+	    this.setTooltip("Is the number to the left greater than the right number?");
+	  }
+};
+
+Blockly.Blocks['logic_not_equals_number'] = {
+	init: function() {
+	    this.setColour(Blockly.Blocks.math.HUE);
+	    this.setOutput(true, 'Boolean');
+	    this.appendValueInput('A')
+		.setCheck('Number');
+	    this.appendValueInput('B')
+		.setCheck('Number')
+		.appendField("!=");
+	    this.setInputsInline(true);
+	    // Assign 'this' to a variable for use in the tooltip closure below.
+	    this.setTooltip("are the numbers not equal?");
 	  }
 };
 
@@ -374,6 +449,35 @@ Blockly.Blocks['logic_operation'] = {
       return TOOLTIPS[op];
     });
   }
+};
+
+Blockly.Blocks['logic_equals_boolean'] = {
+	init: function() {
+	    this.setColour(Blockly.Blocks.math.HUE);
+	    this.setOutput(true, 'Boolean');
+	    this.appendValueInput('A')
+		.setCheck('Boolean');
+	    this.appendValueInput('B')
+		.setCheck('Boolean')
+		.appendField("==");
+	    this.setInputsInline(true);
+	    // Assign 'this' to a variable for use in the tooltip closure below.
+	    this.setTooltip("Are the two boolean values equal?");
+	  }
+};
+Blockly.Blocks['logic_not_equals_boolean'] = {
+	init: function() {
+	    this.setColour(Blockly.Blocks.math.HUE);
+	    this.setOutput(true, 'Boolean');
+	    this.appendValueInput('A')
+		.setCheck('Boolean');
+	    this.appendValueInput('B')
+		.setCheck('Boolean')
+		.appendField("!=");
+	    this.setInputsInline(true);
+	    // Assign 'this' to a variable for use in the tooltip closure below.
+	    this.setTooltip("Are the boolean values  not equal?");
+	  }
 };
 
 Blockly.Blocks['logic_negate'] = {

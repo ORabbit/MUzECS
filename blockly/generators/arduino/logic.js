@@ -80,6 +80,80 @@ Blockly.Arduino.logic_operation = function() {
   return [code, order];
 };
 
+Blockly.Arduino.logic_equals_number = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
+  var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
+  var code = argument0+" == "+argument1;
+  return [code, order];
+};
+
+Blockly.Arduino.logic_greater_number = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
+  var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
+  var code = argument0+" > "+argument1;
+  return [code, order];
+};
+
+Blockly.Arduino.logic_less_number = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
+  var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
+  var code = argument0+" < "+argument1;
+  return [code, order];
+};
+
+Blockly.Arduino.logic_greater_equals_number = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
+  var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
+  var code = argument0+" >= "+argument1;
+  return [code, order];
+};
+
+Blockly.Arduino.logic_less_equals_number = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
+  var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
+  var code = argument0+" <= "+argument1;
+  return [code, order];
+};
+
+Blockly.Arduino.logic_not_equals_number = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
+  var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
+  var code = argument0+" != "+argument1;
+  return [code, order];
+};
+
+Blockly.Arduino.logic_not_equals_boolean = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
+  var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
+  var code = argument0+" != "+argument1;
+  return [code, order];
+};
+
+
+Blockly.Arduino.logic_equals_boolean = function() {
+  // Basic arithmetic operators, and power.
+  var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
+  var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || 'false';
+  var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || 'false';
+  var code = argument0+" == "+argument1;
+  return [code, order];
+};
+
+
 Blockly.Arduino.logic_negate = function() {
   // Negation.
   var order = Blockly.Arduino.ORDER_UNARY_PREFIX;

@@ -89,6 +89,8 @@ function renderContent() {
   } else if (content.id == 'content_arduino') {
     //content.innerHTML = Blockly.Arduino.workspaceToCode();
     var arduinoTextarea = document.getElementById('content_arduino');
+    //TESTTTTTTTT
+    Blockly.Arduino.resetVariables();
     arduinoTextarea.value = Blockly.Arduino.workspaceToCode();
     arduinoTextarea.focus();
   }
@@ -541,7 +543,16 @@ function init() {
       <block type="math_constrain"></block>
     </category>
     <category name="Logic Operators">
-      <block type="logic_compare"></block>
+    <!--  <block type="logic_compare"></block>-->
+      <block type="logic_equals_number"></block>
+      <block type="logic_greater_number"></block>
+      <block type="logic_less_number"></block>
+      <block type="logic_less_equals_number"></block>
+      <block type="logic_greater_equals_number"></block>
+      <block type="logic_not_equals_number"></block>
+      <block type="logic_equals_boolean"></block>
+      <block type="logic_not_equals_boolean"></block>
+
       <block type="logic_operation"></block>
       <block type="logic_negate"></block>
       <block type="logic_null"></block>
