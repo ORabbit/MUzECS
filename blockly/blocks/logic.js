@@ -330,6 +330,21 @@ Blockly.Blocks['logic_compare'] = {
   }
 };
 
+Blockly.Blocks['logic_equals_number'] = {
+	init: function() {
+	    this.setColour(Blockly.Blocks.math.HUE);
+	    this.setOutput(true, 'Number');
+	    this.appendValueInput('A')
+		.setCheck('Number');
+	    this.appendValueInput('B')
+		.setCheck('Number')
+		.appendField(Blockly.Msg.MATH_MIN);
+	    this.setInputsInline(true);
+	    // Assign 'this' to a variable for use in the tooltip closure below.
+	    this.setTooltip(Blockly.Msg.MATH_MIN_TOOLTIP);
+	  }
+};
+
 Blockly.Blocks['logic_operation'] = {
   /**
    * Block for logical operations: 'and', 'or'.

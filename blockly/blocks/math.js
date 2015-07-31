@@ -174,11 +174,11 @@ Blockly.Blocks['math_exponent'] = {
     this.setColour(Blockly.Blocks.math.HUE);
     this.setOutput(true, 'Number');
     this.appendValueInput('A')
-        .setCheck('Number');
+        .setCheck('Number')
+	.appendField("power      base");
     this.appendValueInput('B')
         .setCheck('Number')
-        .appendField(Blockly.Msg.MATH_POWER_SYMBOL);
-    this.setInputsInline(true);
+	.appendField("            exponent");
     // Assign 'this' to a variable for use in the tooltip closure below.
     this.setTooltip(Blockly.Msg.MATH_ARITHMETIC_TOOLTIP_POWER);
   }
@@ -403,16 +403,15 @@ Blockly.Blocks['math_constrain'] = {
 	    this.setOutput(true, 'Number');
 	    this.appendValueInput('A')
 		.setCheck('Number')
-		.appendField("        value");
+		.appendField("                         value");
 	    this.appendValueInput('B')
 		.setCheck('Number')
 		.appendField(Blockly.Msg.MATH_CONSTRAIN)
 		.appendField("        lower");
 	    this.appendValueInput('C')
 		.setCheck('Number')
-		.appendField("        higher");
-
-	    this.setInputsInline(true);
+		.appendField("                          higher");
+	this.setInputsInline(false);
 	    // Assign 'this' to a variable for use in the tooltip closure below.
 	    this.setTooltip(Blockly.Msg.MATH_CONSTRAIN_TOOLTIP);
 	  }
@@ -620,12 +619,8 @@ Blockly.Blocks['math_on_list'] = {
     });
   }
 };
-
+/**
 Blockly.Blocks['math_modulo'] = {
-  /**
-   * Block for remainder of a division.
-   * @this Blockly.Block
-   */
   init: function() {
     this.setHelpUrl(Blockly.Msg.MATH_MODULO_HELPURL);
     this.setColour(Blockly.Blocks.math.HUE);
@@ -640,10 +635,6 @@ Blockly.Blocks['math_modulo'] = {
 };
 
 Blockly.Blocks['math_constrain'] = {
-  /**
-   * Block for constraining a number between two limits.
-   * @this Blockly.Block
-   */
   init: function() {
     this.setHelpUrl(Blockly.Msg.MATH_CONSTRAIN_HELPURL);
     this.setColour(Blockly.Blocks.math.HUE);
@@ -657,7 +648,7 @@ Blockly.Blocks['math_constrain'] = {
     this.setTooltip(Blockly.Msg.MATH_CONSTRAIN_TOOLTIP);
   }
 };
-
+*/
 Blockly.Blocks['math_random_int'] = {
   /**
    * Block for random integer between [X] and [Y].

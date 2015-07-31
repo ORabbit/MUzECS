@@ -193,7 +193,7 @@ Blockly.Arduino.math_constrain = function() {
   var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
   var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
   var argument2 = Blockly.Arduino.valueToCode(this, 'C', order) || '0';
-  var code = "tan("+argument0+","+argument1+","+argument2+")";
+  var code = "constrain("+argument0+","+argument1+","+argument2+")";
   return [code, order];
 };
 

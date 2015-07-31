@@ -222,6 +222,19 @@ Blockly.Blocks['variables_array_create'] = {
   }
 };
 
+Blockly.Blocks['variables_array_name'] = {
+  init: function() {
+    this.appendValueInput("position")
+        .setCheck("Number")
+        .appendField(new Blockly.FieldTextInput("array variable name"), "varName")
+        .appendField("  #");
+    this.setOutput(true, "Number");
+    this.setColour(290);
+    this.setTooltip('Get the value of an array.');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
 Blockly.Blocks['variables_digital'] = {
   init: function() {
     this.appendDummyInput()
