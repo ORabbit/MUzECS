@@ -498,14 +498,18 @@ function init() {
 		<field name="TEXT">Key</field>
 	</block>
 	<!--<block type="inout_highlow"></block>-->
-	<block type="constants_boolean"></block>
-	<block type="constants_boolean"></block>
-	<block type="constants_highlow"></block>
-	<block type="constants_highlow"></block>
-	<block type="constants_high"></block>
-	<block type="constants_low"></block>
-	<block type="constants_true"></block>
-	<block type="constants_false"></block>
+	<block type="constants_boolean">
+		<field name="BOOL">TRUE</field>
+	</block>
+	<block type="constants_boolean">
+		<field name="BOOL">FALSE</field>
+	</block>
+	<block type="constants_highlow">
+		<field name="BOOL">HIGH</field>
+	</block>
+	<block type="constants_highlow">
+		<field name="BOOL">LOW</field>
+	</block>
 	<block type="variables_array_create">
 		<value name="variable">
 			<block type="variables_digital"></block>
