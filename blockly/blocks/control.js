@@ -39,3 +39,51 @@ Blockly.Blocks['delay_milli'] = {
   }
 };
 
+Blockly.Blocks['control_while'] = {
+  init: function() {
+    this.appendValueInput("test")
+        .setCheck("Boolean")
+        .appendField("while        test");
+    this.appendStatementInput("commands")
+        .setCheck(null)
+        .appendField("    commands");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(60);
+    this.setTooltip('Execute the command as long as \"test\" is true');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.Blocks['control_do_while'] = {
+  init: function() {
+    this.appendStatementInput("commands")
+        .setCheck(null)
+        .appendField("         commands");
+    this.appendDummyInput()
+        .appendField("do while");
+    this.appendValueInput("test")
+        .setCheck("Boolean")
+        .appendField("                      test");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(60);
+    this.setTooltip('Execute the list of commands. Then, if \'test\' is true keep on repeating it until \'test\' is false.');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.Blocks['control_repeat_times'] = {
+  init: function() {
+    this.appendValueInput("times")
+        .setCheck("Number")
+        .appendField("                         times");
+    this.appendStatementInput("commands")
+        .appendField("repeat      commands");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(60);
+    this.setTooltip('Repeat the commands. Stop after \"times\" repititions.');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};

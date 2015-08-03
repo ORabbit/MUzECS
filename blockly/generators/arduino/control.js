@@ -40,6 +40,34 @@ Blockly.Arduino.delay_milli = function() {
   return code;
 };
 
+Blockly.Arduino.control_while = function() {
+  var value_test = Blockly.Arduino.valueToCode(this, 'test', Blockly.Arduino.ORDER_ATOMIC);
+  var statements_commands = Blockly.Arduino.statementToCode(this, 'commands');
+
+  var code = 'while ('+value_test+') {\n' + statements_commands + '\n}\n';
+  return code;
+};
+
+Blockly.Arduino.control_do_while = function() {
+  var value_test = Blockly.Arduino.valueToCode(this, 'test', Blockly.Arduino.ORDER_ATOMIC);
+  var statements_commands = Blockly.Arduino.statementToCode(this, 'commands');
+
+  var code = 'do\n{\n' + statements_commands + '\n}while (' + value_test + ');\n';
+  return code;
+};
+
+Blockly.Arduino.control_repeat_times = function() {
+  var value_times = Blockly.Arduino.valueToCode(this, 'times', Blockly.Arduino.ORDER_ATOMIC);
+  var statements_commands = Blockly.Arduino.statementToCode(this, 'commands');
+
+  // Make temp variable
+  varNames.push("a");
+  varSize.push(-1);
+  Blockly.Arduino.definitions_['_ABVAR_' + varNames.length + '_a'] = "_ABVAR_" + varNames.length + "_a;\n";
+  var code = 'for (_ABVAR_' + varNames.length + '_a=1; _ABVAR_' + varNames.length + '_a<= ( ' + value_times + ' ); ++_ABVAR_' + varNames.length + '_a )\n{\n' + statements_commands + '\n}\n';
+  return code;
+};
+
 Blockly.Arduino.controls_for = function() {
   // For loop.
   var variable0 = Blockly.Arduino.variableDB_.getName(

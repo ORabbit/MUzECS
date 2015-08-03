@@ -18,7 +18,7 @@ Blockly.Blocks['play_note'] = {
     this.appendValueInput("note")
         .setCheck("String")
         .setAlign(Blockly.ALIGN_RIGHT)
-         .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/sound_wave.png", 30, 30, "*"))
+        .appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/sound_wave.png", 30, 30, "*"))
         .appendField("Play Note  note");
     this.setPreviousStatement(true, "null");
     this.setNextStatement(true, "null");
