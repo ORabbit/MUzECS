@@ -24,3 +24,18 @@ Blockly.Blocks['delay_micro'] = {
     this.setTooltip('Delay for \"microseconds\" indicated.\nNOTE: 1000000 = 1 second');
   }
 };
+
+Blockly.Blocks['delay_milli'] = {
+  helpUrl: 'http://arduino.cc/en/Reference/delay',
+  init: function() {
+    this.setColour(60); // Yellow
+    this.appendValueInput("DELAY_TIME", 'Number')
+        .appendField("delay MILLIS milliseconds")
+        .setCheck('Number');
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Delay for \"milliseconds\" indicated.\nNOTE: 1000 = 1 second');
+  }
+};
+

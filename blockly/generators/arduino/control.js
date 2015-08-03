@@ -29,8 +29,14 @@ goog.require('Blockly.Arduino');
 
 
 Blockly.Arduino.delay_micro = function() {
-  var delay_time = Blockly.Arduino.valueToCode(this, 'DELAY_TIME', Blockly.Arduino.ORDER_ATOMIC) || '1000'
+  var delay_time = Blockly.Arduino.valueToCode(this, 'DELAY_TIME', Blockly.Arduino.ORDER_ATOMIC) || '1000000'
   var code = 'delayMicroseconds(' + delay_time + ');\n';
+  return code;
+};
+
+Blockly.Arduino.delay_milli = function() {
+  var delay_time = Blockly.Arduino.valueToCode(this, 'DELAY_TIME', Blockly.Arduino.ORDER_ATOMIC) || '1000'
+  var code = 'delay(' + delay_time + ');\n';
   return code;
 };
 
