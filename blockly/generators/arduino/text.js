@@ -41,5 +41,8 @@ Blockly.Arduino.text_concat = function() {
   text_text1 = text_text1.substring(0, text_text1.length-1);
   value_text2 = value_text2.substring(1);
   var code = text_text1 + value_text2;
+  if(code.charAt(code.length-1)!=="\""){
+	code+="\"";
+  }
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
