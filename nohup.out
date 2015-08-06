@@ -1,0 +1,295 @@
+mkdir: cannot create directory ‘ino_project’: File exists
+Current directory is not empty
+src/sketch.ino
+Scanning dependencies of src
+src/sketch.cpp
+Linking firmware.elf
+Converting to firmware.hex
+134.48.6.25 - - [30/Jul/2015 11:42:03] "POST / HTTP/1.1" 200 -
+mkdir: cannot create directory ‘ino_project’: File exists
+Current directory is not empty
+src/sketch.ino
+Scanning dependencies of src
+src/sketch.cpp
+Linking firmware.elf
+Converting to firmware.hex
+134.48.6.25 - - [30/Jul/2015 11:42:08] "POST / HTTP/1.1" 200 -
+mkdir: cannot create directory ‘ino_project’: File exists
+Current directory is not empty
+src/sketch.ino
+Scanning dependencies of src
+src/sketch.cpp
+Linking firmware.elf
+Converting to firmware.hex
+134.48.6.25 - - [30/Jul/2015 11:43:05] "POST / HTTP/1.1" 200 -
+mkdir: cannot create directory ‘ino_project’: File exists
+Current directory is not empty
+src/sketch.ino
+Scanning dependencies of src
+src/sketch.cpp
+Linking firmware.elf
+Converting to firmware.hex
+134.48.6.25 - - [30/Jul/2015 11:43:51] "POST / HTTP/1.1" 200 -
+mkdir: cannot create directory ‘ino_project’: File exists
+Current directory is not empty
+src/sketch.ino
+Scanning dependencies of src
+src/sketch.cpp
+Linking firmware.elf
+Converting to firmware.hex
+134.48.6.25 - - [30/Jul/2015 11:48:35] "POST / HTTP/1.1" 200 -
+mkdir: cannot create directory ‘ino_project’: File exists
+Current directory is not empty
+src/sketch.ino
+Scanning dependencies of src
+src/sketch.cpp
+Linking firmware.elf
+Converting to firmware.hex
+134.48.6.25 - - [30/Jul/2015 11:53:33] "POST / HTTP/1.1" 200 -
+mkdir: cannot create directory ‘ino_project’: File exists
+Current directory is not empty
+src/sketch.ino
+Scanning dependencies of src
+src/sketch.cpp
+Linking firmware.elf
+Converting to firmware.hex
+134.48.6.25 - - [30/Jul/2015 11:53:39] "POST / HTTP/1.1" 200 -
+mkdir: cannot create directory ‘ino_project’: File exists
+Current directory is not empty
+src/sketch.ino
+Scanning dependencies of src
+src/sketch.cpp
+Linking firmware.elf
+Converting to firmware.hex
+134.48.6.25 - - [30/Jul/2015 15:36:50] "POST / HTTP/1.1" 200 -
+mkdir: cannot create directory ‘ino_project’: File exists
+Current directory is not empty
+src/sketch.ino
+Scanning dependencies of src
+src/sketch.cpp
+Linking firmware.elf
+Converting to firmware.hex
+running local web server at 134.48.6.40:8080...
+Starting server, use <Ctrl-C> to stop
+Thread-1 handling post request from 134.48.6.25
+sketch to upload: void setup()
+{
+
+}
+
+
+void loop()
+{
+  tone(11, 440, 1000);
+
+}
+created src/sketch.ino
+ino building
+updated the users hex file with the compiled hex
+Thread-2 handling post request from 134.48.6.25
+sketch to upload: void setup()
+{
+
+}
+
+
+void loop()
+{
+  tone(11, 440, 1000);
+
+}
+created src/sketch.ino
+ino building
+updated the users hex file with the compiled hex
+success 134.48.6.25 got the hex file 80XYBOD5
+http://134.48.6.40/MUBlocklyDuino/ardusers/hex_files/80XYBOD5.txt
+Thread-3 handled GET Request from 134.48.6.25
+success 134.48.6.25 got the hex file 80XYBOD5
+http://134.48.6.40/MUBlocklyDuino/ardusers/hex_files/80XYBOD5.txt
+Thread-4 handled GET Request from 134.48.6.25
+Thread-5 handling post request from 134.48.6.25
+sketch to upload: void setup()
+{
+
+}
+
+
+void loop()
+{
+  tone(11, 440, 1000);
+
+}
+created src/sketch.ino
+ino building
+updated the users hex file with the compiled hex
+success 134.48.6.25 got the hex file 80XYBOD5
+http://134.48.6.40/MUBlocklyDuino/ardusers/hex_files/80XYBOD5.txt
+Thread-6 handled GET Request from 134.48.6.25
+success 134.48.6.25 got the hex file 80XYBOD5
+http://134.48.6.40/MUBlocklyDuino/ardusers/hex_files/80XYBOD5.txt
+Thread-7 handled GET Request from 134.48.6.25
+Thread-8 handling post request from 134.48.6.25
+sketch to upload: void setup()
+{
+  Serial.begin(9600);
+
+}
+
+
+void loop()
+{
+  Serial.print((sin(0)));
+  Serial.print("\t");
+
+}
+created src/sketch.ino
+ino building
+updated the users hex file with the compiled hex
+success 134.48.6.25 got the hex file 80XYBOD5
+http://134.48.6.40/MUBlocklyDuino/ardusers/hex_files/80XYBOD5.txt
+Thread-9 handled GET Request from 134.48.6.25
+Thread-10 handling post request from 134.48.6.25
+sketch to upload: void setup()
+{
+
+}
+
+
+void loop()
+{
+  if (0 == sin(0)) {
+
+  }
+
+}
+created src/sketch.ino
+ino building
+updated the users hex file with the compiled hex
+success 134.48.6.25 got the hex file 80XYBOD5
+http://134.48.6.40/MUBlocklyDuino/ardusers/hex_files/80XYBOD5.txt
+Thread-11 handled GET Request from 134.48.6.25
+success 134.48.6.25 got the hex file 80XYBOD5
+http://134.48.6.40/MUBlocklyDuino/ardusers/hex_files/80XYBOD5.txt
+Thread-12 handled GET Request from 134.48.6.25
+success 134.48.6.25 got the hex file 80XYBOD5
+http://134.48.6.40/MUBlocklyDuino/ardusers/hex_files/80XYBOD5.txt
+Thread-13 handled GET Request from 134.48.6.25
+Thread-14 handling post request from 134.48.6.25
+sketch to upload: void setup()
+{
+  pinMode(5, OUTPUT);
+
+  pinMode(13, OUTPUT);
+
+}
+
+
+void loop()
+{
+  if (0 == sin(0)) {
+    digitalWrite(5, HIGH);
+
+  } else {
+    digitalWrite(13, HIGH);
+
+  }
+
+}
+created src/sketch.ino
+ino building
+updated the users hex file with the compiled hex
+Thread-15 handling post request from 134.48.6.25
+sketch to upload: void setup()
+{
+  pinMode(5, OUTPUT);
+
+  pinMode(13, OUTPUT);
+
+}
+
+
+void loop()
+{
+  digitalWrite(5, HIGH);
+  if (0 == sin(0)) {
+    digitalWrite(13, HIGH);
+
+  }
+
+}
+created src/sketch.ino
+ino building
+updated the users hex file with the compiled hex
+success 134.48.6.25 got the hex file 80XYBOD5
+http://134.48.6.40/MUBlocklyDuino/ardusers/hex_files/80XYBOD5.txt
+Thread-16 handled GET Request from 134.48.6.25
+success 134.48.6.25 got the hex file 80XYBOD5
+http://134.48.6.40/MUBlocklyDuino/ardusers/hex_files/80XYBOD5.txt
+Thread-17 handled GET Request from 134.48.6.25
+file not found
+Thread-21 handled GET Request from 180.97.106.162
+file not found
+Thread-22 handled GET Request from 180.97.106.37
+Thread-23 handling post request from 134.48.6.25
+sketch to upload: void setup()
+{
+
+}
+
+
+void loop()
+{
+
+}
+created src/sketch.ino
+ino building
+updated the users hex file with the compiled hex
+Thread-24 handling post request from 134.48.6.21
+sketch to upload: void setup()
+{
+  pinMode(6, INPUT);
+  pinMode(5, OUTPUT);
+
+}
+
+
+void loop()
+{
+  if (digitalRead(6)) {
+    digitalWrite(5, HIGH);
+
+  } else {
+    digitalWrite(5, LOW);
+
+  }
+
+}
+created src/sketch.ino
+ino building
+written to hosts.txt this line: 134.48.6.21:I58DBFVA.txt with the nex hex file
+upd134.48.6.21 - - [30/Jul/2015 16:02:29] "POST / HTTP/1.1" 200 -
+mkdir: cannot create directory ‘ino_project’: File exists
+Current directory is not empty
+src/sketch.ino
+Scanning dependencies of src
+src/sketch.cpp
+Linking firmware.elf
+Converting to firmware.hex
+134.48.6.21 - - [30/Jul/2015 16:39:02] "POST / HTTP/1.1" 200 -
+134.48.6.25 - - [30/Jul/2015 18:12:16] "POST / HTTP/1.1" 300 -
+mkdir: cannot create directory ‘ino_project’: File exists
+Current directory is not empty
+src/sketch.ino
+Scanning dependencies of src
+src/sketch.cpp
+Linking firmware.elf
+Converting to firmware.hex
+134.48.6.25 - - [30/Jul/2015 18:12:22] "POST / HTTP/1.1" 200 -
+mkdir: cannot create directory ‘ino_project’: File exists
+Current directory is not empty
+src/sketch.ino
+Scanning dependencies of src
+src/sketch.cpp
+Linking firmware.elf
+Converting to firmware.hex
+134.48.6.23 - - [03/Aug/2015 17:59:36] "POST / HTTP/1.1" 200 -

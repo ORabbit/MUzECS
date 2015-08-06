@@ -68,6 +68,15 @@ Blockly.Arduino.control_repeat_times = function() {
   return code;
 };
 
+Blockly.Arduino.control_repeat_count = function() {
+  var value_variable = Blockly.Arduino.valueToCode(this, 'variable', Blockly.Arduino.ORDER_ATOMIC);
+  var value_times = Blockly.Arduino.valueToCode(this, 'times', Blockly.Arduino.ORDER_ATOMIC);
+  var statements_commands = Blockly.Arduino.statementToCode(this, 'commands');
+
+  var code = '...';
+  return code;
+};
+
 Blockly.Arduino.controls_for = function() {
   // For loop.
   var variable0 = Blockly.Arduino.variableDB_.getName(
