@@ -515,7 +515,7 @@ function init() {
 	</block>
 	<block type="variables_array_create">
 		<value name="variable">
-			<block type="variables_int_array"></block>
+			<block type="variables_array_name"></block>
 		</value>
 		<value name="size">
 			<block type="math_number">
@@ -523,7 +523,7 @@ function init() {
 			</block>
 		</value>
 	</block>
-	<block type="variables_array_name">
+	<block type="variables_array_name_pos">
 		<value name="position">
 			<block type="math_number">
 				<field name="NUM">1</field>
@@ -532,7 +532,7 @@ function init() {
 	</block>
 	<block type="variables_set_int_array_member">
 		<value name="variable">
-			<block type="variables_int_array"></block>
+			<block type="variables_array_name"></block>
 		</value>
 		<value name="position">
 			<block type="math_number">
@@ -545,6 +545,17 @@ function init() {
 			</block>
 		</value>
 	</block>
+	<block type="variables_set_integer">
+		<value name="variable">
+			<block type="variables_integer"></block>
+		</value>
+		<value name="value">
+			<block type="math_number">
+				<field name="NUM">1</field>
+			</block>
+		</value>
+	</block>
+	<block type="variables_integer"></block>
 	<!--<block type="logic_boolean"></block>-->
     </category>
     <category name="Math Operators">

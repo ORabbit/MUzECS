@@ -123,7 +123,7 @@ Blockly.Arduino.variables_array_create = function() {
   }
 };
 
-Blockly.Arduino.variables_array_name = function() {
+Blockly.Arduino.variables_array_name_pos = function() {
   var text_varName = this.getFieldValue('varName').replace(/\s/g, "");
   var value_position = Blockly.Arduino.valueToCode(this, 'position', Blockly.Arduino.ORDER_ATOMIC);
 
@@ -137,6 +137,13 @@ Blockly.Arduino.variables_array_name = function() {
   }
   var code = 'vec__ABVAR_' + (varNum + 1) + '_' + varNames[varNum] + '[' + value_position + ' - 1]';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino.variables_array_name = function() {
+  var text_varName = this.getFieldValue('variable').replace(/\s/g, "");
+  
+  var code = text_varName;
+  return [code, Blockly.JavaScript.ATOMIC];
 };
 
 Blockly.Arduino.variables_digital = function() {
@@ -181,11 +188,18 @@ Blockly.Arduino.variables_set_integer = function() {
     return code;
   }else {
     //ERROR variable already exists
-    alert("ERROR: Invalid array name used.\nYou tried to create at least two arrays with the same name\n(Tried: " + value_variable + ")");
+    //alert("ERROR: Invalid variable name used.\nYou tried to create at least two variables with the same name\n(Tried: " + value_variable + ")");
+    var code = '_ABVAR_' + (varNum + 1) + '_' + value_variable + ' = ' + value_value + ';\n';
   }
-  var code = '...';
   return code;
   };
+
+Blockly.Arduino.variables_integer = function() {
+  var text_varName = this.getFieldValue('variable').replace(/\s/g, "");
+  
+  var code = text_varName;
+  return [code, Blockly.JavaScript.ATOMIC];
+};
 
 Blockly.Arduino.resetVariables = function() {
   varNames = [];

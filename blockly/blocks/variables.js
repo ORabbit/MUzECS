@@ -239,7 +239,7 @@ Blockly.Blocks['constants_false'] = {
 Blockly.Blocks['variables_array_create'] = {
   init: function() {
     this.appendValueInput("variable")
-        .setCheck("Digital")
+        .setCheck("Variable_array")
         .appendField("create an integer array      variable");
     this.appendValueInput("size")
         .setCheck("Number")
@@ -253,6 +253,17 @@ Blockly.Blocks['variables_array_create'] = {
 };
 
 Blockly.Blocks['variables_array_name'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("array variable name"), "variable");
+    this.setOutput(true, "Variable_array");
+    this.setColour(290);
+    this.setTooltip('Variable array');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.Blocks['variables_array_name_pos'] = {
   init: function() {
     this.appendValueInput("position")
         .setCheck("Number")
@@ -268,7 +279,7 @@ Blockly.Blocks['variables_array_name'] = {
 Blockly.Blocks['variables_set_int_array_member'] = {
   init: function() {
     this.appendValueInput("variable")
-        .setCheck("Digital")
+        .setCheck("Variable_array")
         .appendField("                                          variable");
     this.appendValueInput("position")
         .setCheck("Number")
@@ -280,6 +291,33 @@ Blockly.Blocks['variables_set_int_array_member'] = {
     this.setNextStatement(true, null);
     this.setColour(290);
     this.setTooltip('Set the value of an array');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.Blocks['variables_set_integer'] = {
+  init: function() {
+    this.appendValueInput("variable")
+        .setCheck("Variable_int")
+        .appendField("set integer variable     variable");
+    this.appendValueInput("value")
+        .setCheck("Number")
+        .appendField("                                      value");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(290);
+    this.setTooltip('Set standard integer variable. -32,768 to +32,767');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.Blocks['variables_integer'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("integer variable name"), "variable");
+    this.setOutput(true, "Variable_int");
+    this.setColour(290);
+    this.setTooltip('Integer variable');
     this.setHelpUrl('http://www.example.com/');
   }
 };
