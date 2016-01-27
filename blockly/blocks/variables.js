@@ -326,9 +326,9 @@ Blockly.Blocks['variables_integer'] = {
   init: function() {
     this.appendDummyInput()
         .appendField(new Blockly.FieldTextInput("integer variable name"), "variable");
-    this.setOutput(true, ["Variable_int", "Number"]);
+    this.setOutput(true, "Number");
     this.setColour(290);
-    this.setTooltip('Integer variable');
+    this.setTooltip('Integer variable (returns an integer)');
     this.setHelpUrl('http://www.example.com/');
   }
 };

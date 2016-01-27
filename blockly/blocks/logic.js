@@ -332,13 +332,23 @@ Blockly.Blocks['logic_compare'] = {
 
 Blockly.Blocks['logic_equals_number'] = {
 	init: function() {
+   var OPERATORS = [
+          ['==', 'EQ'],
+          ['!=', 'NEQ'],
+          ['<', 'LT'],
+          ['<=', 'LTE'],
+          ['>', 'GT'],
+          ['>=', 'GTE']
+        ];
 	    this.setColour(Blockly.Blocks.math.HUE);
 	    this.setOutput(true, 'Boolean');
 	    this.appendValueInput('A')
 		.setCheck('Number');
 	    this.appendValueInput('B')
 		.setCheck('Number')
-		.appendField("==");
+	//	.appendField("==");
+		.appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
+
 	    this.setInputsInline(true);
 	    // Assign 'this' to a variable for use in the tooltip closure below.
 	    this.setTooltip("Are the two numbers equal?");

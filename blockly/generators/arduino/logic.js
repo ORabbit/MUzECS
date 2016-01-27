@@ -85,7 +85,30 @@ Blockly.Arduino.logic_equals_number = function() {
   var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
   var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
   var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
-  var code = argument0+" == "+argument1;
+  var operator;
+	switch(this.getFieldValue('OP')){
+		// (this.getFieldValue('OP') == 'AND') ? '&&' : '||';
+		case 'EQ':
+			operator='==';
+			break;	
+		case 'NEQ':
+			operator='!=';
+			break;	
+		case 'LT':
+			operator='<';
+			break;	
+		case 'LTE':
+			operator='<=';
+			break;	
+		case 'GT':
+			operator='>';
+			break;	
+		case 'GTE':
+			operator='>=';
+			break;	
+
+	}
+  var code = argument0+" "+operator+" "+argument1;
   return [code, order];
 };
 
