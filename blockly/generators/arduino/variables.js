@@ -176,14 +176,14 @@ Blockly.Arduino.variables_set_int_array_member = function() {
 
 Blockly.Arduino.variables_set_integer = function() {
   var value_variable = Blockly.Arduino.valueToCode(this, 'variable', Blockly.Arduino.ORDER_ATOMIC).replace(/\s/g, "");
-  var value_value = Blockly.Arduino.valueToCode(block, 'value', Blockly.Arduino.ORDER_ATOMIC);
+  var value_value = Blockly.Arduino.valueToCode(this, 'value', Blockly.Arduino.ORDER_ATOMIC);
 
 
   var varNum = findVariable(value_variable);
   if(varNum == -1) {
     varNames.push(value_variable);
     varSize.push(-1);
-    Blockly.Arduino.definitions_['vars_integer_' + value_variable]="int _ABVAR_" + varNames.length + "_" + value_variable + "[" + value_size + "];\n";
+    Blockly.Arduino.definitions_['vars_integer_' + value_variable]="int _ABVAR_" + varNames.length + "_" + value_variable + " = 0;\n";
     var code = '_ABVAR_' + varNames.length + '_' + value_variable + ' = ' + value_value + ';\n';
     return code;
   }else {
@@ -194,6 +194,11 @@ Blockly.Arduino.variables_set_integer = function() {
   return code;
   };
 
+Blockly.Arduino.variables_set_integer_name = function() {
+  var text_varName = this.getFieldValue('variable').replace(/\s/g, "");
+  return [text_varName, Blockly.Arduino.ORDER_ATOMIC];
+};
+
 Blockly.Arduino.variables_integer = function() {
   var text_varName = this.getFieldValue('variable').replace(/\s/g, "");
 
@@ -202,7 +207,7 @@ Blockly.Arduino.variables_integer = function() {
     alert("ERROR: Invalid variable name used.\nYou tried to use a variable without first setting it/declaring it.\n(Tried: " + text_varName + ")");
   }
   
-  var code = text_varName;
+  var code = '_ABVAR_' + (varNum + 1) + '_' + text_varName;
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
