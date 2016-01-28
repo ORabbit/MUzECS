@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #modified by Marquette REU team
-import BaseHTTPServer, urllib, re, os
+import BaseHTTPServer, urllib, re, os,sys
 from BaseHTTPServer import HTTPServer
 from SocketServer import ThreadingMixIn
 import random
@@ -132,6 +132,9 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
 	    self.send_header("Access-Control-Allow-Origin","*")
 if __name__ == '__main__':
     print "running local web server at 134.48.6.40:8080..."
+    fpid = os.fork()
+    if fpid!=0:
+	sys.exit(0)
     server = BrylowHTTPServer(server_info, Handler)
     print 'Starting server, use <Ctrl-C> to stop'
     server.pages = {}
