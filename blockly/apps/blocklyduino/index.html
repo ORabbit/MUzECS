@@ -391,10 +391,9 @@ function init() {
     </category>
 -->
     <category name="Control">
+	<block type="controls_infloop"></block>
       <block type="controls_if"></block>
       <block type="control_while"></block>
-      <block type="control_do_while"></block>
-      <block type="control_repeat_times"></block>
       <block type="delay_milli">
         <value name="DELAY_TIME">
           <block type="math_number">
@@ -409,10 +408,9 @@ function init() {
           </block>
         </value>
       </block>
-	<block type="controls_repeat"></block>
-	<block type="controls_whileUntil"></block>
-	<block type="controls_infloop"></block>
-      <block type="controls_for">
+      <block type="control_do_while"></block>
+      <block type="control_repeat_times"></block>
+      <!--<block type="controls_for">
         <value name="FROM">
           <block type="math_number">
             <field name="NUM">1</field>
@@ -423,7 +421,7 @@ function init() {
             <field name="NUM">10</field>
           </block>
         </value>
-      </block>
+      </block>-->
 	<block type="procedures_defnoreturn"></block>
     </category>
 	 <category name="ECS">
@@ -493,6 +491,17 @@ function init() {
 		</block>
 	 </category>
     <category name="Variables/Constants"><!-- custom="VARIABLE"> -->
+	<block type="variables_set_integer">
+		<value name="variable">
+			<block type="variables_set_integer_name"></block>
+		</value>
+		<value name="value">
+			<block type="math_number">
+				<field name="NUM">1</field>
+			</block>
+		</value>
+	</block>
+	<block type="variables_integer"></block>
       	<block type="math_number"></block>
 	<block type="text_concat"></block>
       	<block type="text">
@@ -501,18 +510,28 @@ function init() {
 	<block type="text">
 		<field name="TEXT">Key</field>
 	</block>
-	<!--<block type="inout_highlow"></block>-->
-	<block type="constants_boolean">
-		<field name="BOOL">TRUE</field>
+	<block type="variables_set_digital">
+		<value name="variable">
+			<block type="variables_set_digital_name"></block>
+		</value>
+		<value name="value">
+			<block type="constants_highlow">
+				<field name="BOOL">HIGH</field>
+			</block>
+		</value>
 	</block>
-	<block type="constants_boolean">
-		<field name="BOOL">FALSE</field>
-	</block>
+	<block type="variables_digital"></block>
 	<block type="constants_highlow">
 		<field name="BOOL">HIGH</field>
 	</block>
 	<block type="constants_highlow">
 		<field name="BOOL">LOW</field>
+	</block>
+	<block type="constants_boolean">
+		<field name="BOOL">TRUE</field>
+	</block>
+	<block type="constants_boolean">
+		<field name="BOOL">FALSE</field>
 	</block>
 	<block type="variables_array_create">
 		<value name="variable">
@@ -546,28 +565,6 @@ function init() {
 			</block>
 		</value>
 	</block>
-	<block type="variables_set_integer">
-		<value name="variable">
-			<block type="variables_set_integer_name"></block>
-		</value>
-		<value name="value">
-			<block type="math_number">
-				<field name="NUM">1</field>
-			</block>
-		</value>
-	</block>
-	<block type="variables_integer"></block>
-	<block type="variables_set_digital">
-		<value name="variable">
-			<block type="variables_set_digital_name"></block>
-		</value>
-		<value name="value">
-			<block type="constants_highlow">
-				<field name="BOOL">HIGH</field>
-			</block>
-		</value>
-	</block>
-	<block type="variables_digital"></block>
 	<block type="variables_set_decimal">
 		<value name="variable">
 			<block type="variables_set_decimal_name"></block>
@@ -623,10 +620,10 @@ function init() {
       <block type="logic_null"></block>
     </category>
 	<category name="Communications">
-      <block type="serial_print"> </block>
-      <block type="serial_println"> </block>
       <block type="serial_read"> </block>
       <block type="serial_data_available"> </block>
+      <block type="serial_print"> </block>
+      <block type="serial_println"> </block>
       <block type="glue_number"> </block>
       <block type="glue_boolean"> </block>
 	</category>
