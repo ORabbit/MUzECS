@@ -70,7 +70,26 @@ Blockly.Arduino.math_add = function() {
   var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
   var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
   var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
-  var code = argument0 + " + " + argument1;
+    var operator;
+	switch(this.getFieldValue('OP')){
+		case 'ADD':
+			operator='+';
+			break;	
+		case 'MINUS':
+			operator='-';
+			break;	
+		case 'MULTIPLY':
+			operator='*';
+			break;	
+		case 'DIVIDE':
+			operator='/';
+			break;	
+		case 'MOD':
+			operator='%';
+			break;	
+
+	}
+  var code = argument0+" "+operator+" "+argument1;
   return [code, order];
 };
 
@@ -79,7 +98,26 @@ Blockly.Arduino.math_subtract = function() {
   var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
   var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
   var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
-  var code = argument0 + " - " + argument1;
+   var operator;
+	switch(this.getFieldValue('OP')){
+		case 'ADD':
+			operator='+';
+			break;	
+		case 'MINUS':
+			operator='-';
+			break;	
+		case 'MULTIPLY':
+			operator='*';
+			break;	
+		case 'DIVIDE':
+			operator='/';
+			break;	
+		case 'MOD':
+			operator='%';
+			break;	
+
+	}
+  var code = argument0+" "+operator+" "+argument1;
   return [code, order];
 };
 
@@ -88,7 +126,26 @@ Blockly.Arduino.math_multiplication = function() {
   var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
   var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
   var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
-  var code = argument0 + " * " + argument1;
+   var operator;
+	switch(this.getFieldValue('OP')){
+		case 'ADD':
+			operator='+';
+			break;	
+		case 'MINUS':
+			operator='-';
+			break;	
+		case 'MULTIPLY':
+			operator='*';
+			break;	
+		case 'DIVIDE':
+			operator='/';
+			break;	
+		case 'MOD':
+			operator='%';
+			break;	
+
+	}
+  var code = argument0+" "+operator+" "+argument1;
   return [code, order];
 };
 
@@ -97,7 +154,26 @@ Blockly.Arduino.math_division = function() {
   var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
   var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
   var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
-  var code = argument0 + " / " + argument1;
+   var operator;
+	switch(this.getFieldValue('OP')){
+		case 'ADD':
+			operator='+';
+			break;	
+		case 'MINUS':
+			operator='-';
+			break;	
+		case 'MULTIPLY':
+			operator='*';
+			break;	
+		case 'DIVIDE':
+			operator='/';
+			break;	
+		case 'MOD':
+			operator='%';
+			break;	
+
+	}
+  var code = argument0+" "+operator+" "+argument1;
   return [code, order];
 };
 
@@ -115,7 +191,26 @@ Blockly.Arduino.math_mod = function() {
   var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
   var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
   var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
-  var code = argument0 + " % " + argument1;
+   var operator;
+	switch(this.getFieldValue('OP')){
+		case 'ADD':
+			operator='+';
+			break;	
+		case 'MINUS':
+			operator='-';
+			break;	
+		case 'MULTIPLY':
+			operator='*';
+			break;	
+		case 'DIVIDE':
+			operator='/';
+			break;	
+		case 'MOD':
+			operator='%';
+			break;	
+
+	}
+  var code = argument0+" "+operator+" "+argument1;
   return [code, order];
 };
 

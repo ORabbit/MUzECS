@@ -151,7 +151,13 @@ Blockly.Blocks['math_subtract'] = {
          [Blockly.Msg.MATH_MULTIPLICATION_SYMBOL, 'MULTIPLY'],
          [Blockly.Msg.MATH_DIVISION_SYMBOL, 'DIVIDE'],
          [Blockly.Msg.MATH_MODULO_SYMBOL, 'MOD']];
-    this.setHelpUrl(Blockly.Msg.MATH_SUBTRACTION_HELPURL);
+    	//perform swap for changing default value;
+	var temp;
+	temp = OPERATORS[0];
+	OPERATORS[0] = OPERATORS[1];
+	OPERATORS[1] = temp;
+
+this.setHelpUrl(Blockly.Msg.MATH_SUBTRACTION_HELPURL);
     this.setColour(Blockly.Blocks.math.HUE);
     this.setOutput(true, 'Number');
     this.appendValueInput('A')
@@ -190,7 +196,13 @@ Blockly.Blocks['math_multiplication'] = {
          [Blockly.Msg.MATH_MULTIPLICATION_SYMBOL, 'MULTIPLY'],
          [Blockly.Msg.MATH_DIVISION_SYMBOL, 'DIVIDE'],
          [Blockly.Msg.MATH_MODULO_SYMBOL, 'MOD']];
-    this.setHelpUrl(Blockly.Msg.MATH_MULTIPLICATION_HELPURL);
+    	//perform swap for changing default value;
+	var temp;
+	temp = OPERATORS[0];
+	OPERATORS[0] = OPERATORS[2];
+	OPERATORS[2] = temp;
+
+this.setHelpUrl(Blockly.Msg.MATH_MULTIPLICATION_HELPURL);
     this.setColour(Blockly.Blocks.math.HUE);
     this.setOutput(true, 'Number');
     this.appendValueInput('A')
@@ -229,6 +241,12 @@ Blockly.Blocks['math_division'] = {
          [Blockly.Msg.MATH_MULTIPLICATION_SYMBOL, 'MULTIPLY'],
          [Blockly.Msg.MATH_DIVISION_SYMBOL, 'DIVIDE'],
          [Blockly.Msg.MATH_MODULO_SYMBOL, 'MOD']];
+	//perform swap for changing default value;
+	var temp;
+	temp = OPERATORS[0];
+	OPERATORS[0] = OPERATORS[3];
+	OPERATORS[3] = temp;
+
     this.setHelpUrl(Blockly.Msg.MATH_DIVISION_HELPURL);
     this.setColour(Blockly.Blocks.math.HUE);
     this.setOutput(true, 'Number');
@@ -289,7 +307,13 @@ Blockly.Blocks['math_mod'] = {
          [Blockly.Msg.MATH_MULTIPLICATION_SYMBOL, 'MULTIPLY'],
          [Blockly.Msg.MATH_DIVISION_SYMBOL, 'DIVIDE'],
          [Blockly.Msg.MATH_MODULO_SYMBOL, 'MOD']];
-    this.setHelpUrl(Blockly.Msg.MATH_MODULO_HELPURL);
+    	//perform swap for changing default value;
+	var temp;
+	temp = OPERATORS[0];
+	OPERATORS[0] = OPERATORS[4];
+	OPERATORS[4] = temp;
+
+this.setHelpUrl(Blockly.Msg.MATH_MODULO_HELPURL);
     this.setColour(Blockly.Blocks.math.HUE);
     this.setOutput(true, 'Number');
     this.appendValueInput('A')
