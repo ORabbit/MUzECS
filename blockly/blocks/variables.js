@@ -370,3 +370,41 @@ Blockly.Blocks['variables_digital'] = {
     this.setHelpUrl('http://www.example.com/');
   }
 };
+
+Blockly.Blocks['variables_set_decimal'] = {
+  init: function() {
+    this.appendValueInput("variable")
+        .setCheck("Variable_decimal")
+        .appendField("set decimal number variable     variable");
+    this.appendValueInput("value")
+        .setCheck("Digital")
+        .appendField("                                             value");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(290);
+    this.setTooltip('Set decimal variable');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.Blocks['variables_set_decimal_name'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("decimal variable name"), "variable");
+    this.setOutput(true, "Variable_decimal");
+    this.setColour(290);
+    this.setTooltip('Decimal variable (for set decimal variable)');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.Blocks['variables_decimal'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("Decimal variable name"), "variable");
+    this.setOutput(true, "Double");
+    this.setColour(330);
+    this.setTooltip('Decimal variable');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};

@@ -567,6 +567,20 @@ function init() {
 		</value>
 	</block>
 	<block type="variables_digital"></block>
+	<block type="variables_set_decimal">
+		<value name="variable">
+			<block type="variables_set_decimal_name"></block>
+		</value>
+		<value name="value">
+			<block type="math_decimal">
+				<field name="NUM">3.1415927</field>
+			</block>
+		</value>
+	</block>
+	<block type="variables_decimal"></block>
+	<block type="math_decimal">
+		<field name="NUM">3.1415927</field>
+	</block>
 	<!--<block type="logic_boolean"></block>-->
     </category>
     <category name="Math Operators">
@@ -592,7 +606,8 @@ function init() {
     </category>
     <category name="Logic Operators">
     <!--  <block type="logic_compare"></block>-->
-      <block type="logic_equals_number"></block>
+      <block type="logic_equals_number">
+ </block>
       <block type="logic_greater_number"></block>
       <block type="logic_less_number"></block>
       <block type="logic_less_equals_number"></block>

@@ -38,6 +38,16 @@ Blockly.Arduino.math_number = function() {
   return [code, order];
 };
 
+Blockly.Arduino.math_decimal = function() {
+  // Numeric value.
+  var code = window.parseFloat(this.getFieldValue('NUM'));
+  // -4.abs() returns -4 in Dart due to strange order of operation choices.
+  // -4 is actually an operator and a number.  Reflect this in the order.
+  var order = code < 0 ?
+      Blockly.Arduino.ORDER_UNARY_PREFIX : Blockly.Arduino.ORDER_ATOMIC;
+  return [code, order];
+};
+
 Blockly.Arduino.math_arithmetic = function() {
   // Basic arithmetic operators, and power.
   var mode = this.getFieldValue('OP');
