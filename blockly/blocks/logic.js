@@ -357,13 +357,28 @@ Blockly.Blocks['logic_equals_number'] = {
 
 Blockly.Blocks['logic_greater_number'] = {
 	init: function() {
+var OPERATORS = [
+          ['==', 'EQ'],
+          ['!=', 'NEQ'],
+          ['<', 'LT'],
+          ['<=', 'LTE'],
+          ['>', 'GT'],
+          ['>=', 'GTE']
+        ];
+	//perform swap for changing default value;
+	var temp;
+	temp = OPERATORS[0];
+	OPERATORS[0] = OPERATORS[4];
+	OPERATORS[4] = temp;
+
 	    this.setColour(Blockly.Blocks.math.HUE);
 	    this.setOutput(true, 'Boolean');
 	    this.appendValueInput('A')
 		.setCheck('Number');
 	    this.appendValueInput('B')
 		.setCheck('Number')
-		.appendField(">");
+		//.appendField(">");
+		.appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
 	    this.setInputsInline(true);
 	    // Assign 'this' to a variable for use in the tooltip closure below.
 	    this.setTooltip("Is the left number greater than the right number?");
@@ -372,13 +387,28 @@ Blockly.Blocks['logic_greater_number'] = {
 
 Blockly.Blocks['logic_less_number'] = {
 	init: function() {
+var OPERATORS = [
+          ['==', 'EQ'],
+          ['!=', 'NEQ'],
+          ['<', 'LT'],
+          ['<=', 'LTE'],
+          ['>', 'GT'],
+          ['>=', 'GTE']
+        ];
+	//perform swap for changing default value;
+	var temp;
+	temp = OPERATORS[0];
+	OPERATORS[0] = OPERATORS[2];
+	OPERATORS[2] = temp;
+
 	    this.setColour(Blockly.Blocks.math.HUE);
 	    this.setOutput(true, 'Boolean');
 	    this.appendValueInput('A')
 		.setCheck('Number');
 	    this.appendValueInput('B')
 		.setCheck('Number')
-		.appendField("<");
+		//.appendField("<");
+		.appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
 	    this.setInputsInline(true);
 	    // Assign 'this' to a variable for use in the tooltip closure below.
 	    this.setTooltip("Is the number to the left less than the right number?");
@@ -387,13 +417,28 @@ Blockly.Blocks['logic_less_number'] = {
 
 Blockly.Blocks['logic_less_equals_number'] = {
 	init: function() {
+var OPERATORS = [
+          ['==', 'EQ'],
+          ['!=', 'NEQ'],
+          ['<', 'LT'],
+          ['<=', 'LTE'],
+          ['>', 'GT'],
+          ['>=', 'GTE']
+        ];
+	//perform swap for changing default value;
+	var temp;
+	temp = OPERATORS[0];
+	OPERATORS[0] = OPERATORS[3];
+	OPERATORS[3] = temp;
+
 	    this.setColour(Blockly.Blocks.math.HUE);
 	    this.setOutput(true, 'Boolean');
 	    this.appendValueInput('A')
 		.setCheck('Number');
 	    this.appendValueInput('B')
 		.setCheck('Number')
-		.appendField("<=");
+		//.appendField("<=");
+		.appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
 	    this.setInputsInline(true);
 	    // Assign 'this' to a variable for use in the tooltip closure below.
 	    this.setTooltip("Is the number to the left less than or equal to the right number?");
@@ -402,13 +447,28 @@ Blockly.Blocks['logic_less_equals_number'] = {
 
 Blockly.Blocks['logic_greater_equals_number'] = {
 	init: function() {
+var OPERATORS = [
+          ['==', 'EQ'],
+          ['!=', 'NEQ'],
+          ['<', 'LT'],
+          ['<=', 'LTE'],
+          ['>', 'GT'],
+          ['>=', 'GTE']
+        ];
+	//perform swap for changing default value;
+	var temp;
+	temp = OPERATORS[0];
+	OPERATORS[0] = OPERATORS[5];
+	OPERATORS[5] = temp;
+
 	    this.setColour(Blockly.Blocks.math.HUE);
 	    this.setOutput(true, 'Boolean');
 	    this.appendValueInput('A')
 		.setCheck('Number');
 	    this.appendValueInput('B')
 		.setCheck('Number')
-		.appendField(">=");
+		//.appendField(">=");
+		.appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
 	    this.setInputsInline(true);
 	    // Assign 'this' to a variable for use in the tooltip closure below.
 	    this.setTooltip("Is the number to the left greater than the right number?");
@@ -417,13 +477,28 @@ Blockly.Blocks['logic_greater_equals_number'] = {
 
 Blockly.Blocks['logic_not_equals_number'] = {
 	init: function() {
+var OPERATORS = [
+          ['==', 'EQ'],
+          ['!=', 'NEQ'],
+          ['<', 'LT'],
+          ['<=', 'LTE'],
+          ['>', 'GT'],
+          ['>=', 'GTE']
+        ];
+	//perform swap for changing default value;
+	var temp;
+	temp = OPERATORS[0];
+	OPERATORS[0] = OPERATORS[1];
+	OPERATORS[1] = temp;
+
 	    this.setColour(Blockly.Blocks.math.HUE);
 	    this.setOutput(true, 'Boolean');
 	    this.appendValueInput('A')
 		.setCheck('Number');
 	    this.appendValueInput('B')
 		.setCheck('Number')
-		.appendField("!=");
+		//.appendField("!=");
+		.appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
 	    this.setInputsInline(true);
 	    // Assign 'this' to a variable for use in the tooltip closure below.
 	    this.setTooltip("are the numbers not equal?");
@@ -463,13 +538,18 @@ Blockly.Blocks['logic_operation'] = {
 
 Blockly.Blocks['logic_equals_boolean'] = {
 	init: function() {
+var OPERATORS = [
+          ['==', 'EQ'],
+          ['!=', 'NEQ']
+        ];
 	    this.setColour(Blockly.Blocks.math.HUE);
 	    this.setOutput(true, 'Boolean');
 	    this.appendValueInput('A')
 		.setCheck('Boolean');
 	    this.appendValueInput('B')
 		.setCheck('Boolean')
-		.appendField("==");
+		//.appendField("==");
+		.appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
 	    this.setInputsInline(true);
 	    // Assign 'this' to a variable for use in the tooltip closure below.
 	    this.setTooltip("Are the two boolean values equal?");
@@ -477,13 +557,24 @@ Blockly.Blocks['logic_equals_boolean'] = {
 };
 Blockly.Blocks['logic_not_equals_boolean'] = {
 	init: function() {
+var OPERATORS = [
+          ['==', 'EQ'],
+          ['!=', 'NEQ']
+        ];
+	//perform swap for changing default value;
+	var temp;
+	temp = OPERATORS[0];
+	OPERATORS[0] = OPERATORS[1];
+	OPERATORS[1] = temp;
+
 	    this.setColour(Blockly.Blocks.math.HUE);
 	    this.setOutput(true, 'Boolean');
 	    this.appendValueInput('A')
 		.setCheck('Boolean');
 	    this.appendValueInput('B')
 		.setCheck('Boolean')
-		.appendField("!=");
+		//.appendField("!=");
+		.appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
 	    this.setInputsInline(true);
 	    // Assign 'this' to a variable for use in the tooltip closure below.
 	    this.setTooltip("Are the boolean values  not equal?");
