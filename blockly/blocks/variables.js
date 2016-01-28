@@ -333,13 +333,40 @@ Blockly.Blocks['variables_integer'] = {
   }
 };
 
+Blockly.Blocks['variables_set_digital'] = {
+  init: function() {
+    this.appendValueInput("variable")
+        .setCheck("Variable_digital")
+        .appendField("set digital variable     variable");
+    this.appendValueInput("value")
+        .setCheck("Digital")
+        .appendField("                                      value");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(290);
+    this.setTooltip('Set digital variable');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.Blocks['variables_set_digital_name'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("digital variable name"), "variable");
+    this.setOutput(true, "Variable_digital");
+    this.setColour(290);
+    this.setTooltip('Digital variable (for set digital variable)');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
 Blockly.Blocks['variables_digital'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldTextInput("array variable name"), "variable");
+        .appendField(new Blockly.FieldTextInput("digital variable name"), "variable");
     this.setOutput(true, "Digital");
     this.setColour(330);
-    this.setTooltip('Digital var');
+    this.setTooltip('Digital variable');
     this.setHelpUrl('http://www.example.com/');
   }
 };
