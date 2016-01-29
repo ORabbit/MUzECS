@@ -87,3 +87,21 @@ Blockly.Blocks['control_repeat_times'] = {
     this.setHelpUrl('http://www.example.com/');
   }
 };
+
+Blockly.Blocks['control_repeat_and_count'] = {
+    init: function() {
+        this.appendValueInput("variable")
+             .setCheck("Variable_int")
+             .appendField("                    variable");
+        this.appendValueInput("times")
+             .setCheck("Number")
+             .appendField("repeat and count       times");
+        this.appendStatementInput("commands")
+             .appendField("                    commands");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(60);
+        this.setTooltip('Repeat the commands. Stop after \"times\" repititions. Variable keeps count of iterations.');
+        this.setHelpUrl('http://www.example.com/');
+    }
+};
