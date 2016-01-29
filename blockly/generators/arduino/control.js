@@ -68,12 +68,18 @@ Blockly.Arduino.control_repeat_times = function() {
   return code;
 };
 
-Blockly.Arduino.control_repeat_count = function() {
+Blockly.Arduino.control_repeat_and_count = function() {
   var value_variable = Blockly.Arduino.valueToCode(this, 'variable', Blockly.Arduino.ORDER_ATOMIC);
   var value_times = Blockly.Arduino.valueToCode(this, 'times', Blockly.Arduino.ORDER_ATOMIC);
   var statements_commands = Blockly.Arduino.statementToCode(this, 'commands');
-
-  var code = '...';
+  var var_num = findVarible(value_variable);
+  var code; 
+  if(var_num == -1){
+    alert("ERROR: Invalid variable name used.\nYou tried to use a variable without first setting/declaring it.\n(Tried: " + value_variable + ")");
+    code = "undefined";
+  }else{
+    code = 'for (_ABVAR_' + (var_num + 1) + '_' + value_variable + '=1; _ABVAR_' + (var_num + 1) + '_' + value_variable + '<= ( ' + value_times + ' ); ++_ABVAR_' + (var_num + 1) + '_' + value_variable + ' )\n{\n' + statements_commands + '\n}\n';
+  }
   return code;
 };
 
