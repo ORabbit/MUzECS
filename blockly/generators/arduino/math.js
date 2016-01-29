@@ -279,7 +279,8 @@ Blockly.Arduino.math_min = function() {
   var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
   var argument0 = Blockly.Arduino.valueToCode(this, 'A', order) || '0';
   var argument1 = Blockly.Arduino.valueToCode(this, 'B', order) || '0';
-  var code = "min("+argument+")";
+  var operator = this.getFieldValue('OP')=='MAX'?'max':'min';
+  var code = operator+"("+argument0+","+argument1+")";
   return [code, order];
 };
 
@@ -288,7 +289,8 @@ Blockly.Arduino.math_max = function() {
   var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
   var argument0 = Blockly.Arduino.valueToCode(this, 'NUM', order) || '0';
   var argument1 = Blockly.Arduino.valueToCode(this, 'NUM', order) || '0';
-  var code = "max("+argument0+","+argument1+")";
+  var operator = this.getFieldValue('OP')=='MAX'?'max':'min';
+  var code = operator+"("+argument0+","+argument1+")";
   return [code, order];
 };
 

@@ -506,9 +506,9 @@ Blockly.Blocks['math_random_max_min'] = {
 Blockly.Blocks['math_max'] = {
 	init: function() {
 var OPERATORS =
-        [[Blockly.Msg.MATH_ADDITION_SYMBOL, 'MIN'],
-         [Blockly.Msg.MATH_SUBTRACTION_SYMBOL, 'MAX']];
-	var temp;
+        [[Blockly.Msg.MATH_MIN, 'MIN'],
+         [Blockly.Msg.MATH_MAX, 'MAX']];
+var temp;
 	temp = OPERATORS[0];
 	OPERATORS[0] = OPERATORS[1];
 	OPERATORS[1] = temp;
@@ -530,8 +530,8 @@ var OPERATORS =
 Blockly.Blocks['math_min'] = {
 	init: function() {
 var OPERATORS =
-        [[Blockly.Msg.MATH_ADDITION_SYMBOL, 'MIN'],
-         [Blockly.Msg.MATH_SUBTRACTION_SYMBOL, 'MAX']];
+        [[Blockly.Msg.MATH_MIN, 'MIN'],
+         [Blockly.Msg.MATH_MAX, 'MAX']];
 	    this.setColour(Blockly.Blocks.math.HUE);
 	    this.setOutput(true, 'Number');
 	    this.appendValueInput('A')
