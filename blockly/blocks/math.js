@@ -505,13 +505,22 @@ Blockly.Blocks['math_random_max_min'] = {
 
 Blockly.Blocks['math_max'] = {
 	init: function() {
+var OPERATORS =
+        [[Blockly.Msg.MATH_ADDITION_SYMBOL, 'MIN'],
+         [Blockly.Msg.MATH_SUBTRACTION_SYMBOL, 'MAX']];
+	var temp;
+	temp = OPERATORS[0];
+	OPERATORS[0] = OPERATORS[1];
+	OPERATORS[1] = temp;
 	    this.setColour(Blockly.Blocks.math.HUE);
 	    this.setOutput(true, 'Number');
 	    this.appendValueInput('A')
 		.setCheck('Number');
 	    this.appendValueInput('B')
 		.setCheck('Number')
-		.appendField(Blockly.Msg.MATH_MAX);
+	//	.appendField(Blockly.Msg.MATH_MAX);
+	
+       	        .appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
 	    this.setInputsInline(true);
 	    // Assign 'this' to a variable for use in the tooltip closure below.
 	    this.setTooltip(Blockly.Msg.MATH_MAX_TOOLTIP);
@@ -520,13 +529,17 @@ Blockly.Blocks['math_max'] = {
 
 Blockly.Blocks['math_min'] = {
 	init: function() {
+var OPERATORS =
+        [[Blockly.Msg.MATH_ADDITION_SYMBOL, 'MIN'],
+         [Blockly.Msg.MATH_SUBTRACTION_SYMBOL, 'MAX']];
 	    this.setColour(Blockly.Blocks.math.HUE);
 	    this.setOutput(true, 'Number');
 	    this.appendValueInput('A')
 		.setCheck('Number');
 	    this.appendValueInput('B')
 		.setCheck('Number')
-		.appendField(Blockly.Msg.MATH_MIN);
+	//	.appendField(Blockly.Msg.MATH_MIN);
+       	        .appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
 	    this.setInputsInline(true);
 	    // Assign 'this' to a variable for use in the tooltip closure below.
 	    this.setTooltip(Blockly.Msg.MATH_MIN_TOOLTIP);
