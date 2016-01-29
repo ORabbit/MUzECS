@@ -105,3 +105,27 @@ Blockly.Blocks['control_repeat_and_count'] = {
         this.setHelpUrl('http://www.example.com/');
     }
 };
+
+Blockly.Blocks['control_repeat_between'] = {
+    init: function() {
+        this.appendValueInput("variable")
+             .setCheck("Variable_int")
+             .appendField("                    variable");
+        this.appendValueInput("start")
+             .setCheck("Number")
+             .appendField("                       start");
+        this.appendValueInput("stop")
+             .setCheck("Number")
+             .appendField("repeat between          stop");
+        this.appendValueInput("steps")
+             .setCheck("Number")
+             .appendField("                    steps of");
+        this.appendStatementInput("commands")
+             .appendField("                    commands");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(60);
+        this.setTooltip('Repeat the commands. Start iterating on \"start\" and stop iterating on \"stop\" in steps of \"steps of\" between the two');
+        this.setHelpUrl('http://www.example.com/');
+    }
+};

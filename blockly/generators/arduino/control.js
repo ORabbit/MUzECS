@@ -76,6 +76,16 @@ Blockly.Arduino.control_repeat_and_count = function() {
   return code;
 };
 
+Blockly.Arduino.control_repeat_between = function() {
+  var value_variable = Blockly.Arduino.valueToCode(this, 'variable', Blockly.Arduino.ORDER_ATOMIC);
+  var value_start = Blockly.Arduino.valueToCode(this, 'start', Blockly.Arduino.ORDER_ATOMIC);
+  var value_stop = Blockly.Arduino.valueToCode(this, 'stop', Blockly.Arduino.ORDER_ATOMIC);
+  var value_steps = Blockly.Arduino.valueToCode(this, 'steps', Blockly.Arduino.ORDER_ATOMIC);
+  var statements_commands = Blockly.Arduino.statementToCode(this, 'commands');
+  var code = 'for (' + value_variable + '=' + value_start + '; ' + value_variable + '<= ( ' + value_stop + ' ); ' + value_variable + '+=' value_steps ' )\n{\n' + statements_commands + '\n}\n';
+  return code;
+};
+
 Blockly.Arduino.controls_for = function() {
   // For loop.
   var variable0 = Blockly.Arduino.variableDB_.getName(
