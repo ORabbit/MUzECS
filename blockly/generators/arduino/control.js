@@ -82,7 +82,7 @@ Blockly.Arduino.control_repeat_between = function() {
   var value_stop = Blockly.Arduino.valueToCode(this, 'stop', Blockly.Arduino.ORDER_ATOMIC);
   var value_steps = Blockly.Arduino.valueToCode(this, 'steps', Blockly.Arduino.ORDER_ATOMIC);
   var statements_commands = Blockly.Arduino.statementToCode(this, 'commands');
-  var code = 'for (' + value_variable + '=' + value_start + '; ' + value_variable + '<= ( ' + value_stop + ' ); ' + value_variable + '+=' value_steps ' )\n{\n' + statements_commands + '\n}\n';
+  var code = 'for (' + value_variable + '=' + value_start + '; ' + value_variable + '<= ( ' + value_stop + ' ); ' + value_variable + '+=' + value_steps + ' )\n{\n' + statements_commands + '\n}\n';
   return code;
 };
 
