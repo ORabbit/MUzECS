@@ -7,6 +7,7 @@ from SocketServer import ThreadingMixIn
 import random
 import threading
 import string
+import time
 
 absPathMUBD ="/var/www/html/MUBlocklyDuino/"
 lock = threading.Lock()
@@ -50,21 +51,21 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
         #if there is a hex file success and tell the user the link if not tellt them file not found
         if match!=None:
             hex_file=match.group(1)
-            print "success "+self.client_address[0]+" got the hex file "+hex_file
-            print "http://"+server_info[0]+"/MUBlocklyDuino/ardusers/hex_files/"+hex_file+".txt"
+            print (time.strftime("%d/%m/%Y - %I:%M:%S"))+"success "+self.client_address[0]+" got the hex file "+hex_file
+            print (time.strftime("%d/%m/%Y - %I:%M:%S"))+"http://"+server_info[0]+"/MUBlocklyDuino/ardusers/hex_files/"+hex_file+".txt"
             self.wfile.write("http://"+server_info[0]+"/ardusers/hex_files/"+hex_file+".txt")
         else:
             print "file not found"
             self.wfile.write("file_not_found")
 
         self.wfile.write(self.template_end)
-        print threading.currentThread().getName()+" handled GET Request from "+self.client_address[0]
+        print (time.strftime("%d/%m/%Y - %I:%M:%S"))+threading.currentThread().getName()+" handled GET Request from "+self.client_address[0]
 
 
     def do_POST(self):
         """Save new page text and display it"""
         length = int(self.headers.getheader('content-length'))
-	print threading.currentThread().getName()+" handling post request from "+self.client_address[0]                        
+	print (time.strftime("%d/%m/%Y - %I:%M:%S"))+threading.currentThread().getName()+" handling post request from "+self.client_address[0]                        
         if length:
             text = self.rfile.read(length)
                         
@@ -115,23 +116,23 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
                             new_hex_file=''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(8))
                             hosts_file.write(self.client_address[0]+":"+new_hex_file+".txt\n")
                             os.system("cp "+absPathMUBD+"ino_project/.build/leonardo/firmware.hex "+absPathMUBD+"ardusers/hex_files/"+new_hex_file+".txt")
-                            print "written to hosts.txt this line: "+self.client_address[0]+":"+new_hex_file+".txt with the nex hex file"
+                            print (time.strftime("%d/%m/%Y - %I:%M:%S"))+"written to hosts.txt this line: "+self.client_address[0]+":"+new_hex_file+".txt with the nex hex file"
                         else:#edit the file with the new firmware hex
                             hex_file=match.group(1)
                             os.system("cp "+absPathMUBD+"ino_project/.build/leonardo/firmware.hex "+absPathMUBD+"ardusers/hex_files/"+hex_file+".txt")
                         hosts_file.close()
 			lock.release()
-                        print "updated the users hex file with the compiled hex"
+                        print (time.strftime("%d/%m/%Y - %I:%M:%S"))+"updated the users hex file with the compiled hex"
                         self.send_response(200)
 			self.send_header("Access-Control-Allow-Origin","*")
             os.chdir("..")
 	#this occurs if the person doesn't click the arduino tab atleast once: the length of content is 0
 	else:
-	    print "post request failed because content was "+ str(length)+" bytes" 
+	    print (time.strftime("%d/%m/%Y - %I:%M:%S"))+"post request failed because content was "+ str(length)+" bytes" 
 	    self.send_response(300)
 	    self.send_header("Access-Control-Allow-Origin","*")
 if __name__ == '__main__':
-    print "running local web server at 134.48.6.40:8080..."
+    print (time.strftime("%d/%m/%Y - %I:%M:%S"))+"running local web server at 134.48.6.40:8080..."
     fpid = os.fork()
     if fpid!=0:
 	sys.exit(0)
