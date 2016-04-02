@@ -162,3 +162,43 @@ Blockly.Arduino.controls_infloop = function() {
   return code + '\n';
 
 };
+
+/*
+ * SUBROUTINE AREA
+ */
+
+var subNames = [];
+
+// Finds varaible and returns the index it is located at, if not found returns -1
+function findSubroutine(name) {
+  var subNum = -1;
+  for (var i = 0; i < subNames.length; i++) {
+    if (subNames[i] == name) { // FOUND
+      subNum = i;
+      break;
+    }
+  }
+  return subNum;
+}
+
+Blockly.Arduino.resetSubroutines = function() {
+  subNames = [];
+};
+
+Blockly.Arduino.control_subroutine = function() {
+  var text_subroutine_name = this.getFieldValue('subroutine_name').replace(/\s/g, "");
+  var statements_subroutine = Blockly.Arduino.statementToCode(this, 'subroutine');
+  
+  var subNum = findSubroutine(text_subroutine_name);
+  var code = '';
+  if(subNum == -1) {
+    subNames.push(text_subroutine_name);
+    //Blockly.Arduino.definitions_['vars_digital_' + value_variable]="bool _ABVAR_" + varNames.length + "_" + value_variable + " = false;\n";
+    //var code = 'void _ABFUNC_' + (subNames.length-1) + '_' + text_subroutine_name + '() {\n\t' + statements_subroutine + '}\n';
+    Blockly.Arduino.definitions_['subroutine_' + (subNames.length-1)]='void _ABFUNC_' + (subNames.length-1) + '_' + text_subroutine_name + '() {\n' + statements_subroutine + '}\n';
+  }else {
+    alert("ERROR: Invalid subroutine name used.\nYou tried to use the same subroutine name twice\n(Tried: " + text_subroutine_name + ")");
+  }
+
+  return code;
+};

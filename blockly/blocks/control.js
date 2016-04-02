@@ -129,3 +129,29 @@ Blockly.Blocks['control_repeat_between'] = {
         this.setHelpUrl('http://www.example.com/');
     }
 };
+
+Blockly.Blocks['control_subroutine'] = {
+     init: function() {
+       this.appendDummyInput()
+	   .appendField(new Blockly.FieldTextInput("subroutine"), "subroutine_name");
+       this.appendStatementInput("subroutine")
+           .setCheck(null)
+           .appendField("             commands");
+       this.setColour(65);
+       this.setTooltip('Add a subroutine');
+       this.setHelpUrl('http://www.example.com/');
+     }
+};
+
+Blockly.Blocks['setup_and_loop'] = {
+     init: function() {
+       this.appendStatementInput()
+	   .appendField("setup");
+       this.appendStatementInput("subroutine")
+           .setCheck(null)
+           .appendField("             loop");
+       this.setColour(65);
+       this.setTooltip('main program with loop and setup');
+       this.setHelpUrl('http://www.example.com/');
+     }
+};
