@@ -141,6 +141,28 @@ Blockly.Arduino.controls_repeat = function() {
   return code + '\n';
 
 };
+var setupNames = 0;
+Blockly.Arduino.resetSetupLoop = function() {
+  setupNames = 0;
+};
+
+Blockly.Arduino.setup_and_loop = function() {
+    if(setupNames<1){
+	  setupNames++;
+	var mode = this.getFieldValue('MODE');
+	  var bool=Blockly.Arduino.valueToCode(this, 'BOOL', Blockly.Arduino.ORDER_NONE);
+	  
+	  var branch_setup = Blockly.Arduino.statementToCode(this, 'setup');
+	  var branch_code = Blockly.Arduino.statementToCode(this, 'loop');
+	  Blockly.Arduino.setups_['setup_output_code'] = branch_setup;
+	  return branch_code + '\n';
+	}else{
+		alert("multiple loop block found!");
+		return '';
+	}
+};
+
+
 Blockly.Arduino.controls_whileUntil = function() {
   var mode = this.getFieldValue('MODE');
   var bool=Blockly.Arduino.valueToCode(this, 'BOOL', Blockly.Arduino.ORDER_NONE);
@@ -173,7 +195,7 @@ var subNames = [];
 function findSubroutine(name) {
   var subNum = -1;
   for (var i = 0; i < subNames.length; i++) {
-    if (subNames[i] == name) { // FOUND
+    if (subNames[i] == name && subNames[i] != 'setup' && subNames[i] != 'loop') { // FOUND
       subNum = i;
       break;
     }
@@ -193,11 +215,23 @@ Blockly.Arduino.control_subroutine = function() {
   var code = '';
   if(subNum == -1) {
     subNames.push(text_subroutine_name);
-    //Blockly.Arduino.definitions_['vars_digital_' + value_variable]="bool _ABVAR_" + varNames.length + "_" + value_variable + " = false;\n";
-    //var code = 'void _ABFUNC_' + (subNames.length-1) + '_' + text_subroutine_name + '() {\n\t' + statements_subroutine + '}\n';
     Blockly.Arduino.definitions_['subroutine_' + (subNames.length-1)]='void _ABFUNC_' + (subNames.length-1) + '_' + text_subroutine_name + '() {\n' + statements_subroutine + '}\n';
   }else {
     alert("ERROR: Invalid subroutine name used.\nYou tried to use the same subroutine name twice\n(Tried: " + text_subroutine_name + ")");
+  }
+
+  return code;
+};
+
+Blockly.Arduino.control_call_subroutine = function() {
+  var text_subroutine_name = this.getFieldValue('subroutine_name');
+
+  var subNum = findSubroutine(text_subroutine_name);
+  var code = '';
+  if(subNum == -1) {
+    alert("ERROR: Invalid subroutine name used.\nYou tried to invoke the subroutine before creating it\n(Tried: " + text_subroutine_name + ")");
+  }else {
+    code = '_ABFUNC_' + subNum + '_' + text_subroutine_name + '();\n';
   }
 
   return code;

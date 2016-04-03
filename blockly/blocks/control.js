@@ -143,11 +143,25 @@ Blockly.Blocks['control_subroutine'] = {
      }
 };
 
+Blockly.Blocks['control_call_subroutine'] = {
+     init: function() {
+       this.appendDummyInput()
+           .appendField(new Blockly.FieldTextInput("subroutine"), "subroutine_name");
+       this.setPreviousStatement(true, null);
+       this.setNextStatement(true, null);
+       this.setColour(65);
+       this.setTooltip('Invoke subroutine');
+       this.setHelpUrl('http://www.example.com/');
+     }
+};
+
 Blockly.Blocks['setup_and_loop'] = {
      init: function() {
-       this.appendStatementInput()
-	   .appendField("setup");
-       this.appendStatementInput("subroutine")
+       this.appendDummyInput()
+	   .appendField("program");
+       this.appendStatementInput("setup")
+	   .appendField("             setup");
+       this.appendStatementInput("loop")
            .setCheck(null)
            .appendField("             loop");
        this.setColour(65);

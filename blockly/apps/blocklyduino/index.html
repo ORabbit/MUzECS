@@ -89,8 +89,10 @@ function renderContent() {
   } else if (content.id == 'content_arduino') {
     //content.innerHTML = Blockly.Arduino.workspaceToCode();
     var arduinoTextarea = document.getElementById('content_arduino');
-    //TESTTTTTTTT
     Blockly.Arduino.resetVariables();
+    Blockly.Arduino.resetSubroutines();
+    Blockly.Arduino.resetSetupLoop();
+
     arduinoTextarea.value = Blockly.Arduino.workspaceToCode();
     arduinoTextarea.focus();
   }
@@ -391,6 +393,8 @@ function init() {
     </category>
 -->
     <category name="Control">
+	
+	<block type="setup_and_loop"></block>
 	<block type="controls_infloop"></block>
       <block type="controls_if"></block>
       <block type="control_while"></block>
@@ -452,7 +456,8 @@ function init() {
           </block>
         </value>
       </block>-->
-	<block type="procedures_defnoreturn"></block>
+        <block type="control_subroutine"></block>
+	<block type="control_call_subroutine"></block>
     </category>
 	 <category name="ECS">
 		<block type="play_note">
@@ -805,7 +810,7 @@ function init() {
 		</block>
 	</category>
     <sep></sep>
-    <category name="Functions" custom="PROCEDURE"></category>
+    <!--<category name="Functions" custom="PROCEDURE"></category>-->
   </xml>
 </body>
 </html>
