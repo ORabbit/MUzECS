@@ -76,7 +76,7 @@ Blockly.Generator.prototype.workspaceToCode = function(opt_workspace) {
   var blocks = workspace.getTopBlocks(true);
   for (var x = 0, block; block = blocks[x]; x++) {
     //console.log(block.type);
-    if (block.type == 'setup_and_loop' || block.type == 'control_inf_loop' || block.type == 'control_subroutine') {
+    if (block.type == 'setup_and_loop' || block.type == 'control_do_loop' || block.type == 'control_subroutine') {
       var line = this.blockToCode(block);
       if (goog.isArray(line)) {
         // Value blocks return tuples of code and operator order.

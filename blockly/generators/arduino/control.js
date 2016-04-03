@@ -149,12 +149,20 @@ Blockly.Arduino.resetSetupLoop = function() {
 Blockly.Arduino.setup_and_loop = function() {
     if(setupNames<1){
 	  setupNames++;
-	var mode = this.getFieldValue('MODE');
-	  var bool=Blockly.Arduino.valueToCode(this, 'BOOL', Blockly.Arduino.ORDER_NONE);
-	  
 	  var branch_setup = Blockly.Arduino.statementToCode(this, 'setup');
 	  var branch_code = Blockly.Arduino.statementToCode(this, 'loop');
 	  Blockly.Arduino.setups_['setup_output_code'] = branch_setup;
+	  return branch_code + '\n';
+	}else{
+		alert("multiple loop block found!");
+		return '';
+	}
+};
+
+Blockly.Arduino.control_do_loop = function() {
+    if(setupNames<1){
+	  setupNames++;
+	  var branch_code = Blockly.Arduino.statementToCode(this, 'loop');
 	  return branch_code + '\n';
 	}else{
 		alert("multiple loop block found!");

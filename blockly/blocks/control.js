@@ -73,6 +73,20 @@ Blockly.Blocks['control_do_while'] = {
   }
 };
 
+Blockly.Blocks['control_do_loop'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("loop");
+    this.appendStatementInput('loop')
+	.setCheck(null)
+        .appendField("            do ");
+    this.setColour(60);
+    this.setTooltip('Main Program. Loop without.');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+
 Blockly.Blocks['control_repeat_times'] = {
   init: function() {
     this.appendValueInput("times")
