@@ -121,7 +121,15 @@ function getBBox_(element) {
     y: y
   };
 }
-
+function generateHashCode(){
+  var hashCode = '';
+  var i;
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+ for(i = 0;i<11;i++){
+	hashCode+=possible.charAt(Math.floor(Math.random()*possible.length));
+ }
+return hashCode;
+}
 /**
  * Initialize Blockly.  Called on page load.
  */
@@ -129,7 +137,20 @@ function init() {
   //window.onbeforeunload = function() {
   //  return 'Leaving this page will result in the loss of your work.';
   //};
+if(typeof(Storage) !== "undefined") {
+	if(sessionStorage.HASHCODE){
+		Blockly.Arduino.HASHCODE = sessionStorage.HASHCODE;
+		console.log("session storage exists");
+	}else{
+		sessionStorage.HASHCODE = generateHashCode();
+		Blockly.Arduino.HASHCODE = sessionStorage.HASHCODE;
 
+	}
+console.log("local storage exists");
+} else {
+	Blockly.Arduino.HASHCODE = '';
+}
+console.log(Blockly.Arduino.HASHCODE);
   var container = document.getElementById('content_area');
   var onresize = function(e) {
     var bBox = getBBox_(container);
@@ -303,7 +324,13 @@ function init() {
               <button onclick="save()">Save XML</button>
               <button id="fakeload">Load XML</button>
               <input type="file" id="load" style="display: none;"/>
-              <button type="button" style="background-color:lightgreen; width:100; height:50" onclick="uploadClick()">Upload</button>
+              <button type="button" id="upload" style="background-color:lightgreen; width:100; height:50">Upload</button>
+		<script>
+			document.getElementById("upload").addEventListener("click", function() {
+    uploadClick(Blockly.Arduino.HASHCODE);
+}, false);
+
+		</script>
               <!-- <button class="launch" onclick="runJS()">Run Program</button> -->
             </td>
           </tr>

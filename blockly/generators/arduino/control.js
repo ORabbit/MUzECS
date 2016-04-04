@@ -198,6 +198,7 @@ Blockly.Arduino.controls_infloop = function() {
  */
 
 var subNames = [];
+var missingSubs = [];
 
 // Finds varaible and returns the index it is located at, if not found returns -1
 function findSubroutine(name) {
@@ -213,6 +214,7 @@ function findSubroutine(name) {
 
 Blockly.Arduino.resetSubroutines = function() {
   subNames = [];
+  missingSubs = [];
 };
 
 Blockly.Arduino.control_subroutine = function() {
@@ -237,7 +239,8 @@ Blockly.Arduino.control_call_subroutine = function() {
   var subNum = findSubroutine(text_subroutine_name);
   var code = '';
   if(subNum == -1) {
-    alert("ERROR: Invalid subroutine name used.\nYou tried to invoke the subroutine before creating it\n(Tried: " + text_subroutine_name + ")");
+    //alert("ERROR: Invalid subroutine name used.\nYou tried to invoke the subroutine before creating it\n(Tried: " + text_subroutine_name + ")");
+    missingSubs.push(text_subroutine_name); // Add unresolved subroutine name to list
   }else {
     code = '_ABFUNC_' + subNum + '_' + text_subroutine_name + '();\n';
   }

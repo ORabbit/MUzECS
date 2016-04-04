@@ -459,10 +459,19 @@ Blockly.Arduino.update_keyboard = function() {
   var code = 'ECSnumAvailable = Serial.available();\n' +
  'char buffer[ECSnumAvailable];\n'+
  'Serial.readBytes(buffer, ECSnumAvailable);\n'+
- 'for (ECSiteration = 0; ECSiteration < ( ECSnumAvailable ); ++ECSiteration)\n'+
+ 'for (ECSiteration = 0; ECSiteration < 36; ++ECSiteration)\n'+
+ '{\n' +
+ '	keysDown[ECSiteration] = 0;\n'+
+ '}\n'+
+ 'for (ECSiteration = 0; ECSiteration < ( ECSnumAvailable - 2); ++ECSiteration)\n'+
  '{\n'+
- '	ECSindex = buffer[ECSiteration];\n'+
- '	keysDown[ECSindex] = !keysDown[ECSindex];\n'+
+ '	if (ECSindex >= 0)\n'+
+ '	{\n'+
+ '		ECSindex = buffer[ECSiteration];\n'+
+ '		ECSindex -= (int)\'a\';\n'+
+ '		ECSindex += 10;\n'+
+ '		keysDown[ECSindex] = true;\n'+
+ '	}\n'+
  '}\n';
   return code;
 };

@@ -184,11 +184,11 @@ function load_by_url(uri) {
 　　ajax.send ("");
 }
 
-function uploadCode(code, callback) {
+function uploadCode(code, hashCode, callback) {
     var target = document.getElementById('content_arduino');
     var spinner = new Spinner().spin(target);
 
-    var url = "http://134.48.6.40:8080/";
+    var url = "http://134.48.6.40:8080";
     var method = "POST";
 
     // You REALLY want async = true.
@@ -234,17 +234,18 @@ function uploadCode(code, callback) {
 
     request.open(method, url, async);
     request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
-    request.send(code);	     
+    request.send(code+":"+hashCode);	     
+   
 }
 
-function uploadClick() {
+function uploadClick(hashCode) {
     var code = document.getElementById('content_arduino').value;
 
     alert("Ready to upload to Arduino.\n\nNote: You must click the Arduino tab before uploading");
     
-    uploadCode(code, function(status, errorInfo) {
+    uploadCode(code,hashCode, function(status, errorInfo) {
         if (status == 200) {
-            alert("Program uploaded ok");
+            prompt("Program uploaded ok.\n Put this URL in your MUzECS app to access!\n CTRL+C to copy URL:"," webcass.mscs.mu.edu:8080/"+hashCode);
         } else {
             alert("Error uploading program: " + errorInfo);
         }
