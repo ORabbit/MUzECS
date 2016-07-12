@@ -492,7 +492,7 @@ Blockly.Arduino.key_pressed = function() {
   }
   //key code = null error alert box
   if(key_code==null){
-    alert("unrecognized key used in block.\n\n\nHiny: Valid keys are a-z and 0-9.");
+    alert("unrecognized key used in block.\n\n\nHint: Valid keys are a-z and 0-9.");
   }
   var code = 'keysDown['+key_code+']';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
@@ -556,4 +556,25 @@ Blockly.Arduino.get_distance = function() {
   Blockly.Arduino.setups_['setup_dist_3'] = 'pinMode(2, OUTPUT);\n';
   var code = 'smoothDistance()';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino.get_accelerometer_x = function() {
+  Blockly.Arduino.definitions_['func_get_accelerometer_x()'] =
+		"print 'Hello World!'";
+	var code = 'get_accelerometer_x()';
+	return code;
+};
+
+Blockly.Arduino.get_accelerometer_y = function() {
+  Blockly.Arduino.definitions_['func_get_accelerometer_y()'] =
+		"print 'Hello World!'";
+	var code = 'get_accelerometer_y()';
+	return code;
+};
+
+Blockly.Arduino.get_accelerometer_z = function() {
+  Blockly.Arduino.definitions_['func_get_accelerometer_z()'] =
+		"print 'Hello World!'";
+	var code = 'get_accelerometer_z()';
+	return code;
 };

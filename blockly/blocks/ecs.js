@@ -194,11 +194,22 @@ Blockly.Blocks['turn_led_4_off'] = {
 
 Blockly.Blocks['set_up_keyboard'] = {
   init: function() {
-    this.setHelpUrl('http://www.example.com/');
     this.setColour(120);
     this.appendDummyInput()
 	.appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/keyboard.png", 30, 30, "*"))
         .appendField("Set Up Keyboard");
+    this.setPreviousStatement(true, "null");
+    this.setNextStatement(true, "null");
+    this.setTooltip('');
+  }
+};
+
+Blockly.Blocks['set_up_accelerometer'] = {
+  init: function() {
+    this.setColour(120);
+    this.appendDummyInput()
+				.appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/accel_icon.png", 30, 30, "*"))
+				.appendField("Set Up Keyboard");
     this.setPreviousStatement(true, "null");
     this.setNextStatement(true, "null");
     this.setTooltip('');
@@ -258,4 +269,37 @@ Blockly.Blocks['get_distance'] = {
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');
   }
+};
+
+Blockly.Blocks['get_accelerometer_x'] = {
+	init: function() {
+		this.appendDummyInput()
+				.appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/accel_icon.png", 30, 30, "*"))
+				.appendField("Get Accelerometer X");
+		this.setOutput(true, "Number");
+		this.setColour(120);
+		this.setTooltip('');
+	}
+};
+
+Blockly.Blocks['get_accelerometer_y'] = {
+	init: function() {
+		this.appendDummyInput()
+				.appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/accel_icon.png", 30, 30, "*"))
+				.appendField("Get Accelerometer Y");
+		this.setOutput(true, "Number");
+		this.setColour(120);
+		this.setTooltip('');
+	}
+};
+
+Blockly.Blocks['get_accelerometer_z'] = {
+	init: function() {
+		this.appendDummyInput()
+				.appendField(new Blockly.FieldImage("http://134.48.6.40/blockly/media/accel_icon.png", 30, 30, "*"))
+				.appendField("Get Accelerometer Z");
+		this.setOutput(true, "Number");
+		this.setColour(120);
+		this.setTooltip('');
+	}
 };
